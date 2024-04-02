@@ -15,6 +15,10 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
