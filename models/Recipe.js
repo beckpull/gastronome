@@ -31,6 +31,10 @@ Recipe.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    has_meat: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
