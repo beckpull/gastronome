@@ -39,15 +39,15 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "user",
-        key: "id",
+        model: 'user',
+        key: 'id',
       },
     },
   },
   {
     sequelize,
     freezeTableName: true,
-    modelName: "comment",
+    modelName: 'recipe',
   }
 );
 

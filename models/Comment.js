@@ -16,10 +16,10 @@ Comment.init(
       allowNull: false
     },
     recipe_id: {
-      type: DataTypes.UNTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'post',
+        model: 'recipe',
         key: 'id',
       },
     },
