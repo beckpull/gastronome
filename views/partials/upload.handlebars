@@ -1,0 +1,20 @@
+<div class="section">
+  <h1>Upload Image</h1>
+
+  <form
+    action="/upload"
+    method="post"
+    encType="multipart/form-data"
+    ref="uploadImage"
+    id="uploadImage"
+  >
+    <div class="form__section">
+      <input type="file" name="uploadFile" />
+      <label>
+        Please select the image to be uploaded
+      </label>
+    </div>
+    <input type="submit" value="Upload!" class="btn" />
+  </form>
+
+</div>
