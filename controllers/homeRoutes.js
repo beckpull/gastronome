@@ -24,8 +24,8 @@ router.get('/', async (req, res) => {
     }
     console.log(selectedRecipes);
 
-    // res.render('homepage', { recipes });
-    res.json(selectedRecipes);
+    res.render('homepage', { ...recipes });
+    // res.json(selectedRecipes);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -43,11 +43,11 @@ router.get('/all', async (req, res) => {
     Recipe.get({ plain: true })
     );
 
-    // res.render('all-recipes', {
-    //     ...recipes, 
-    //     logged_in: req.session.logged_in
-    // });
-    res.json(recipes);
+    res.render('all-recipes', {
+        ...recipes, 
+        logged_in: req.session.logged_in
+    });
+    // res.json(recipes);
   } catch (err) {
     res.status(500).json(err);
   }
