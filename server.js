@@ -2,12 +2,15 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+
+// We're not using any custom helpers with handlebars yet--we can uncomment this when we make the file and some custom helpers.
+const helpers = require('./utils/helpers');
+
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const { strict } = require('assert');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
-const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
