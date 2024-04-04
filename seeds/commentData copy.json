@@ -1,34 +1,42 @@
 [
     {
         "content": "sapien sapien non mi integer ac neque",
-        "recipe_id": 1
+        "recipe_id": 1, 
+        "user_id": 1
     },
     {
         "content": "convallis nulla neque libero convallis eget eleifend luctus",
-        "recipe_id": 2
+        "recipe_id": 2,
+        "user_id": 2
     },
     {
         "content": "erat id mauris vulputate elementum nullam varius",
-        "recipe_id": 3
+        "recipe_id": 3,
+        "user_id": 3
     },
     {
         "content": "ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium",
-        "recipe_id": 4
+        "recipe_id": 4,
+        "user_id": 4
     },
     {
         "content": "id nulla ultrices aliquet maecenas leo",
-        "recipe_id": 5
+        "recipe_id": 5,
+        "user_id": 5
     },
     {
         "content": "eget tempus vel pede morbi porttitor lorem id",
-        "recipe_id": 6
+        "recipe_id": 6,
+        "user_id": 6
     },
     {
         "content": "amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis",
-        "recipe_id": 7
+        "recipe_id": 7,
+        "user_id": 7
     },
     {
         "content": "in eleifend quam a odio in hac habitasse platea dictumst",
-        "recipe_id": 8
+        "recipe_id": 8,
+        "user_id": 8
     }
 ]
