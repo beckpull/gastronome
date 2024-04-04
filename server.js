@@ -8,9 +8,9 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const { strict } = require('assert');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const fileUpload = require('express-fileupload');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,7 +21,7 @@ const sess = {
       maxAge: 60 * 60 * 4 * 1000,
       httpOnly: true,
       secure: false,
-      sameSite: 'strict'
+      // sameSite: 'strict'
   },
   rolling: true,
   resave: false,
@@ -41,6 +41,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload());
 
 app.use(routes);
 

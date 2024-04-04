@@ -19,9 +19,8 @@ Recipe.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    filename: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    imageUrl: {
+      type: DataTypes.TEXT,
     },
     ingredients: {
       type: DataTypes.TEXT,
