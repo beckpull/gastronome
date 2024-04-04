@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
     }
     console.log(selectedRecipes);
 
-    res.render('homepage', { ...recipes });
+    res.render('homepage', { selectedRecipes });
     // res.json(selectedRecipes);
   } catch (err) {
     res.status(500).json(err);
@@ -42,9 +42,9 @@ router.get('/all', async (req, res) => {
     const recipes = recipeData.map((Recipe) =>
     Recipe.get({ plain: true })
     );
-
+    console.log(recipes[0]);
     res.render('all-recipes', {
-        ...recipes, 
+        recipes, 
         logged_in: req.session.logged_in
     });
     // res.json(recipes);
@@ -63,7 +63,7 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
           include: [
               {
                   model: User, 
-                  attributes: ['name'],
+                  attributes: ['username'],
               },
               {
                   model: Comment, 

@@ -11,7 +11,16 @@
                     <figure class="image is-128x128">
                       <img src="https://bulma.io/assets/images/placeholders/96x96.png" alt="Placeholder image" />
                     </figure>
-                    <p>{{ description }} </p>
+                    <p> {{ user.username }} </p>
+                    <p> {{ description }} </p>
+                    <p> {{ ingredients }} </p>
+                    <p> {{instructions }} </p>              
+                    {{#if has_meat}}
+                    <p> This recipe contains meat </p>
+                    {{else}}
+                    <p> This dish is vegetarian friendly!</p>
+                    {{/if}}
+                    <p> {{ created_on }} </p>
                   </div>
                 </div>
               </div>
@@ -19,6 +28,3 @@
           </div>
         </div>
       </div>
-
-
-    
