@@ -22,3 +22,7 @@ const newPostFormHandler = async (event) => {
 document
   .querySelector(".newcomment-form") // Form will either need to have class="newcomment-form" or we will need to change this
   .addEventListener("submit", newPostFormHandler);
+
+  // will need this link in recipe.handlebars
+  //<script src="/js/addComment.js"></script>
+
