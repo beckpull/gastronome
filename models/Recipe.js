@@ -43,8 +43,14 @@ Recipe.init(
         key: 'id',
       },
     },
+    created_on: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
+    }
   },
   {
+    timestamps: false,
     sequelize,
     freezeTableName: true,
     modelName: 'recipe',

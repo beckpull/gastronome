@@ -33,22 +33,52 @@ router.get('/', async (req, res) => {
 
 
 // Ideally, when the user successfully logs in and is redirected to the all-recipes page, I would want to only show the title, image, and short description of each recipe, rather than displaying all of the ingredients and instructions there, too. I would want the user to have to click on 1 recipe to see its full details including ingredients and instructions. For now, we will render everything about every recipe on the all-recipes page.
-router.get('/all-recipes', async (req, res) => {
+router.get('/all', async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
-      attributes: { exclude: ['password'] },
-      include: [{ model: Comment }, { model: User }]
+      include: [{ model: Comment, include: {model: User, attributes: ['username']} }, { model: User, attributes: ['username'] }]
     });
 
-    const serializedRecipes = recipeData.get({ plain: true });
+    const recipes = recipeData.map((Recipe) =>
+    Recipe.get({ plain: true })
+    );
 
     // res.render('all-recipes', {
-    //     ...serializedRecipes, 
-    //     logged_in: true
+    //     ...recipes, 
+    //     logged_in: req.session.logged_in
     // });
-    res.json(serializedRecipes);
+    res.json(recipes);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+
+// Get 1 recipe with a particular id, which the user can only do after being logged in. 
+// I PERSONALLY PREFER THIS ROUTE TO BE IN recipeRoutes RATHER THAN homeRoutes--CHECK THAT IT CAUSES NO ISSUES.
+// The full route is localhost:PORT/api/recipes/:id 
+router.get('/recipe/:id', withAuth, async (req, res) => {
+  try {
+      const recipeData = await Recipe.findByPk(req.params.id, {
+          include: [
+              {
+                  model: User, 
+                  attributes: ['name'],
+              },
+              {
+                  model: Comment, 
+                  attributes: ['content'],
+              }
+          ]
+      });
+      const recipe = recipeData.get({ plain: true });
+
+      res.render('recipe', {
+          recipe, 
+          logged_in: req.session.logged_in
+      });
+  } catch (err) {
+      res.status(500).json(err);
   }
 });
 
