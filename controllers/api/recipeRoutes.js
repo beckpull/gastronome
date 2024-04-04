@@ -19,34 +19,6 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 
-// Get 1 recipe with a particular id, which the user can only do after being logged in. 
-// I PERSONALLY PREFER THIS ROUTE TO BE IN recipeRoutes RATHER THAN homeRoutes--CHECK THAT IT CAUSES NO ISSUES.
-// The full route is localhost:PORT/api/recipes/:id 
-router.get('/:id', withAuth, async (req, res) => {
-    try {
-        const recipeData = await Recipe.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User, 
-                    attributes: ['name'],
-                },
-                {
-                    model: Comments, 
-                    attributes: ['content'],
-                }
-            ]
-        });
-        const recipe = recipeData.get({ plain: true });
-
-        res.render('recipe', {
-            ...recipe, 
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 
 // Delete a recipe with a particular id.The full route is localhost:PORT/api/recipes/:id 
 router.delete('/:id', withAuth, async (req, res) => {
