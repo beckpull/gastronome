@@ -9,6 +9,7 @@ Instruction.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     step: {
         type: DataTypes.TEXT,
