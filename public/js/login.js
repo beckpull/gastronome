@@ -16,8 +16,8 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        // If successful, redirect the browser to the profile page
-        document.location.replace('/profile');
+        // If successful, redirect the browser to the user's my-recipes page.
+        document.location.replace('/my-recipes');
       } else {
         alert(response.statusText);
       }

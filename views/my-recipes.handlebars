@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <h2>Welcome, {{ username }}!</h2>
+  </div>
+</div>
+
+{{#if Recipes.length}}
+<div>
+    <h3>Your Shared Recipes:</h3>
+
+    {{#each Recipes as |recipe|}}
+    <div>
+        <h4><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></h4>
+    </div>
+    {{!-- Add a delete button to be generated for each recipe. --}}
+    {{/each}}
+</div>
+{{/if}}
