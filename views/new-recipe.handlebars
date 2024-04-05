@@ -1,6 +1,6 @@
 {{!-- Put an h2 here, which should be centered across the page horizontally, which says "Add a New Recipe" --}}
 
-<form class="form share-recipe-form">
+<form class="form share-recipe-form" id="myForm">
     <div class="field">
     <label class="label">Recipe Title</label>
     <div class="control">
@@ -27,7 +27,7 @@
     <div class="field">
         <div class="control">
             {{!-- Would be nice to add a + icon right before the word "Add". Check out https://bulma.io/documentation/elements/icon/ and Material Design Icons https://pictogrammers.com/library/mdi/icon/plus/ --}}
-            <button class="button is-link add-ingredient">Add Ingredient</button>
+            <button class="button is-link" id="add-ingredient">Add Ingredient</button>
         </div>
     </div>
     
@@ -44,7 +44,7 @@
     <div class="field">
         <div class="control">
             {{!-- Would be nice to add a + icon right before the word "Add". Check out https://bulma.io/documentation/elements/icon/ and Material Design Icons https://pictogrammers.com/library/mdi/icon/plus/ --}}
-            <button class="button is-link add-step">Add Step</button>
+            <button class="button is-link" id="add-step">Add Step</button>
         </div>
     </div>
 
@@ -59,4 +59,4 @@
 </form>
 
 
-<script src="./js/new-recipe.js"></script>
+<script src="/js/newRecipe.js"></script>
