@@ -83,7 +83,6 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
   }
 });
 
-
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/all-recipes');
@@ -104,6 +103,28 @@ router.get('/signup', (req, res) => {
 // This is for rendering the new-recipe page where the user can fill in a form to create a new recipe
 router.get('/new-recipe', (req, res) => {
     res.render('new-recipe');
+});
+
+router.get('/my-recipes', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Recipe }],
+        });
+
+        console.log(userData);
+
+        const user = userData.get({ plain: true });
+
+        console.log(user);
+
+        res.render('my-recipes', {
+            ...user, 
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
