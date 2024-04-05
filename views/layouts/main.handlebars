@@ -1,4 +1,4 @@
-<html lang="en" style="background-color: black">
+<html lang="en" style="background-color: rgb(202, 104, 120)">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,25 +8,27 @@
   <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 </head>
 
-<body>
+<body class="block">
   <header>
     <h1 class="quote title is-2 is-medium is-uppercase has-text-weight-bold has-text-centered py-3 my-2 is-centered"
-      style="color: rgb(11, 167, 115)">
+      style="color: rgb(172, 176, 196)">
       GastronoME, Your Home for Cooking!
   </h1>
   </header>
     <nav>
     <a href="/">Home</a>
     {{#if logged_in}}
-    <button id="logout" class="button is-rounded is-outlined" style="background-color: black; color: aquamarine">Logout</button>
+    <button id="logout" class="button is-rounded is-outlined" style="background-color: black; color: rgb(172, 176, 196)">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
   </nav>
   <main>
-<div class="recipe container-is-fluid">
+    <div class="container-is-vcentered">
+<div class="columns">
     {{{body}}}
 </div> 
+</div>
   </main>
 {{#if logged_in}}
 <script src="../../public/js/logout.js"></script>
