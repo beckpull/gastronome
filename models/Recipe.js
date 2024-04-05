@@ -22,13 +22,21 @@ Recipe.init(
     imageUrl: {
       type: DataTypes.TEXT,
     },
-    ingredients: {
-      type: DataTypes.TEXT,
+    ingredients_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'ingredients',
+        key: 'id',
+      },
     },
-    instructions: {
-      type: DataTypes.TEXT,
+    instructions_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'instructions',
+        key: 'id'
+      },
     },
     has_meat: {
       type: DataTypes.BOOLEAN,
