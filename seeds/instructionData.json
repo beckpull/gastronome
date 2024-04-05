@@ -1,0 +1,210 @@
+[
+    {
+        "recipe_id": 1,
+        "step": "Bring a large pot of salted water to a boil."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Cook the spaghetti according to the package instructions until al dente."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Reserve about 1 cup of pasta cooking water, then drain the spaghetti and set aside."
+    },
+    {
+        "recipe_id": 1,
+        "step": "While the pasta is cooking, heat a large skillet over medium heat."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Reserve about 1 cup of pasta cooking water, then drain the spaghetti and set aside."
+    },
+    {
+        "recipe_id": 1,
+        "step": "While the pasta is cooking, heat a large skillet over medium heat."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Add the diced pancetta or guanciale and cook until golden and crisp, about 5-7 minutes. Remove from the heat and set aside."
+    },
+    {
+        "recipe_id": 1,
+        "step": "In a mixing bowl, whisk together the eggs, grated Pecorino Romano cheese, and grated Parmesan cheese until well combined."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Once the spaghetti is cooked and drained, immediately transfer it to the skillet with the cooked pancetta or guanciale."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Toss the spaghetti with the pancetta/guanciale and its rendered fat over low heat for about 1 minute, allowing the pasta to absorb some of the flavor."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Remove the skillet from the heat."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Quickly pour the egg and cheese mixture over the hot spaghetti while continuously tossing or stirring the pasta to evenly coat it with the sauce."
+    },
+    {
+        "recipe_id": 1,
+        "step": "The residual heat from the pasta will cook the eggs and create a creamy sauce."
+    },
+    {
+        "recipe_id": 1,
+        "step": "If the sauce seems too thick, gradually add some of the reserved pasta cooking water, a little at a time, until the desired consistency is reached."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Season the spaghetti carbonara generously with freshly ground black pepper."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Taste and adjust seasoning if necessary, keeping in mind that the pancetta or guanciale and cheeses are already salty."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Serve the spaghetti carbonara immediately, garnished with additional grated cheese and black pepper if desired."
+    },
+    {
+        "recipe_id": 1,
+        "step": "Enjoy your delicious traditional Italian dish!"
+    },
+    {
+        "recipe_id": 2,
+        "step": "Arrange alternating slices of tomatoes and mozzarella cheese on a serving platter."
+    },
+    {
+        "recipe_id": 2,
+        "step": "Tuck fresh basil leaves between the tomato and cheese slices."
+    },
+    {
+        "recipe_id": 2,
+        "step": "Drizzle extra virgin olive oil over the salad."
+    },
+    {
+        "recipe_id": 2,
+        "step": "Drizzle balsamic glaze over the top."
+    },
+    {
+        "recipe_id": 2,
+        "step": "Season with salt and black pepper to taste."
+    },
+    {
+        "recipe_id": 2,
+        "step": "Serve immediately as a refreshing appetizer or side dish."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Heat ghee or oil in a large pot."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Add sliced onions and cook until golden brown."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Remove half and set aside."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Add whole spices and ginger-garlic paste to the pot."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Cook until fragrant."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Add chicken pieces, yogurt, chopped tomatoes, potatoes, green chilies, and half of the chopped coriander and mint leaves."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Cook until chicken is partially cooked."
+    },
+    {
+        "recipe_id": 3,
+        "step": "In a separate pot, boil water and cook soaked rice until partially done."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Drain and set aside."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Layer the partially cooked rice over the chicken mixture."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Sprinkle with remaining coriander and mint leaves, fried onions, and saffron-infused milk."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Cover and cook on low heat until the rice is fully cooked and the flavors are melded together."
+    },
+    {
+        "recipe_id": 3,
+        "step": "Serve hot with raita."
+    },
+    {
+        "recipe_id": 4,
+        "step": "In a skillet, melt butter over medium heat."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Add sliced beef and cook until browned."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Remove beef from skillet and set aside."
+    },
+    {
+        "recipe_id": 4,
+        "step": "In the same skillet, add sliced onions and cook until translucent."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Add minced garlic and sliced mushrooms."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Cook until mushrooms are tender."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Sprinkle flour over the mushroom mixture and cook for 1-2 minutes."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Gradually pour in beef broth, stirring constantly to avoid lumps."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Bring to a simmer."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Return cooked beef to the skillet."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Stir in sour cream, Dijon mustard, and Worcestershire sauce."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Season with salt and pepper to taste."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Simmer gently for a few minutes until the sauce thickens and the beef is heated through."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Serve hot over cooked egg noodles or rice."
+    },
+    {
+        "recipe_id": 4,
+        "step": "Garnish with chopped parsley."
+    }
+]

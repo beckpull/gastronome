@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Instruction extends Model {}
+class Instruction extends Model { }
 
 Instruction.init(
   {
@@ -12,8 +12,16 @@ Instruction.init(
       autoIncrement: true,
     },
     step: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'recipe',
+        key: 'id'
+      },
     },
   },
 
@@ -21,7 +29,7 @@ Instruction.init(
     timestamps: false,
     sequelize,
     freezeTableName: false,
-    modelName: 'recipe',
+    tableName: 'instruction',
   }
 );
 

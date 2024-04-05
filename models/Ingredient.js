@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Ingredient extends Model {}
+class Ingredient extends Model { }
 
 Ingredient.init(
   {
@@ -12,8 +12,16 @@ Ingredient.init(
       autoIncrement: true,
     },
     ingredient: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'recipe',
+        key: 'id'
+      },
     },
   },
 
@@ -21,7 +29,7 @@ Ingredient.init(
     timestamps: false,
     sequelize,
     freezeTableName: false,
-    modelName: 'recipe',
+    tableName: 'ingredient',
   }
 );
 
