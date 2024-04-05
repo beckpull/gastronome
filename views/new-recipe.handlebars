@@ -1,0 +1,62 @@
+{{!-- Put an h2 here, which should be centered across the page horizontally, which says "Add a New Recipe" --}}
+
+<form class="form share-recipe-form">
+    <div class="field">
+    <label class="label">Recipe Title</label>
+    <div class="control">
+        <input class="input" type="text" placeholder="Name your recipe" id="recipe-name">
+    </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Give your recipe a description" id="recipe-description">
+        </div>
+    </div>
+
+    <div id="ingredients-container">
+        <div class="field">
+            <label class="label">Ingredients</label>
+            <div class="control">
+                <input class="input ingredient" type="text" placeholder="ingredient">
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            {{!-- Would be nice to add a + icon right before the word "Add". Check out https://bulma.io/documentation/elements/icon/ and Material Design Icons https://pictogrammers.com/library/mdi/icon/plus/ --}}
+            <button class="button is-link add-ingredient">Add Ingredient</button>
+        </div>
+    </div>
+    
+    <div id="instructions-container">
+        <div class="field">
+            <label class="label">Instructions</label>
+            <div class="control">
+                <input class="input instruction" type="text" placeholder="step">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="field">
+        <div class="control">
+            {{!-- Would be nice to add a + icon right before the word "Add". Check out https://bulma.io/documentation/elements/icon/ and Material Design Icons https://pictogrammers.com/library/mdi/icon/plus/ --}}
+            <button class="button is-link add-step">Add Step</button>
+        </div>
+    </div>
+
+    <div class="field is-grouped">
+    <div class="control">
+        <button class="button is-link">Share Recipe</button>
+    </div>
+    <div class="control">
+        <button class="button is-link is-light">Cancel</button>
+    </div>
+    </div>
+</form>
+
+
+<script src="./js/new-recipe.js"></script>

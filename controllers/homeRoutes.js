@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', { selectedRecipes });
     // res.json(selectedRecipes);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -99,6 +100,11 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// We will need to add withAuth before (req, res)
+// This is for rendering the new-recipe page where the user can fill in a form to create a new recipe
+router.get('/new-recipe', (req, res) => {
+    res.render('new-recipe');
+});
 
 module.exports = router;
 
