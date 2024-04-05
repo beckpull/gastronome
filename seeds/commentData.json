@@ -1,34 +1,34 @@
 [
     {
-        "content": "sapien sapien non mi integer ac neque",
+        "content": "This dish is absolutely delicious, I couldn't get enough!",
         "recipe_id": 1
     },
     {
-        "content": "convallis nulla neque libero convallis eget eleifend luctus",
+        "content": "I made this for dinner last night and my family loved it!",
         "recipe_id": 2
     },
     {
-        "content": "erat id mauris vulputate elementum nullam varius",
+        "content": "The flavors in this recipe are so well-balanced, it's a new favorite!",
         "recipe_id": 3
     },
     {
-        "content": "ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium",
+        "content": "I added a pinch of extra spice and it turned out perfectly!",
         "recipe_id": 4
     },
     {
-        "content": "id nulla ultrices aliquet maecenas leo",
+        "content": "Such a simple recipe but so satisfying, will definitely make again.",
         "recipe_id": 5
     },
     {
-        "content": "eget tempus vel pede morbi porttitor lorem id",
+        "content": "I'm not usually a fan of [ingredient], but it worked so well in this dish!",
         "recipe_id": 6
     },
     {
-        "content": "amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis",
+        "content": "This recipe was a hit at my dinner party, everyone was asking for the recipe!",
         "recipe_id": 7
     },
     {
-        "content": "in eleifend quam a odio in hac habitasse platea dictumst",
+        "content": "I've made this multiple times now, it's become a weekly staple in my household.",
         "recipe_id": 8
     }
 ]

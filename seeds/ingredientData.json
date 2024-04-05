@@ -1,0 +1,230 @@
+[
+    {
+        "recipe_id": 1,
+        "ingredient": "12 ounces (340g) spaghetti pasta"
+    },
+    {
+        "recipe_id": 1,
+        "ingredient": "4 ounces (115g) pancetta or guanciale, diced"
+    },
+    {
+        "recipe_id": 1,
+        "ingredient": "3 large eggs"
+    },
+    {
+        "recipe_id": 1,
+        "ingredient": "1 cup (about 100g) grated Pecorino Romano cheese"
+    },
+    {
+        "recipe_id": 1,
+        "ingredient": "1/2 cup (about 50g) grated Parmesan cheese"
+    },
+    {
+        "recipe_id": 1,
+        "ingredient": "Freshly ground black pepper"
+    },
+    {
+        "recipe_id": 1,
+        "ingredient": "Salt (for pasta water)"
+    },
+    {
+        "recipe_id": 2,
+        "ingredient": "3 large ripe tomatoes, sliced"
+    },
+    {
+        "recipe_id": 2,
+        "ingredient": "8 ounces (225g) fresh mozzarella cheese, sliced"
+    },
+    {
+        "recipe_id": 2,
+        "ingredient": "Fresh basil leaves"
+    },
+    {
+        "recipe_id": 2,
+        "ingredient": "Extra virgin olive oil"
+    },
+    {
+        "recipe_id": 2,
+        "ingredient": "Balsamic glaze (optional)"
+    },
+    {
+        "recipe_id": 2,
+        "ingredient": "Salt and freshly ground black pepper, to taste"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "2 cups basmati rice, soaked for 30 minutes"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "1 lb chicken, cut into pieces"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "1 large onion, thinly sliced"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "1 cup plain yogurt"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "2 tomatoes, chopped"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "2 potatoes, peeled and quartered"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "4 green chilies, slit"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "1/4 cup chopped fresh coriander leaves"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "1/4 cup chopped fresh mint leaves"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "1 tablespoon ginger-garlic paste"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "Whole spices (cinnamon, cardamom, cloves, bay leaves)"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "Saffron strands soaked in warm milk"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "Ghee or cooking oil"
+    },
+    {
+        "recipe_id": 3,
+        "ingredient": "Salt to taste"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 lb beef sirloin, thinly sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 onion, thinly sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "2 cloves garlic, minced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 cup mushrooms, sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "2 tablespoons butter"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "2 tablespoons all-purpose flour"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 cup beef broth"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1/2 cup sour cream"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 tablespoon Dijon mustard"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 tablespoon Worcestershire sauce"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Salt and pepper to taste"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Chopped fresh parsley, for garnish"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Cooked egg noodles or rice, for serving"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 lb beef sirloin, thinly sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 onion, thinly sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "2 cloves garlic, minced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 cup mushrooms, sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "2 tablespoons butter"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "2 tablespoons all-purpose flour"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 cup beef broth"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1/2 cup sour cream"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 tablespoon Dijon mustard"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 tablespoon Worcestershire sauce"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Salt and pepper to taste"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Chopped fresh parsley, for garnish"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Cooked egg noodles or rice, for serving"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 tablespoon tomato paste"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "1 teaspoon dried thyme"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "8 ounces mushrooms, sliced"
+    },
+    {
+        "recipe_id": 4,
+        "ingredient": "Fresh parsley, for garnish"
+    }
+]

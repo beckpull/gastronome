@@ -50,6 +50,4 @@ Instruction.belongsTo(Recipe, {
 });
 
 
-
-
 module.exports = { User, Recipe, Comment, Instruction, Ingredient };

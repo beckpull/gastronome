@@ -22,22 +22,6 @@ Recipe.init(
     imageUrl: {
       type: DataTypes.TEXT,
     },
-    ingredients_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'ingredients',
-        key: 'id',
-      },
-    },
-    instructions_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'instructions',
-        key: 'id'
-      },
-    },
     has_meat: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
@@ -60,7 +44,7 @@ Recipe.init(
     timestamps: false,
     sequelize,
     freezeTableName: true,
-    modelName: 'recipe',
+    tableName: 'recipe',
   }
 );
 
