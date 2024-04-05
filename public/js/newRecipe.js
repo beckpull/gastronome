@@ -1,10 +1,12 @@
 // Function to save form data to session storage
 function saveFormData() {
+  // sessionStorage.clear();
   const formData = new FormData(document.getElementById('myForm'));
+  console.log(formData);
   for (const [key, value] of formData.entries()) {
     sessionStorage.setItem(key, value);
   }
-}
+};
 
 // Function to populate form fields with session storage data
 function populateForm() {
@@ -15,7 +17,9 @@ function populateForm() {
       element.value = value;
     }
   }
-}
+};
+
+let counter = 0;
 
 const addIngredient = (event) => {
   event.preventDefault(); // Prevent default form submission behavior
@@ -23,27 +27,30 @@ const addIngredient = (event) => {
   let newIngredient = `<div class="field">
     <label class="label">Ingredient</label>
     <div class="control">
-      <input class="input ingredient" type="text" placeholder="Ingredient" name="ingredient">
+      <input class="input ingredient" type="text" placeholder="Ingredient" name="ingredient${counter}">
     </div>
   </div>`;
   document.getElementById('ingredients-container').insertAdjacentHTML('beforeend', newIngredient);
   populateForm(); // Populate form fields with session storage data
+  counter++;
 };
+
 document.querySelector('#add-ingredient').addEventListener('click', addIngredient);
 
 
-
+let counter2 = 0;
 const addStep = (event) => {
   event.preventDefault();
   saveFormData();
   let newStep = `<div class="field">
     <label class="label">Instruction</label>
     <div class="control">
-      <input class="input instruction" type="text" placeholder="Instruction" name="instruction">
+      <input class="input instruction" type="text" placeholder="Instruction" name="instruction${counter2}">
     </div>
   </div>`;
   document.getElementById('instructions-container').insertAdjacentHTML('beforeend', newStep);
   populateForm();
+  counter2++;
 };
 
 const recipeFormHandler = async (event) => {
@@ -67,13 +74,13 @@ const recipeFormHandler = async (event) => {
       formData.append('image', imageFile);
     }
 
-    ingredients.forEach((ingredient) => {
-      formData.append('ingredients[]', ingredient.value.trim());
-    });
+    // ingredients.forEach((ingredient) => {
+    //   formData.append('ingredients[]', ingredient.value.trim());
+    // });
 
-    instructions.forEach((instruction) => {
-      formData.append('instructions[]', instruction.value.trim());
-    });
+    // instructions.forEach((instruction) => {
+    //   formData.append('instructions[]', instruction.value.trim());
+    // });
 
     const response = await fetch('/api/recipes/new', {
       method: 'POST',
