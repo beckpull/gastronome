@@ -7,28 +7,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Satisfy&display=swap" rel="stylesheet">
 </head>
 
 <body class="block">
-  <header>
-    <h1 class="quote title is-2 is-medium is-uppercase has-text-weight-bold has-text-centered py-3 my-2 is-centered"
-      style="color: rgb(172, 176, 196)">
-      GastronoME, Your Home for Cooking!
-  </h1>
+  <header class="mt-5">
+  
   </header>
-    <nav>
-    <a href="/">Home</a>
+    <nav class=" navbar has-text-weight-bold">
+    <div class="navbar-brand">
+    <a class="navbar-item glow-item" style="color: white;" href="/">Home</a>
+   
+    
     {{#if logged_in}}
     <button id="logout" class="button is-rounded is-outlined" style="background-color: black; color: rgb(172, 176, 196)">Logout</button>
     {{else}}
-    <a href="/login">Login</a>
+    <a class="navbar-item glow item" style="color: white;" href="/login">Login</a>
     {{/if}}
+    </div>
+    
   </nav>
   <main>
     <div class="container-is-vcentered">
 <div class="columns">
     {{{body}}}
-</div> 
+</div>
+ 
 </div>
   </main>
 {{#if logged_in}}
