@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Recipe, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const { UniqueRand } = require('uniquerand');
+const { Op } = require('sequelize');
 
 
 // User does not have to be logged in to see the home page. Home page will have forms to sign up and log in. At the home page, the user can see 4 recipes, each with a title, image, and teaser description.
@@ -123,6 +124,31 @@ router.get('/my-recipes', withAuth, async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// This is for rendering the page that has the search bar on it
+// ADD WITHAUTH INTO THIS WHEN THE TIME COMES, AND MAKE IT ASYNC
+router.get('/search', (req, res) => {
+    res.render('search');
+});
+
+// This is for getting the results of input in the search bar when the user is trying to search for a recipe
+router.get('/find-recipe', async (req, res) => {
+    const query = req.query.query;
+
+    try {
+        const recipes = await Recipe.findAll({
+            where: {
+                recipe_name: {
+                    [Op.iLike]: `%${query}%` // Case-insensitive search
+                }
+            }
+        });
+        res.json(recipes);
+    } catch (err) {
+        console.error(err);
         res.status(500).json(err);
     }
 });
