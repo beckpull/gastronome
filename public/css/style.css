@@ -1,3 +1,45 @@
+header {
+  background-image: url('../img/GastronoME.gif'); /* Set the URL of the animated image */
+  background-size: cover; /* Cover the entire area of the navigation bar with the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  padding: 20px; /* Add padding to provide spacing for the content inside the navigation bar */
+  color: white; /* Text color for the content inside the navigation bar */
+  text-align: center; /* Center-align the content inside the navigation bar */
+  background-position: center;
+  height: 400px;
+  width: auto;
+  
 
+}
 
+nav {
+  text-shadow: 8px 6px 14px rgb(38, 3, 68);
+}
 
+  .glowing-box {
+    width: 100%;
+    height: 10%;
+    background-color: #0c34e6;
+    /* border: dotted solid double  2px #ffffff; */
+    box-shadow:
+      inset 30px 0 100px 10px rgb(17, 1, 17),  
+      inset -60px 0 200px 20px rgb(255, 0, 128); 
+}
+
+  
+  #grad {
+    background-image: linear-gradient(hotpink, white)
+  }
+
+/* Google font for satisfy text */
+  .satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .navbar-item {
+    text-shadow: #0c34e6;
+  }
+
+ 
