@@ -1,5 +1,11 @@
-{{!-- Put an h2 here, which should be centered across the page horizontally, which says "Add a New Recipe" --}}
+<h2 style="text-align: center;" class="is-title is-2">Add a Recipe</h2>
+<div class="section">
+    <h3>Upload Image</h3>
 
+<<<<<<< HEAD
+    <form action="/api/recipes/create-recipe" method="post" enctype="multipart/form-data" class="form share-recipe-form"
+        id="recipe-form">
+=======
 <form class="form share-recipe-form" id="myForm">
     <div class="field">
         <label class="label">Recipe Title</label>
@@ -7,56 +13,90 @@
             <input class="input" type="text" placeholder="Name your recipe" id="recipe-name">
         </div>
     </div>
+>>>>>>> main
 
-    <div class="field">
-        <label class="label">Description</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Give your recipe a description" id="recipe-description">
+        <div class="form__section">
+            <label for="uploadFile">
+                Choose File
+            </label>
+            <input type="file" class="file-upload-btn" id="uploadFile" name="uploadFile" style="display: inline-block;">
         </div>
-    </div>
 
-    <div id="ingredients-container">
         <div class="field">
-            <label class="label">Ingredients</label>
+            <label class="label">Recipe Title</label>
             <div class="control">
-                <input class="input ingredient" type="text" placeholder="ingredient">
+                <input class="input" type="text" placeholder="Name your recipe" id="recipe-name">
             </div>
         </div>
-    </div>
 
-    <div class="field">
-        <div class="control">
-            {{!-- Would be nice to add a + icon right before the word "Add". Check out https://bulma.io/documentation/elements/icon/ and Material Design Icons https://pictogrammers.com/library/mdi/icon/plus/ --}}
-            <button class="button is-link" id="add-ingredient">Add Ingredient</button>
-        </div>
-    </div>
-    
-    <div id="instructions-container">
         <div class="field">
-            <label class="label">Instructions</label>
+            <label class="label">Description</label>
             <div class="control">
-                <input class="input instruction" type="text" placeholder="step">
+                <input class="input" type="text" placeholder="Give your recipe a description" id="recipe-description">
             </div>
         </div>
-    </div>
-    
 
-    <div class="field">
-        <div class="control">
-            {{!-- Would be nice to add a + icon right before the word "Add". Check out https://bulma.io/documentation/elements/icon/ and Material Design Icons https://pictogrammers.com/library/mdi/icon/plus/ --}}
-            <button class="button is-link" id="add-step">Add Step</button>
+        <div id="ingredients-container">
+            <div class="field">
+                <label class="label">Ingredients</label>
+                <div class="control">
+                    <input class="input ingredient" type="text" placeholder="ingredient">
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="field is-grouped">
-    <div class="control">
-        <button class="button is-link">Share Recipe</button>
-    </div>
-    <div class="control">
-        <button class="button is-link is-light">Cancel</button>
-    </div>
-    </div>
-</form>
+        <div class="field">
+            <div class="control">
+                {{!-- Would be nice to add a + icon right before the word "Add".
+                Check out
+                https://bulma.io/documentation/elements/icon/ and Material Design
+                Icons
+                https://pictogrammers.com/library/mdi/icon/plus/ --}}
+                <button class="button is-link" id="add-ingredient">Add
+                    Ingredient</button>
+            </div>
+        </div>
 
+        <div id="instructions-container">
+            <div class="field">
+                <label class="label">Instructions</label>
+                <div class="control">
+                    <input class="input instruction" type="text" placeholder="step">
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{!-- Would be nice to add a + icon right before the word "Add".
+                Check out
+                https://bulma.io/documentation/elements/icon/ and Material Design
+                Icons
+                https://pictogrammers.com/library/mdi/icon/plus/ --}}
+                <button class="button is-link" id="add-step">Add Step</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Has Meat</label>
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" id="has-meat">
+                    Yes, this recipe contains meat
+                </label>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" id="share-btn" type="submit">Share
+                    Recipe</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 <script src="/js/newRecipe.js"></script>
