@@ -1,100 +1,128 @@
 // Function to save form data to session storage
-function saveFormData() {
-  // sessionStorage.clear();
-  const formData = new FormData(document.getElementById('myForm'));
-  console.log(formData);
-  for (const [key, value] of formData.entries()) {
-    sessionStorage.setItem(key, value);
+async function saveFormData() {
+  try {
+    sessionStorage.clear();
+    const formData = new FormData(document.getElementById('recipe-form'));
+    console.log(formData);
+    for (const [key, value] of formData.entries()) {
+      sessionStorage.setItem(key, value);
+    }
+  } catch (error) {
+    console.error(error);
   }
 };
 
 // Function to populate form fields with session storage data
-function populateForm() {
-  const formData = new FormData(document.getElementById('myForm'));
-  for (const [key, value] of formData.entries()) {
-    const element = document.querySelector(`[name="${key}"]`);
-    if (element) {
-      element.value = value;
+async function populateForm() {
+  try {
+    const formData = new FormData(document.getElementById('recipe-form'));
+    for (const [key, value] of formData.entries()) {
+      const element = document.querySelector(`[name="${key}"]`);
+      if (element) {
+        element.value = value;
+      }
     }
+  } catch (error) {
+    console.error(error);
   }
 };
 
-let counter = 0;
+let counter = 2;
 
-const addIngredient = (event) => {
+const addIngredient = async (event) => {
   event.preventDefault(); // Prevent default form submission behavior
-  saveFormData(); // Save form data to session storage
+  await saveFormData(); // Save form data to session storage
   let newIngredient = `<div class="field">
-    <label class="label">Ingredient</label>
-    <div class="control">
-      <input class="input ingredient" type="text" placeholder="Ingredient" name="ingredient${counter}">
-    </div>
-  </div>`;
+      <label class="label">Ingredient</label>
+      <div class="control">
+        <input class="input ingredient" type="text" placeholder="Ingredient" name="ingredient${counter}">
+      </div>
+    </div>`;
   document.getElementById('ingredients-container').insertAdjacentHTML('beforeend', newIngredient);
-  populateForm(); // Populate form fields with session storage data
+  await populateForm(); // Populate form fields with session storage data
   counter++;
 };
 
-document.querySelector('#add-ingredient').addEventListener('click', addIngredient);
 
+let counter2 = 2;
 
-let counter2 = 0;
-const addStep = (event) => {
+const addStep = async (event) => {
   event.preventDefault();
-  saveFormData();
+  await saveFormData();
   let newStep = `<div class="field">
-    <label class="label">Instruction</label>
-    <div class="control">
-      <input class="input instruction" type="text" placeholder="Instruction" name="instruction${counter2}">
-    </div>
-  </div>`;
+      <label class="label">Instruction</label>
+      <div class="control">
+        <input class="input instruction" type="text" placeholder="Instruction" name="instruction${counter2}">
+      </div>
+     </div>`;
   document.getElementById('instructions-container').insertAdjacentHTML('beforeend', newStep);
-  populateForm();
+  await populateForm();
   counter2++;
 };
 
-const recipeFormHandler = async (event) => {
-  event.preventDefault();
+const handleFileSelection = () => {
+  const fileInput = document.getElementById('uploadFile');
+  fileInput.click(); // Trigger file input click
+};
 
-  const recipeName = document.querySelector('#recipe-name').value.trim();
-  const recipeDescription = document.querySelector('#recipe-description').value.trim();
-  const hasMeat = document.querySelector('#has-meat').value.trim();
-  const imageFile = document.querySelector('#image').files[0]; // Get the image file from the form
+const submitForm = async (event) => {
+  event.preventDefault(); // Prevent default form submission behavior
 
-  const ingredients = document.querySelectorAll('.ingredient');
-  const instructions = document.querySelectorAll('.instruction');
+  // Initialize FormData object
+  const formData = new FormData();
 
-  if (recipeName && recipeDescription && ingredients.length > 0 && instructions.length > 0) {
-    const formData = new FormData();
-    formData.append('recipe_name', recipeName);
-    formData.append('description', recipeDescription);
-    formData.append('has_meat', hasMeat);
+  // Add image file to FormData (if selected)
+  const imageFile = document.querySelector('#uploadFile').files[0];
+  if (imageFile) {
+    formData.append('image', imageFile);
+  }
 
-    if (imageFile) {
-      formData.append('image', imageFile);
-    }
+  // Add recipe details to FormData
+  formData.append('recipe_name', document.getElementById('recipe-name').value.trim());
+  formData.append('description', document.getElementById('recipe-description').value.trim());
 
-    // ingredients.forEach((ingredient) => {
-    //   formData.append('ingredients[]', ingredient.value.trim());
-    // });
+  // Add the value of the "Has Meat" checkbox to FormData
+  const hasMeat = document.getElementById('has-meat').checked;
+  formData.append('has_meat', hasMeat);
 
-    // instructions.forEach((instruction) => {
-    //   formData.append('instructions[]', instruction.value.trim());
-    // });
+  const nodeList = document.querySelectorAll('.ingredient');
+  const ingredients = Array.from(nodeList).map(input => input.value);
+  // console.log(ingredients);
 
-    const response = await fetch('/api/recipes/new', {
+  formData.append('ingredients', ingredients);
+
+  const nodeList2 = document.querySelectorAll('.ingredient');
+  const instructions = Array.from(nodeList).map(input => input.value);
+  // console.log(instructions);
+
+  formData.append('instructions', instructions);
+
+  try {
+    // Send FormData to server
+    const response = await fetch('/api/recipes/create-recipe', {
       method: 'POST',
-      body: formData,
+      body: formData
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      // If the upload is successful, redirect or display a success message
+      console.log('Recipe created successfully');
+      // Redirect or display success message as needed
     } else {
-      alert(response.statusText);
+      // Handle error if upload fails
+      console.error('Error creating recipe:', response.statusText);
+      // Display an error message to the user
     }
+  } catch (error) {
+    console.error('Error creating recipe:', error);
+    // Display an error message to the user
   }
 };
 
+// Add event listeners
+document.querySelector('.file-upload-btn').addEventListener('click', handleFileSelection);
+document.querySelector('#share-btn').addEventListener('click', submitForm);
+// document.querySelector('#share-btn').addEventListener('click', recipeFormHandler);
 document.querySelector('#add-ingredient').addEventListener('click', addIngredient);
 document.querySelector('#add-step').addEventListener('click', addStep);
-document.querySelector('.share-recipe-form').addEventListener('submit', recipeFormHandler);
+
