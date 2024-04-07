@@ -5,12 +5,18 @@
     /* font-family: 'Poppins', sans-serif */
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     top: 0;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     background-color: #E3E3E3;
+    margin-bottom: 45px;
 }
 
 .container-for-nav {
@@ -149,6 +155,17 @@ nav {
 }
 
 #footer-bottom {
-    height: 70px;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 55px;
+
+}
+
+#footer-img-container {
+    margin-top: 10px;
 }
