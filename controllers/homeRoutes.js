@@ -118,7 +118,14 @@ router.get('/signup', (req, res) => {
 // We will need to add withAuth before (req, res)
 // This is for rendering the new-recipe page where the user can fill in a form to create a new recipe
 router.get('/new-recipe', withAuth, (req, res) => {
-  res.render('new-recipe');
+  try {
+    res.render('new-recipe',
+      {
+        logged_in: req.session.logged_in
+      });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.get('/my-recipes', withAuth, async (req, res) => {
