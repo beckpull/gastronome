@@ -1,38 +1,70 @@
 <div class="container-is-fluid">
   <div class="columns is-vcentered">
-    <div class="column is-3">
-      <div class="card">
-
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
-              <div class="media-center">
-                <figure class="image is-128x128">
-                  {{#if imageUrl}}
-                  <img src="{{imageUrl}}" alt="Recipe Photo">
-                  {{/if}}
-                </figure>
-                <p> {{ user.username }} </p>
-                <p> {{ description }} </p>
-                {{#if logged_in}}
-
-                {{#if ../has_meat}}
-                <p> This recipe contains meat </p>
-                {{else}}
-                <p> This dish is vegetarian friendly!</p>
+    <div class="column p-6">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
+            <div class="media-center">
+              <figure class="image is-128x128">
+                {{#if imageUrl}}
+                <img src="{{imageUrl}}" alt="Recipe Photo">
                 {{/if}}
-                {{/if}}
-                <p> {{ created_on }} </p>
-                {{#if logged_in}}
-                <label for="comment-contents">Comment:</label>
-                <input class="form-input" type="text" id="comment-contents" />
-              </div>
-              <button class="btn-primary" type="submit">submit</button>
+              </figure>
+              <p> {{ user.username }} </p>
+              {{#if logged_in}}
+              <p> {{ description }} </p>
+
+              {{#if has_meat}}
+              <p> This recipe contains meat </p>
+              {{else}}
+              <p> This dish is vegetarian friendly!</p>
               {{/if}}
+              {{/if}}
+              <p> {{ format_date created_on }} </p>
+
             </div>
           </div>
         </div>
+
+        <!-- Ingredients -->
+        <div class="ingredients">
+          <h5>Ingredients:</h5>
+          <ul>
+            {{#each ingredients}}
+            <li>{{ this.ingredient }}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+          <h5>Instructions:</h5>
+          <ol>
+            {{#each instructions in orderById}}
+            <li>{{ this.step }}</li>
+            {{/each}}
+          </ol>
+        </div>
+
+        <!-- Comments -->
+        {{#if logged_in}}
+        <div class="comments">
+          <h5>Comments:</h5>
+          <ul>
+            {{#each comments}}
+            <li>
+              <strong>{{ user.username }}:</strong> {{ content }}
+            </li>
+            {{/each}}
+          </ul>
+
+          <label for="comment-contents">Comment:</label>
+          <input class="form-input" type="text" id="comment-contents" />
+          <button class="btn-primary" type="submit">submit</button>
+
+        </div>
+        {{/if}}
       </div>
     </div>
   </div>
