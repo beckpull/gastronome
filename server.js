@@ -3,6 +3,15 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const Handlebars = require('handlebars');
+
+// Register Handlebars helper
+Handlebars.registerHelper('orderById', function(instructions) {
+  if (!Array.isArray(instructions)) {
+    return [];
+  }
+  return instructions.slice().sort((a, b) => a.id - b.id);
+});
 
 // We're not using any custom helpers with handlebars yet--we can uncomment this when we make the file and some custom helpers.
 const helpers = require('./utils/helpers');

@@ -4,16 +4,16 @@
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
+            <h2 class="title is-4 has-text-centered p-6"><a href="/recipe/{{recipe.id}}">{{ recipe.recipe_name }}</a></h2>
             <div class="media-center">
               <figure class="image is-128x128">
-                {{#if imageUrl}}
-                <img src="{{imageUrl}}" alt="Recipe Photo">
+                {{#if recipe.imageUrl}}
+                <img src="{{recipe.imageUrl}}" alt="Recipe Photo">
                 {{/if}}
               </figure>
-              <p> {{ user.username }} </p>
+              <p> {{ recpe.user.username }} </p>
               {{#if logged_in}}
-              <p> {{ description }} </p>
+              <p> {{ recipe.description }} </p>
 
               {{#if has_meat}}
               <p> This recipe contains meat </p>
@@ -21,7 +21,7 @@
               <p> This dish is vegetarian friendly!</p>
               {{/if}}
               {{/if}}
-              <p> {{ format_date created_on }} </p>
+              <p> {{ format_date recipe.created_on }} </p>
 
             </div>
           </div>
@@ -31,7 +31,7 @@
         <div class="ingredients">
           <h5>Ingredients:</h5>
           <ul>
-            {{#each ingredients}}
+            {{#each recipe.ingredients}}
             <li>{{ this.ingredient }}</li>
             {{/each}}
           </ul>
@@ -41,7 +41,7 @@
         <div class="instructions">
           <h5>Instructions:</h5>
           <ol>
-            {{#each instructions in orderById}}
+            {{#each (orderById recipe.instructions)}}
             <li>{{ this.step }}</li>
             {{/each}}
           </ol>
@@ -52,9 +52,9 @@
         <div class="comments">
           <h5>Comments:</h5>
           <ul>
-            {{#each comments}}
+            {{#each recipe.comments as |comment|}}
             <li>
-              <strong>{{ user.username }}:</strong> {{ content }}
+              <strong>{{ comment.user.username }}:</strong> {{ comment.content }}
             </li>
             {{/each}}
           </ul>
