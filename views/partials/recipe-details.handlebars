@@ -9,12 +9,12 @@
               <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
               <div class="media-center">
                 <figure class="image is-128x128">
-                  <img src="https://bulma.io/assets/images/placeholders/96x96.png" alt="Placeholder image" />
+                <img src="{{imageUrl}}" alt="Recipe Photo">
                 </figure>
                 <p> {{ user.username }} </p>
                 <p> {{ description }} </p>
                 {{#if logged_in}}
-                
+
                 {{#if ../has_meat}}
                 <p> This recipe contains meat </p>
                 {{else}}

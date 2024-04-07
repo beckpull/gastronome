@@ -13,21 +13,14 @@
                 </figure>
                 <p> {{ user.username }} </p>
                 <p> {{ description }} </p>
-                {{#if logged_in}}
 
                 {{#if ../has_meat}}
                 <p> This recipe contains meat </p>
                 {{else}}
                 <p> This dish is vegetarian friendly!</p>
                 {{/if}}
-                {{/if}}
                 <p> {{ created_on }} </p>
-                {{#if logged_in}}
-                <label for="comment-contents">Comment:</label>
-                <input class="form-input" type="text" id="comment-contents" />
-              </div>
-              <button class="btn-primary" type="submit">submit</button>
-              {{/if}}
+                <button data-num="{{id}}" class="button is-danger" id="delete-btn">delete</button>
             </div>
           </div>
         </div>
@@ -35,3 +28,4 @@
     </div>
   </div>
 </div>
+<script src="/js/deleteRecipe.js"></script>

@@ -2,49 +2,49 @@
     {
         "recipe_name": "Spaghetti Carbonara",
         "description": "Classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper.",
-        "imageUrl": "/public/img/spahetti-carbonara.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/creamy_carbonara_cwd5jd.jpg",
         "has_meat": "true"
     },
     {
         "recipe_name": "Caprese Salad",
         "description": "Refreshing salad made with ripe tomatoes, fresh mozzarella cheese, basil leaves, olive oil, and balsamic glaze.",
-        "imageUrl": "/public/img/caprese-salad.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/Caprese-Salad-6_r4fk99.jpg",
         "has_meat": "false"
     },
     {
         "recipe_name": "Pakistani Biryani",
         "description": "Fragrant and flavorful rice dish cooked with aromatic spices, meat, and saffron, a popular dish in Pakistani cuisine.",
-        "imageUrl": "/public/img/pakistani-biryani.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/CHICKEN-BIRYANiI_nc5d7b.jpg",
         "has_meat": "true"
     },
     {
         "recipe_name": "Russian Beef Stroganoff",
         "description": "A creamy and savory beef dish served with noodles or rice, a classic in Russian cuisine.",
-        "imageUrl": "/public/img/russian-beef-stroganoff.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/25202beef-stroganoff-iii-ddmfs-3x4-233-0f26fa477e9c446b970a32502468efc6_i0fyz9.jpg",
         "has_meat": "true"
     },
     {
         "recipe_name": "Thai Green Curry",
         "description": "A fragrant and spicy curry made with green curry paste, coconut milk, vegetables, and chicken, a staple in Thai cuisine.",
-        "imageUrl": "/public/img/thai-green-curry.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519060/Thai-Green-Curry-square-FS_hpncjm.jpg",
         "has_meat": "true"
     },
     {
         "recipe_name": "French Coq au Vin",
         "description": "A classic French dish of chicken braised in red wine with mushrooms, onions, and bacon, full of rich and deep flavors.",
-        "imageUrl": "/public/img/coq-au-vin.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519063/IG1005_Coq_Au_Vin_s4x3_y1yvxq.jpg",
         "has_meat": "true"
     },
     {
         "recipe_name": "Indian Palak Paneer",
         "description": "A classic North Indian dish made with spinach (palak) and paneer (Indian cottage cheese), simmered in a creamy and flavorful tomato-based sauce.",
-        "imageUrl": "/public/img/palak-paneer.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/palak-paneer-recipe_uhztov.jpg",
         "has_meat": "false"
     },
     {
         "recipe_name": "Greek Spanakopita",
         "description": "A savory Greek pastry filled with spinach, feta cheese, onions, and herbs, layered between flaky phyllo dough sheets.",
-        "imageUrl": "/public/img/greek-spanakopita.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/Greek-spanakopita-recipe-featured-1_bqv7iq.jpg",
         "has_meat": "false"
     }
 ]

@@ -105,17 +105,13 @@ const submitForm = async (event) => {
     });
 
     if (response.ok) {
-      // If the upload is successful, redirect or display a success message
-      console.log('Recipe created successfully');
-      // Redirect or display success message as needed
+      // console.log('Recipe created successfully');
+      response.redirect('my-recipes');
     } else {
-      // Handle error if upload fails
       console.error('Error creating recipe:', response.statusText);
-      // Display an error message to the user
     }
   } catch (error) {
     console.error('Error creating recipe:', error);
-    // Display an error message to the user
   }
 };
 
