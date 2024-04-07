@@ -44,12 +44,11 @@ router.get('/all', async (req, res) => {
     const recipes = recipeData.map((Recipe) =>
     Recipe.get({ plain: true })
     );
-    // console.log(recipes[0]);
-    // res.render('all-recipes', {
-    //     recipes, 
-    //     logged_in: req.session.logged_in
-    // });
-    res.json(recipes);
+    console.log(recipes[0]);
+    res.render('all-recipes', {
+      layout: 'authenticated',
+      data: recipes 
+    });
     // res.json(recipes);
   } catch (err) {
     res.status(500).json(err);
