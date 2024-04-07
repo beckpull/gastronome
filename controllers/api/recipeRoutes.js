@@ -36,15 +36,14 @@ router.post('/create-recipe', withAuth, uploadImage, async (req, res) => {
       });
     }));
     console.log(newRecipe);
-    // res.status(201).json(newRecipe);
-    res.redirect('/my-recipes');
+    res.status(201).json(newRecipe);
   } catch (error) {
     console.error('Error creating recipe:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/update/:id', withAuth, async (req, res) => {
   try {
     const row = await Recipe.update(req.body, {
       where: {
@@ -78,8 +77,8 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No recipe found with this id.' });
       return;
     }
-    res.redirect('/my-recipes')
-    // res.status(200).json(recipeData);
+
+    res.status(200).json(recipeData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -8,7 +8,9 @@ const { Op } = require('sequelize');
 // User does not have to be logged in to see the home page. Home page will have forms to sign up and log in. At the home page, the user can see 4 recipes, each with a title, image, and teaser description.
 router.get('/', async (req, res) => {
   try {
-    const recipeData = await Recipe.findAll();
+    const recipeData = await Recipe.findAll({
+      // include: [Ingredient, Instruction],
+    });
 
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
@@ -42,7 +44,7 @@ router.get('/', async (req, res) => {
 router.get('/all', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
-      include: [{ model: Comment, include: { model: User, attributes: ['username'] } }, { model: User, attributes: ['username'] }]
+      include: [Ingredient, Instruction, { model: Comment, include: { model: User, attributes: ['username'] } }, { model: User, attributes: ['username'] }]
     });
 
     const recipes = recipeData.map((Recipe) =>
@@ -50,7 +52,6 @@ router.get('/all', withAuth, async (req, res) => {
     );
     console.log(recipes[0]);
     res.render('all-recipes', {
-      // layout: 'authenticated',
       recipes,
       logged_in: req.session.logged_in,
     });
@@ -136,8 +137,8 @@ router.get('/my-recipes', withAuth, async (req, res) => {
         {
           model: Recipe,
           include: [
-            { model: Ingredient },
-            { model: Instruction },
+            Ingredient,
+            Instruction,
             {
               model: Comment,
               include: {
@@ -181,7 +182,8 @@ router.get('/find-recipe', async (req, res) => {
         recipe_name: {
           [Op.iLike]: `%${query}%` // Case-insensitive search
         }
-      }
+      },
+      include: [Ingredient, Instruction]
     });
     res.json(recipes);
   } catch (err) {
@@ -191,7 +193,13 @@ router.get('/find-recipe', async (req, res) => {
 });
 
 router.get('/update/:id', withAuth, async (req, res) => {
-  res.render('update', {id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
+  const dbRecipeData = await Recipe.findByPk(req.params.id, {
+    include: [{model: Ingredient}, {model: Instruction}]
+  });
+  const recipe = dbRecipeData.get({ plain: true });
+  console.log(recipe);
+
+  res.render('update', {recipe, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 })
 
 router.get('/delete/:id', withAuth, async (req, res) => {
