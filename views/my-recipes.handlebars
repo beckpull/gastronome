@@ -1,15 +1,18 @@
 <div>
   <div>
-    <h2>Welcome, {{ username }}!</h2>
+    <h2>Welcome, {{ user.username }}!</h2>
   </div>
 </div>
-
+{{#if user.recipes}}
 <div>
     <h3>Your Shared Recipes:</h3>
-    {{#each user.recipes as |recipe|}}
+    {{#each ../user.recipes as |recipe|}}
     {{> recipe-details}}
     <a href="/update/{{recipe.id}}">update this recipe </a>•<a href="/delete/{{recipe.id}}"> delete this recipe</a>
     
     {{/each}}
+{{else}}
+<p>Click <a href="/new-recipe">here</a> to add a new recipe! </p>
+{{/if}}
 </div>
 
