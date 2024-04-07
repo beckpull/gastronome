@@ -36,7 +36,8 @@ router.post('/create-recipe', withAuth, uploadImage, async (req, res) => {
       });
     }));
     console.log(newRecipe);
-    res.status(201).json(newRecipe);
+    // res.status(201).json(newRecipe);
+    res.redirect('/my-recipes');
   } catch (error) {
     console.error('Error creating recipe:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -77,8 +78,8 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No recipe found with this id.' });
       return;
     }
-
-    res.status(200).json(recipeData);
+    res.redirect('/my-recipes')
+    // res.status(200).json(recipeData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       // layout: 'authenticated',
-      selectedRecipes, 
+      selectedRecipes,
       logged_in: req.session.logged_in,
     });
     // res.json(selectedRecipes);
@@ -39,14 +39,14 @@ router.get('/', async (req, res) => {
 
 
 // Ideally, when the user successfully logs in and is redirected to the all-recipes page, I would want to only show the title, image, and short description of each recipe, rather than displaying all of the ingredients and instructions there, too. I would want the user to have to click on 1 recipe to see its full details including ingredients and instructions. For now, we will render everything about every recipe on the all-recipes page.
-router.get('/all', async (req, res) => {
+router.get('/all', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
-      include: [{ model: Comment, include: {model: User, attributes: ['username']} }, { model: User, attributes: ['username'] }]
+      include: [{ model: Comment, include: { model: User, attributes: ['username'] } }, { model: User, attributes: ['username'] }]
     });
 
     const recipes = recipeData.map((Recipe) =>
-    Recipe.get({ plain: true })
+      Recipe.get({ plain: true })
     );
     console.log(recipes[0]);
     res.render('all-recipes', {
@@ -66,42 +66,42 @@ router.get('/all', async (req, res) => {
 // The full route is localhost:PORT/api/recipes/:id 
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
-      const recipeData = await Recipe.findByPk(req.params.id, {
-          include: [
-              {
-                  model: User, 
-                  attributes: ['username'],
-              },
-              {
-                  model: Comment, 
-                  include: {
-                    model: User,
-                    attributes: ['username'],
-                  },
-              },
-              {
-                model: Ingredient,
-              },
-              {
-                model: Instruction,
-              }
-          ]
-      });
-      const recipe = recipeData.get({ plain: true });
-      console.log(recipe);
-      // res.json(recipe);
-      res.render('recipe', {
-          recipe, 
-          logged_in: req.session.logged_in
-      });
+    const recipeData = await Recipe.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+        {
+          model: Ingredient,
+        },
+        {
+          model: Instruction,
+        }
+      ]
+    });
+    const recipe = recipeData.get({ plain: true });
+    console.log(recipe);
+    // res.json(recipe);
+    res.render('recipe', {
+      recipe,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/all-recipes');
+    res.redirect('/my-recipes');
     return;
   }
   res.render('login');
@@ -109,7 +109,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/all-recipes');
+    res.redirect('/my-recipes');
     return;
   }
   res.render('signup');
@@ -117,56 +117,79 @@ router.get('/signup', (req, res) => {
 
 // We will need to add withAuth before (req, res)
 // This is for rendering the new-recipe page where the user can fill in a form to create a new recipe
-router.get('/new-recipe', (req, res) => {
-    res.render('new-recipe');
+router.get('/new-recipe', withAuth, (req, res) => {
+  res.render('new-recipe');
 });
 
 router.get('/my-recipes', withAuth, async (req, res) => {
-    try {
-        const userData = await User.findByPk(req.session.user_id, {
-            // attributes: { exclude: ['password'] },
-            include: [{ model: Recipe, include: {model: Comment, include: { model: User, attributes: ['username']}} }],
-        });
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      // attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Recipe,
+          include: [
+            { model: Ingredient },
+            { model: Instruction },
+            {
+              model: Comment,
+              include: {
+                model: User,
+                attributes: ['username']
+              }
+            }
+          ]
+        }
+      ],
+    });
 
-        console.log(userData);
+    console.log(userData);
 
-        const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-        console.log(user);
+    console.log(user);
 
-        res.render('my-recipes', {
-            user, 
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    res.render('my-recipes', {
+      user,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // This is for rendering the page that has the search bar on it
 // ADD WITHAUTH INTO THIS WHEN THE TIME COMES, AND MAKE IT ASYNC
 router.get('/search', (req, res) => {
-    res.render('search');
+  res.render('search');
 });
 
 // This is for getting the results of input in the search bar when the user is trying to search for a recipe
 router.get('/find-recipe', async (req, res) => {
-    const query = req.query.query;
+  const query = req.query.query;
 
-    try {
-        const recipes = await Recipe.findAll({
-            where: {
-                recipe_name: {
-                    [Op.iLike]: `%${query}%` // Case-insensitive search
-                }
-            }
-        });
-        res.json(recipes);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json(err);
-    }
+  try {
+    const recipes = await Recipe.findAll({
+      where: {
+        recipe_name: {
+          [Op.iLike]: `%${query}%` // Case-insensitive search
+        }
+      }
+    });
+    res.json(recipes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
 });
+
+router.get('/update/:id', withAuth, async (req, res) => {
+  res.render('update', {id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
+})
+
+router.get('/delete/:id', withAuth, async (req, res) => {
+  res.render('delete', {id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
+})
 
 module.exports = router;
 

@@ -1,5 +1,5 @@
 const deleteRecipeHandler = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   if (confirm("Are you sure you want to delete your recipe?")) {
     const id = event.target.dataset.num;
     console.log(`ID: ${id}`);
@@ -11,8 +11,8 @@ const deleteRecipeHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) {
-        // document.location.replace('/profile');
-        response.json({message: "Success!"});
+        document.location.replace('/my-recipes');
+        // response.json({message: "Success!"});
       } else {
         alert(response.statusText);
       }

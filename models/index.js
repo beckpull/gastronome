@@ -32,21 +32,21 @@ Comment.belongsTo(User, {
 });
 
 Recipe.hasMany(Ingredient, {
-    foreignKey: 'ingredient_id',
+    foreignKey: 'recipe_id',
     onDelete: 'CASCADE'
 });
 
 Ingredient.belongsTo(Recipe, {
-    foreignKey: 'ingredient_id'
+    foreignKey: 'recipe_id'
 });
 
 Recipe.hasMany(Instruction, {
-    foreignKey: 'instruction_id',
+    foreignKey: 'recipe_id',
     onDelete: 'CASCADE'
 });
 
 Instruction.belongsTo(Recipe, {
-    foreignKey: 'instruction_id'
+    foreignKey: 'recipe_id'
 });
 
 

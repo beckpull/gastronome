@@ -4,15 +4,12 @@
   </div>
 </div>
 
-{{#if Recipes.length}}
 <div>
     <h3>Your Shared Recipes:</h3>
-
-    {{#each Recipes as |recipe|}}
-    <div>
-        <h4><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></h4>
-    </div>
-    {{!-- Add a delete button to be generated for each recipe. --}}
+    {{#each user.recipes as |recipe|}}
+    {{> recipe-details}}
+    <a href="/update/{{recipe.id}}">update this recipe </a>•<a href="/delete/{{recipe.id}}"> delete this recipe</a>
+    
     {{/each}}
 </div>
-{{/if}}
+
