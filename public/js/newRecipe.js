@@ -60,10 +60,6 @@ const addStep = async (event) => {
   counter2++;
 };
 
-const handleFileSelection = () => {
-  const fileInput = document.getElementById('uploadFile');
-  fileInput.click(); // Trigger file input click
-};
 
 const submitForm = async (event) => {
   event.preventDefault(); // Prevent default form submission behavior
@@ -104,21 +100,14 @@ const submitForm = async (event) => {
       body: formData
     });
 
-    if (response.ok) {
-      // console.log('Recipe created successfully');
-      response.redirect('my-recipes');
-    } else {
-      console.error('Error creating recipe:', response.statusText);
-    }
+    document.location.replace('my-recipes');
   } catch (error) {
     console.error('Error creating recipe:', error);
   }
 };
 
 // Add event listeners
-document.querySelector('.file-upload-btn').addEventListener('click', handleFileSelection);
 document.querySelector('#share-btn').addEventListener('click', submitForm);
-// document.querySelector('#share-btn').addEventListener('click', recipeFormHandler);
 document.querySelector('#add-ingredient').addEventListener('click', addIngredient);
 document.querySelector('#add-step').addEventListener('click', addStep);
 

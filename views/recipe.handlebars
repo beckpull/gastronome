@@ -9,7 +9,9 @@
               <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
               <div class="media-center">
                 <figure class="image is-128x128">
-                <img src="{{imageUrl}}" alt="Recipe Photo">
+                  {{#if imageUrl}}
+                  <img src="{{imageUrl}}" alt="Recipe Photo">
+                  {{/if}}
                 </figure>
                 <p> {{ user.username }} </p>
                 <p> {{ description }} </p>
