@@ -1,5 +1,6 @@
 <h2 style="text-align: center;" class="is-title is-2">Add a Recipe</h2>
 <div class="section">
+    <input value="{{recipe.id}}" type="hidden" class="form-input" id="recipe-id">
     <h3>Upload Image</h3>
 
     <form action="/api/recipes/create-recipe" method="post" enctype="multipart/form-data" class="form share-recipe-form"
@@ -7,49 +8,56 @@
 
         <div class="form__section">
             <label for="uploadFile">
-                Choose File
+                Choose new image
             </label>
             <input type="file" class="file-upload-btn" id="uploadFile" name="uploadFile" style="display: inline-block;">
         </div>
 
         <div class="field">
-            <label class="label">Recipe Title</label>
+            <label class="label">Recipe Name:</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Name your recipe" id="recipe-name">
+                <input value="{{recipe.recipe_name}}" class="input" type="text" placeholder="Name your recipe"
+                    id="recipe-name">
             </div>
         </div>
 
         <div class="field">
-            <label class="label">Description</label>
+            <label class="label">Description:</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Give your recipe a description" id="recipe-description">
+                <input value="{{recipe.description}}" class="input" type="text"
+                    placeholder="Give your recipe a description" id="recipe-description">
             </div>
         </div>
 
+        {{#each recipe.ingredients as |ingredient|}}
         <div id="ingredients-container">
             <div class="field">
-                <label class="label">Ingredients</label>
+                <label class="label">Ingredients:</label>
                 <div class="control">
-                    <input class="input ingredient" type="text" placeholder="ingredient">
+                    <input value="{{ingredient.ingredient}}" class="input ingredient" type="text"
+                        placeholder="ingredient">
                 </div>
             </div>
         </div>
+        {{/each}}
 
         <div class="field">
             <div class="control">
                 <button class="button is-link" id="add-ingredient">Add
-                    Ingredient</button>
+                    Ingredient:</button>
             </div>
         </div>
 
+{{#each recipe.instructions as |instruction|}}
         <div id="instructions-container">
             <div class="field">
-                <label class="label">Instructions</label>
+                <label class="label">Instructions:</label>
                 <div class="control">
-                    <input class="input instruction" type="text" placeholder="step">
+                    <input value="{{instruction.step}}" class="input instruction" type="text" placeholder="step">
                 </div>
             </div>
         </div>
+{{/each}}
 
         <div class="field">
             <div class="control">
@@ -58,10 +66,10 @@
         </div>
 
         <div class="field">
-            <label class="label">Has Meat</label>
+            <label class="label">Has Meat:</label>
             <div class="control">
                 <label class="checkbox">
-                    <input type="checkbox" id="has-meat">
+                    <input value="{{recipe.has_meat}}" type="checkbox" id="has-meat">
                     Yes, this recipe contains meat
                 </label>
             </div>
@@ -69,7 +77,7 @@
 
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-link" id="share-btn" type="submit">Share
+                <button class="button is-link" id="update-btn" type="submit">Update
                     Recipe</button>
             </div>
             <div class="control">
@@ -79,4 +87,4 @@
     </form>
 </div>
 
-<script src="/js/newRecipe.js"></script>
+<script src="/js/updateRecipe.js"></script>
