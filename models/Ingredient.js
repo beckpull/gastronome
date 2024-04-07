@@ -30,6 +30,7 @@ Ingredient.init(
     sequelize,
     freezeTableName: false,
     tableName: 'ingredient',
+    modelName: 'ingredient',
   }
 );
 

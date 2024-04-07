@@ -30,6 +30,7 @@ Instruction.init(
     sequelize,
     freezeTableName: false,
     tableName: 'instruction',
+    modelName: 'instruction',
   }
 );
 
