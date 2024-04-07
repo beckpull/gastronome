@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif */
+}
+
+body {
+    top: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #E3E3E3;
+}
+
+.container-for-nav {
+    border-bottom-style: double;
+    border-bottom-color: #8D0000;
+    border-bottom-width: thick;
+    height: 100px;
+    /* position: sticky;
+    top: 0; */
+    margin-top: -40px;
+}
+
+nav {
+    height: 110px;
+}
+
+.container {
+    height: 100%;
+    border-bottom-style: double;
+    border-bottom-color: #8D0000;
+}
+
+.navbar-brand {
+    height: 110px;
+} 
+
+.navbar-menu {
+    height: 110px;
+} 
+
+#navbar-space {
+    width: 100px;
+}
+
+#logo-span {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* margin-top: 5px;
+    margin-bottom:5px;
+    height: 100%; */
+    width: 200px;
+    height: 110px;
+    width: 100%;
+    height: 100%;
+}
+
+#div-for-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .navbar-brand {
+      min-width: 100%;
+    }
+    .navbar-menu {
+      margin-left: auto;
+      min-width: 50%;
+    }
+    .navbar-top-margin {
+        margin-top: 100px;
+        height: 100vh;
+    }
+}
+
+#accordion {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+#accordion li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#accordion li label {
+    padding: 10px;
+    display: flex;
+    align-items: left;
+    font-size: 14px;
+    /* font-weight: 500; */
+    cursor: pointer;
+    color: #8D0000;
+}
+
+/* Styles and rotates the arrow character &#x3e; for the accordion footer (the arrow points to the right by default) */
+#accordion li label i {
+    /* font: Arial;
+    transform: rotate(90deg);
+    font-size: 22px; */
+    color: #333;
+    /* align-self: left; */
+}
+
+#accordion label + input[type="radio"] {
+    display: none;
+}
+
+#accordion li {
+    border-bottom-style: solid;
+    border-bottom-color: #8D0000;
+    border-bottom-width: 2px;
+}
+
+#accordion .content {
+    padding: 0;
+    /* padding: 0 10px; */
+    line-height: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    font-size: 14px;
+}
+
+#accordion label + input[type="radio"]:checked + .content {
+    max-height: 400px;
+}
+
+.dancing-script-font {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>;
+    font-style: normal; */
+    font-size: 60px;
+}
+
+#footer-bottom {
+    height: 70px;
+    background-color: white;
+}
