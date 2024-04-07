@@ -1,25 +1,37 @@
-    {{!-- <div class="container-is-fluid"> --}}
-      
-      <div class="row glowing-box mx-3 my-5">
-        <div class="column-is-one-quarter my-6 mx-3">
-          <div class="card" id="recipe-card"  style="background-color: rgb(43, 9, 38)">
-            
-            <div class="card-content-is-centered">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-4 has-text-centered" style="color: rgb(172, 176, 196)"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
-                  <div class="media-center">
-                    <figure class="image is-centered is-128x128">
-                      <img src="https://bulma.io/assets/images/placeholders/96x96.png" alt="Placeholder image" />
-                    </figure>
-                    <p>{{ description }} </p>
-                  </div>
-                </div>
+<div class="container-is-fluid">
+  <div class="columns is-vcentered">
+    <div class="column is-3">
+      <div class="card">
+
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
+              <div class="media-center">
+                <figure class="image is-128x128">
+                  <img src="https://bulma.io/assets/images/placeholders/96x96.png" alt="Placeholder image" />
+                </figure>
+                <p> {{ user.username }} </p>
+                <p> {{ description }} </p>
+                {{#if logged_in}}
+                
+                {{#if ../has_meat}}
+                <p> This recipe contains meat </p>
+                {{else}}
+                <p> This dish is vegetarian friendly!</p>
+                {{/if}}
+                {{/if}}
+                <p> {{ created_on }} </p>
+                {{#if logged_in}}
+                <label for="comment-contents">Comment:</label>
+                <input class="form-input" type="text" id="comment-contents" />
               </div>
+              <button class="btn-primary" type="submit">submit</button>
+              {{/if}}
             </div>
           </div>
         </div>
       </div>
-      
-
-    
+    </div>
+  </div>
+</div>

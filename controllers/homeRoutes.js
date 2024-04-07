@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Recipe, Comment } = require('../models');
+const { User, Recipe, Comment, Ingredient, Instruction } = require('../models');
 const withAuth = require('../utils/auth');
 const { UniqueRand } = require('uniquerand');
 const { Op } = require('sequelize');
@@ -27,7 +27,8 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       // layout: 'authenticated',
-      data: selectedRecipes, 
+      selectedRecipes, 
+      logged_in: req.session.logged_in,
     });
     // res.json(selectedRecipes);
   } catch (err) {
@@ -50,7 +51,8 @@ router.get('/all', async (req, res) => {
     console.log(recipes[0]);
     res.render('all-recipes', {
       // layout: 'authenticated',
-      data: recipes 
+      recipes,
+      logged_in: req.session.logged_in,
     });
     // res.json(recipes);
   } catch (err) {
@@ -76,15 +78,22 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
                     model: User,
                     attributes: ['username'],
                   },
+              },
+              {
+                model: Ingredient,
+              },
+              {
+                model: Instruction,
               }
           ]
       });
       const recipe = recipeData.get({ plain: true });
-      res.json(recipe);
-      // res.render('recipe', {
-      //     recipe, 
-      //     logged_in: req.session.logged_in
-      // });
+      console.log(recipe);
+      // res.json(recipe);
+      res.render('recipe', {
+          recipe, 
+          logged_in: req.session.logged_in
+      });
   } catch (err) {
       res.status(500).json(err);
   }
