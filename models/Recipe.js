@@ -44,6 +44,7 @@ Recipe.init(
     timestamps: false,
     sequelize,
     freezeTableName: true,
+    modelName: 'recipe',
     tableName: 'recipe',
   }
 );

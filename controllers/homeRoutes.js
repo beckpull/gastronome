@@ -25,7 +25,10 @@ router.get('/', async (req, res) => {
     }
     console.log(selectedRecipes);
 
-    res.render('homepage', { selectedRecipes });
+    res.render('homepage', {
+      // layout: 'authenticated',
+      data: selectedRecipes, 
+    });
     // res.json(selectedRecipes);
   } catch (err) {
     console.log(err);
@@ -46,7 +49,7 @@ router.get('/all', async (req, res) => {
     );
     console.log(recipes[0]);
     res.render('all-recipes', {
-      layout: 'authenticated',
+      // layout: 'authenticated',
       data: recipes 
     });
     // res.json(recipes);
