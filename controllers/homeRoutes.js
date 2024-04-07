@@ -44,11 +44,12 @@ router.get('/all', async (req, res) => {
     const recipes = recipeData.map((Recipe) =>
     Recipe.get({ plain: true })
     );
-    console.log(recipes[0]);
-    res.render('all-recipes', {
-        recipes, 
-        logged_in: req.session.logged_in
-    });
+    // console.log(recipes[0]);
+    // res.render('all-recipes', {
+    //     recipes, 
+    //     logged_in: req.session.logged_in
+    // });
+    res.json(recipes);
     // res.json(recipes);
   } catch (err) {
     res.status(500).json(err);
@@ -69,23 +70,26 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
               },
               {
                   model: Comment, 
-                  attributes: ['content'],
+                  include: {
+                    model: User,
+                    attributes: ['username'],
+                  },
               }
           ]
       });
       const recipe = recipeData.get({ plain: true });
-
-      res.render('recipe', {
-          recipe, 
-          logged_in: req.session.logged_in
-      });
+      res.json(recipe);
+      // res.render('recipe', {
+      //     recipe, 
+      //     logged_in: req.session.logged_in
+      // });
   } catch (err) {
       res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/all-recipes');
     return;
   }
@@ -93,7 +97,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/all-recipes');
     return;
   }
@@ -109,8 +113,8 @@ router.get('/new-recipe', (req, res) => {
 router.get('/my-recipes', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Recipe }],
+            // attributes: { exclude: ['password'] },
+            include: [{ model: Recipe, include: {model: Comment, include: { model: User, attributes: ['username']}} }],
         });
 
         console.log(userData);
@@ -120,7 +124,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
         console.log(user);
 
         res.render('my-recipes', {
-            ...user, 
+            user, 
             logged_in: req.session.logged_in
         });
     } catch (err) {
