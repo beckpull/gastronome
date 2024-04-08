@@ -43,23 +43,57 @@ router.post('/create-recipe', withAuth, uploadImage, async (req, res) => {
   }
 });
 
-router.put('/update/:id', withAuth, async (req, res) => {
+router.put('/update/:id', withAuth, uploadImage, async (req, res) => {
   try {
-    const row = await Recipe.update(req.body, {
+    const imageUrl = req.body.imageUrl;
+
+    const { recipe_name, description, has_meat, ingredients, instructions } = req.body;
+
+    // Update the recipe in the database
+    const updatedRecipe = await Recipe.update({
+      recipe_name,
+      description,
+      imageUrl,
+      has_meat
+    }, {
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     });
 
-    if (row > 0) {
-      res.status(200).end();
-    } else {
-      res.status(404).end();
-    }
+    // Delete existing ingredients and instructions associated with the recipe
+    await Ingredient.destroy({
+      where: {
+        recipe_id: req.params.id
+      }
+    });
 
+    await Instruction.destroy({
+      where: {
+        recipe_id: req.params.id
+      }
+    });
+
+    // Create ingredients for the updated recipe
+    await Promise.all(ingredients.split(',').map(async (ingredient) => {
+      await Ingredient.create({
+        ingredient,
+        recipe_id: req.params.id
+      });
+    }));
+
+    // Create instructions for the updated recipe
+    await Promise.all(instructions.split(',').map(async (instruction) => {
+      await Instruction.create({
+        step: instruction,
+        recipe_id: req.params.id
+      });
+    }));
+
+    res.status(200).json(updatedRecipe);
   } catch (error) {
-    console.log(error);
-    res.status(500).json(error);
+    console.error('Error updating recipe:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 

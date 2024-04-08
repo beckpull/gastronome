@@ -87,7 +87,7 @@ const submitForm = async (event) => {
 
   formData.append('ingredients', ingredients);
 
-  const nodeList2 = document.querySelectorAll('.ingredient');
+  const nodeList2 = document.querySelectorAll('.instruction');
   const instructions = Array.from(nodeList2).map(input => input.value);
   // console.log(instructions);
 
