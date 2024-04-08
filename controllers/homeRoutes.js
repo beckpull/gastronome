@@ -155,11 +155,11 @@ router.get('/my-recipes', withAuth, async (req, res) => {
       ],
     });
 
-    console.log(userData);
+    // console.log(userData);
 
     const user = userData.get({ plain: true });
 
-    console.log(user);
+    // console.log(user);
 
     res.render('my-recipes', {
       user,
@@ -172,7 +172,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
 
 // This is for rendering the page that has the search bar on it
 // ADD WITHAUTH INTO THIS WHEN THE TIME COMES, AND MAKE IT ASYNC
-router.get('/search', (req, res) => {
+router.get('/search', withAuth, (req, res) => {
   res.render('search');
 });
 
@@ -200,10 +200,10 @@ router.get('/update/:id', withAuth, async (req, res) => {
   const dbRecipeData = await Recipe.findByPk(req.params.id, {
     include: [{model: Ingredient}, {model: Instruction}]
   });
-  const recipe = dbRecipeData.get({ plain: true });
-  console.log(recipe);
+  const recipeData = dbRecipeData.get({ plain: true });
+  // console.log(recipe);
 
-  res.render('update', {recipe, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
+  res.render('update', {recipeData, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 })
 
 router.get('/delete/:id', withAuth, async (req, res) => {

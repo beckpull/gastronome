@@ -1,18 +1,55 @@
-<div>
+<div style="text-align:center;">
   <div>
     <h2>Welcome, {{ user.username }}!</h2>
   </div>
 </div>
 {{#if user.recipes}}
-<div>
-    <h3>Your Shared Recipes:</h3>
-    {{#each ../user.recipes as |recipe|}}
-    {{> recipe-details}}
-    <a href="/update/{{recipe.id}}">update this recipe </a>•<a href="/delete/{{recipe.id}}"> delete this recipe</a>
-    
+<div style="text-align:center;">
+  <h3 style="text-align:center;">Your Shared Recipes:</h3>
+  {{#each user.recipes as |recipe|}}
+  {{> recipe-details}}
+
+  <!-- HTML for the "View Comments" button -->
+  <button id="view-comments-btn">View Comments</button>
+
+
+  <!-- HTML container for the comments section -->
+  <div id="comments-container" style="display: none;">
+    <p>Comments:</p>
+    {{#each ../../user.recipes.comments as |comment|}}
+    <p><strong>{{comment.user.username}}</strong> <i>said: </i>{{comment.content}}</p>
     {{/each}}
-{{else}}
-<p>Click <a href="/new-recipe">here</a> to add a new recipe! </p>
-{{/if}}
+  </div>
+
+
+  </br>
+  <a href="/update/{{recipe.id}}">update this recipe </a>•<a href="/delete/{{recipe.id}}"> delete this recipe</a>
+  {{/each}}
+  {{else}}
+  <p>Click <a href="/new-recipe">here</a> to add a new recipe! </p>
+  {{/if}}
 </div>
 
+
+<script>
+// JavaScript code to handle button click
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the "View Comments" buttons
+    var viewCommentsButtons = document.querySelectorAll('#view-comments-btn');
+
+    // Attach event listeners to each button
+    viewCommentsButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            console.log("button event listener");
+            // Toggle visibility of the comments container for this specific button
+            var commentsContainer = document.querySelector('#comments-container');
+            if (commentsContainer.style.display === 'none') {
+                commentsContainer.style.display = 'block';
+            } else {
+                commentsContainer.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
