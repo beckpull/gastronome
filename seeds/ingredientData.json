@@ -226,5 +226,197 @@
     {
         "recipe_id": 4,
         "ingredient": "Fresh parsley, for garnish"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 lb boneless, skinless chicken breasts, sliced"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "2 tablespoons green curry paste"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 can (13.5 oz) coconut milk"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 cup chicken broth"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 tablespoon fish sauce"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 tablespoon brown sugar"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 bell pepper, sliced"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 eggplant, diced"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 cup green beans, trimmed"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "1 cup sliced mushrooms"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "Fresh basil leaves, for garnish"
+    },
+    {
+        "recipe_id": 5,
+        "ingredient": "Cooked jasmine rice, for serving"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "4 slices bacon, chopped"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "4 chicken thighs"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "Salt and pepper to taste"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "1 onion, chopped"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "2 cloves garlic, minced"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "1 cup red wine (such as Burgundy)"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "1 cup chicken broth"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "1 tablespoon tomato paste"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "1 teaspoon dried thyme"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "8 ounces mushrooms, sliced"
+    },
+    {
+        "recipe_id": 6,
+        "ingredient": "Fresh parsley, for garnish"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1 lb fresh spinach leaves, washed and chopped"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "8 oz paneer, cubed"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1 onion, finely chopped"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "2 tomatoes, pureed"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "2 cloves garlic, minced"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1-inch piece of ginger, grated"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1 green chili, chopped (optional)"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1 teaspoon cumin seeds"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1 teaspoon garam masala"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1/2 teaspoon turmeric powder"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1/2 teaspoon ground coriander"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1/4 teaspoon red chili powder"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "1/4 cup heavy cream"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "Salt to taste"
+    },
+    {
+        "recipe_id": 7,
+        "ingredient": "Ghee or cooking oil"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1 lb fresh spinach leaves, washed and chopped"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1 onion, finely chopped"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "2 cloves garlic, minced"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1 cup crumbled feta cheese"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1/4 cup chopped fresh dill"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1/4 cup chopped fresh parsley"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1/4 cup olive oil"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "Salt and pepper to taste"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "1/2 lb phyllo dough, thawed if frozen"
+    },
+    {
+        "recipe_id": 8,
+        "ingredient": "Butter or olive oil for brushing"
     }
 ]
