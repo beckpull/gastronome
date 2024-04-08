@@ -6,24 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GastronoMe</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/css/authenticated-style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/authenticated-style.css">
 </head>
 
 <body class="has-navbar-fixed-top">
     <div class="container-for-nav">
         <nav class="navbar is-white is-fixed-top">
             <div class="container">
-                <div class="navbar-brand"
-                    style="position: fixed; left: 0px; top: 0px; bottom: auto; width: 100%; z-index: auto; border-style: none; background-color: rgb(255, 255, 255); opacity: 1; box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 8px;">
-                    <a class="navbar-item dancing-script-font">GastronoMe</a>
-                    <a class="navbar-item" id="navbar-space"></a>
-                    <a class="navbar-item">
-                        <img src="/img/line-drawingv2.png" alt="cooking line drawing image" style="max-height: 110px"
-                            class="py-2 px-2">
+                <div class="navbar-brand">
+                    <a>
+                        <img src="/img/logo-03.png" alt="website logo" style="max-height: 110px" class="py-2 px-2">
                     </a>
                     <a class="navbar-burger" id="burger">
                         {{!-- These empty span tags create the Bulma navbar burger icon --}}
@@ -46,12 +38,9 @@
                         <a href="/my-recipes" class="navbar-item">My Recipes</a>
                         <a href="/new-recipe" class="navbar-item">Create a New Recipe</a>
                         <a href="/search" class="navbar-item">Recipe Search</a>
+                        <a class="navbar-item" id="logout">Logout</a>
                     </div>
-                    {{#if logged_in}}
-                    <button class="navbar-item" id="logout">Logout</button>
-                    {{else}}
-                    <a class="navbar-item" href="/login">Login</a>
-                    {{/if}}
+
                 </div>
         </nav>
     </div>
@@ -59,51 +48,51 @@
     <div class="columns" id="div-for-main-content">
         {{{body}}}
     </div>
-    <ul id="accordion">
-        <li>
-            <label for="first">GastronoMe<i class='fas fa-angle-down' style='font-size:24px'></i></label>
-            <input type="radio" name="accordion" id="first" checked>
+
+    <div class="accordion">
+        <div class="contentBx first-box">
+            <div class="label">GastronoMe</div>
             <div class="content">
                 <p>Our Story</p>
                 <p>Recipes</p>
-                <p>Recipes Directory</p>
             </div>
-        </li>
-        <li>
-            <label for="second">Our Company<i class='fas fa-angle-down' style='font-size:24px'></i></label>
-            <input type="radio" name="accordion" id="second">
+        </div>
+        <div class="contentBx">
+            <div class="label">Our Company</div>
             <div class="content">
                 <p>Careers</p>
                 <p>Sustainability</p>
             </div>
-        </li>
-        <li>
-            <label for="third">Contact Us<i class='fas fa-angle-down' style='font-size:24px'></i></label>
-            <input type="radio" name="accordion" id="third">
+        </div>
+        <div class="contentBx third-box">
+            <div class="label">Contact Us</div>
             <div class="content">
-                <p>FAQ</p>
-                <p>Do Not Sell or Share My Personal Information</p>
+                <p>Frequently Asked Questions</p>
+                <p>Privacy</p>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
+
     <div id="footer-bottom">
         <div id="footer-img-container">
             <img src="/img/tomato.jpg" alt="tomato image" style="max-height: 45px"></img>
             <img src="/img/plate-and-utensils.png" alt="plate and utensils image" style="max-height: 45px"></img>
             <img src="/img/pear.png" alt="pear image" style="max-height: 45px"></img>
             <img src="/img/radish2.png" alt="radish image" style="max-height: 45px"></img> 
+            <img src="/img/fork-and-knife.png" alt="fork and knife image" style="max-height: 45px"></img> 
             <img src="/img/apple.png" alt="apple image" style="max-height: 40px"></img>
             <img src="/img/beetroot.png" alt="beetroot image" style="max-height: 45px"></img>
             <img src="/img/plate-and-utensils.png" alt="plate and utensils image" style="max-height: 45px"></img>
             <img src="/img/tomato.jpg" alt="tomato image" style="max-height: 45px"></img>
             <img src="/img/fork-and-knife.png" alt="fork and knife image" style="max-height: 45px"></img> 
             <img src="/img/apple.png" alt="apple image" style="max-height: 40px"></img>
+            <img src="/img/radish2.png" alt="radish image" style="max-height: 45px"></img> 
+            <img src="/img/pear.png" alt="pear image" style="max-height: 45px"></img>
+            <img src="/img/plate-and-utensils.png" alt="plate and utensils image" style="max-height: 45px"></img>
+            <img src="/img/pear.png" alt="pear image" style="max-height: 45px"></img>
         </div>
     </div>
 
 </body>
 
-{{#if logged_in}}
-<script src="/js/logout.js"></script>
-{{/if}}
 <script src="/js/authenticated.js"></script>

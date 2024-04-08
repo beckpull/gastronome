@@ -16,16 +16,16 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-color: #E3E3E3;
-    margin-bottom: 45px;
+    /* margin-bottom: 40px; */
 }
 
 .container-for-nav {
-    border-bottom-style: double;
-    border-bottom-color: #8D0000;
-    border-bottom-width: thick;
     height: 100px;
     /* position: sticky;
     top: 0; */
+    border-bottom-style: solid;
+    border-bottom-color: #8D0000;
+    border-bottom-width: thick;
     margin-top: -40px;
 }
 
@@ -35,12 +35,21 @@ nav {
 
 .container {
     height: 100%;
-    border-bottom-style: double;
+    border-bottom-style: solid;
     border-bottom-color: #8D0000;
 }
 
 .navbar-brand {
     height: 110px;
+    position: fixed; 
+    left: 20px; 
+    top: 0px; 
+    bottom: auto; 
+    width: 100%; 
+    z-index: auto; 
+    border-style: none; background-color: rgb(255, 255, 255); 
+    opacity: 1; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 8px;
 } 
 
 .navbar-menu {
@@ -89,83 +98,77 @@ nav {
     }
 }
 
-#accordion {
-    margin-bottom: 0;
-    width: 100%;
+.accordion {
+    background: white;
 }
 
-#accordion li {
-    list-style: none;
-    width: 100%;
-    margin-bottom: 10px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 4px;
-}
+.accordion .contentBx {
+    /* position: relative; */
+    margin: 0px 0px;
+    /* margin: 10px 0px; */
 
-#accordion li label {
-    padding: 10px;
-    display: flex;
-    align-items: left;
-    font-size: 14px;
-    /* font-weight: 500; */
-    cursor: pointer;
-    color: #8D0000;
-}
-
-/* Styles and rotates the arrow character &#x3e; for the accordion footer (the arrow points to the right by default) */
-#accordion li label i {
-    /* font: Arial;
-    transform: rotate(90deg);
-    font-size: 22px; */
-    color: #333;
-    /* align-self: left; */
-}
-
-#accordion label + input[type="radio"] {
-    display: none;
-}
-
-#accordion li {
     border-bottom-style: solid;
     border-bottom-color: #8D0000;
     border-bottom-width: 2px;
 }
 
-#accordion .content {
-    padding: 0;
-    /* padding: 0 10px; */
-    line-height: 20px;
-    max-height: 0;
+.accordion .first-box {
+    border-top-style: solid;
+    border-top-color: #8D0000;
+    border-top-width: 2px;
+}
+
+.accordion .contentBx .label {
+    position: relative;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.accordion .contentBx .label::before {
+    content: "+ ";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentBx.active .label::before {
+    content: "- ";
+}
+
+.accordion .contentBx .content {
+    /* position: relative; */
+    padding: 0px;
+    background: white;
+    height: 0;
     overflow: hidden;
-    transition: max-height 0.5s;
-    font-size: 14px;
+    transition: 0.5s;
+    overflow-y: hidden;
+    line-height: 10px;
+    margin-left: 40px;
 }
 
-#accordion label + input[type="radio"]:checked + .content {
-    max-height: 400px;
-}
-
-.dancing-script-font {
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    /* font-weight: <weight>;
-    font-style: normal; */
-    font-size: 60px;
+.accordion .contentBx.active .content {
+    height: 60px;
+    padding: 0px;
+    line-height: 10px;
+    margin-left: 40px;
 }
 
 #footer-bottom {
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 55px;
-
+    height: 90px;
+    padding: 20px 5px;
 }
 
 #footer-img-container {
-    margin-top: 10px;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
