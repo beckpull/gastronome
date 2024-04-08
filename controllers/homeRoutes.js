@@ -6,38 +6,38 @@ const { Op } = require('sequelize');
 
 
 // User does not have to be logged in to see the home page. Home page will have forms to sign up and log in. At the home page, the user can see 4 recipes, each with a title, image, and teaser description.
-router.get('/', async (req, res) => {
-  try {
-    const recipeData = await Recipe.findAll({
-      // include: [Ingredient, Instruction],
-    });
+// router.get('/', async (req, res) => {
+//   try {
+//     const recipeData = await Recipe.findAll({
+//       // include: [Ingredient, Instruction],
+//     });
 
-    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+//     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
-    let min = 0;
-    let max = recipes.length - 1;
-    let count = 4;
-    // Generates an array of 4 unique random numbers between min and max (inclusive).
-    let arr = UniqueRand.getRandArr(min, max, count);
-    let selectedRecipes = [];
-    // For each randomly generated number in arr, find the recipe at that index and push it into the selectedRecipes array.
-    for (let i = 0; i < arr.length; i++) {
-      let selectedRecipe = recipes[arr[i]];
-      selectedRecipes.push(selectedRecipe);
-    }
-    console.log(selectedRecipes);
+//     let min = 0;
+//     let max = recipes.length - 1;
+//     let count = 4;
+//     // Generates an array of 4 unique random numbers between min and max (inclusive).
+//     let arr = UniqueRand.getRandArr(min, max, count);
+//     let selectedRecipes = [];
+//     // For each randomly generated number in arr, find the recipe at that index and push it into the selectedRecipes array.
+//     for (let i = 0; i < arr.length; i++) {
+//       let selectedRecipe = recipes[arr[i]];
+//       selectedRecipes.push(selectedRecipe);
+//     }
+//     console.log(selectedRecipes);
 
-    res.render('homepage', {
-      // layout: 'authenticated',
-      selectedRecipes,
-      logged_in: req.session.logged_in,
-    });
-    // res.json(selectedRecipes);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     res.render('login', {
+//       layout: 'landing',
+//       selectedRecipes,
+//       logged_in: req.session.logged_in,
+//     });
+//     // res.json(selectedRecipes);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 
 // Ideally, when the user successfully logs in and is redirected to the all-recipes page, I would want to only show the title, image, and short description of each recipe, rather than displaying all of the ingredients and instructions there, too. I would want the user to have to click on 1 recipe to see its full details including ingredients and instructions. For now, we will render everything about every recipe on the all-recipes page.
@@ -100,12 +100,14 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/my-recipes');
     return;
   }
-  res.render('login');
+  res.render('login', {
+    layout: 'landing'
+  });
 });
 
 router.get('/signup', (req, res) => {
@@ -113,7 +115,9 @@ router.get('/signup', (req, res) => {
     res.redirect('/my-recipes');
     return;
   }
-  res.render('signup');
+  res.render('signup', {
+    layout: 'landing'
+  });
 });
 
 // We will need to add withAuth before (req, res)

@@ -1,25 +1,36 @@
 <div class="login-card">
-  <h2 class="page-title">Signup</h2>
-  <form action="/signup"class="form signup-form">
-    <div class="form-group">
-      <label for="username-signup">Username:</label>
-      <input class="form-input" type="text" id="username-signup" />
+  <div class="form-container">
+    <div class="control">
+      <div id="logo-container">
+        <img src="/img/logo-03.png" alt="website logo" id="logo">
+      </div>
+
+      <div id="text-container">
+        <h2 class="page-title" id="title-text">Sign up to join the community!</h2>
+      <form action="/signup"class="form signup-form">
+            <div class="form-group">
+          <label for="username-signup"><span>Username:</span></label>
+          <input class="form-input" type="text" id="username-signup" />
+        </div>
+        <div class="form-group">
+          <label for="email-signup"><span>Email:</span></label>
+          <input class="form-input" type="text" id="email-signup" />
+        </div>
+        <div class="form-group">
+          <label for="password-signup"><span>Password:</span></label>
+          <input class="form-input" type="password" id="password-signup" />
+        </div>
+        <div class="form-group">
+          <button class="button is-black is-large" type="submit">Sign Up</button>
+        </div>
+      </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="email-signup">Email:</label>
-      <input class="form-input" type="text" id="email-signup" />
-    </div>
-    <div class="form-group">
-      <label for="password-signup">Password:</label>
-      <input class="form-input" type="password" id="password-signup" />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">signup</button>
-    </div>
-  </form>
+  </div>
 </div>
-<div>
-  <p>Have an account? Log in <a href="/login"><strong>here</strong></a></p>
+
+<div id="switch-container">
+  <p id="switch">Have an account? <a href="/"><strong>Log in here!</strong></a></p>
 </div>
 </main>
 <script src="/js/signup.js"></script>

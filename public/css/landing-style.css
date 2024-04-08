@@ -1,0 +1,136 @@
+.img-column {
+    width: 50vw;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.form-column {
+    width: 50vw;
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+    position: relative;
+    text-align: center;
+    padding: .5vh 0;   
+}
+
+.login-card {
+    text-align: left;
+}
+
+.control {
+    align-items: center;
+}
+
+#logo-container {
+    width: 100%;
+    margin: 4% 22% 3% 22%;
+}
+
+#logo {
+    width: 56%;
+    align-self: center;
+}
+
+.text-container {
+    text-align: left;
+    align-items: left;
+    width: 100%;
+}
+
+#title-text {
+    font-size: 1.4em;
+    line-height: em;
+    margin: 0% 20%;
+}
+
+/* The login page has less input elements than the signup page and can afford some extra spacing, which the below selector helps with. */
+#title-text-login {
+    font-size: 1.4em;
+    line-height: em;
+    margin: 6% 20% 3% 20%;
+}
+
+.form-group {
+    font-size: 1.4em;
+    margin: 0% 20%;
+}
+
+label {
+    display: block;
+    position: relative;
+    padding-left: 100px;
+    padding-bottom: 35px;
+    padding-top: 10px;
+}
+
+label > span {
+    position: absolute;
+    left: 0;
+}
+
+input {
+    height: 50px;
+    font-size: 22px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    height: 32px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#switch-container {
+    margin: 0% 20%;
+    text-align: left;
+}
+
+#switch {
+    font-size: 1.4em;
+    width: 100%;
+}
+
+/* Hover effect for the link to switch from the login page to signup page and vice versa */
+a {
+    background-image: linear-gradient(
+      to right,
+      #8D0000,
+      #8D0000 50%,
+      #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    font-style: italic;
+}
+  
+a:before {
+    content: '';
+    background: #8D0000;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+  
+a:hover {
+    background-position: 0;
+}
+  
+a:hover::before {
+    width:100%;
+}
