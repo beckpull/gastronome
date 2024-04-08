@@ -1,25 +1,35 @@
-<div class="box ">
-<div class="login-card my-5">
-  <div class="control">
-  <h2>Login</h2>
-  <form class="form login-form">
-    <div class="form-group">
-      <label for="email-login">E-Mail:</label>
-      <input class="form-input" type="text" id="email-login" />
-    </div>
-    <div class="form-group">
-      <label for="password-login">Password:</label>
-      <input class="form-input" type="password" id="password-login" />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">Login</button>
-    </div>
-  </form>
+<div class="login-card">
+  <div class="form-container">
+    <div class="control">
+      <div id="logo-container">
+        <img src="/img/logo-03.png" alt="website logo" id="logo">
+      </div>
+
+      <div id="text-container">
+        <h2 id="title-text-login">Log in to view and share recipes!</h2>
+      <form class="form login-form">
+        <div class="form-group">
+          <label for="email-login"><span>E-Mail:</span></label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login"><span>Password:</span></label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button class="button is-black is-large" type="submit">Log In</button>
+        </div>
+      </form>
+      </div>
+      </div>
   </div>
 </div>
-<div>
-  <p class="align-right">Don't have an account yet? Sign up <a href="/signup"><strong>here</strong></a></p>
+
+<div id="switch-container">
+  <p id="switch">Don't have an account yet? <a href="/signup"><strong>Sign up here!</strong></a></p>
+</div>
+  
 </div>
 </div>
-</main>
+
 <script src="/js/login.js"></script>
