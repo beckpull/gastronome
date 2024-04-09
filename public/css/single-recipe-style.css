@@ -1,0 +1,82 @@
+.my-column {
+    width: 100vw;
+}
+
+#recipe-name {
+    font-size: 2.5em;
+    /* font-family: 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    text-decoration: none; */
+    font-family: 'Roboto';
+    color: black;
+}
+
+.media-content {
+    /* width: 100%; */
+    /* margin: 0;
+    padding: 0; */
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.media-center {
+    width: 100%;
+    /* margin-left: 30%;
+    margin-right: 30% */
+    font-size: 1.2em;
+    line-height: 2em;
+
+}
+
+.figure {
+    width: 40%;
+}
+
+.recipe-container {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.ingredients, .instructions, .comments {
+    width: 100%;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+.comments {
+    line-height: 2em;
+    margin-bottom: 15%;
+}
+
+.heading {
+    font-size: 2em;
+    /* font-family: 'Brush Script MT'; */
+    font-family: 'Roboto';
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.input-container {
+    padding-top: 5%;
+    padding-bottom: 6%;
+}
+
+.form-input {
+    font-size: 1.2em;
+    /* height: 2em; */
+    height: 50px;
+    width: 100%;
+    padding: 1%;
+    border-radius: 8px;
+}
+
+.button-container {
+    text-align: right;
+    margin-bottom: 7%;
+}
+
+#submit-comment-btn {
+    width: 30%;
+}
