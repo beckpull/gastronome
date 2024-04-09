@@ -41,7 +41,7 @@ const { Op } = require('sequelize');
 
 
 // Ideally, when the user successfully logs in and is redirected to the all-recipes page, I would want to only show the title, image, and short description of each recipe, rather than displaying all of the ingredients and instructions there, too. I would want the user to have to click on 1 recipe to see its full details including ingredients and instructions. For now, we will render everything about every recipe on the all-recipes page.
-router.get('/all', withAuth, async (req, res) => {
+router.get('/all', async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
       include: [Ingredient, Instruction, { model: Comment, include: { model: User, attributes: ['username'] } }, { model: User, attributes: ['username'] }]
@@ -64,7 +64,7 @@ router.get('/all', withAuth, async (req, res) => {
 
 // Get 1 recipe with a particular id, which the user can only do after being logged in. 
 // The full route is localhost:PORT/api/recipes/:id 
-router.get('/recipe/:id', withAuth, async (req, res) => {
+router.get('/recipe/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
@@ -120,7 +120,7 @@ router.get('/signup', (req, res) => {
 
 // We will need to add withAuth before (req, res)
 // This is for rendering the new-recipe page where the user can fill in a form to create a new recipe
-router.get('/new-recipe', withAuth, (req, res) => {
+router.get('/new-recipe', (req, res) => {
   try {
     res.render('new-recipe',
       {
@@ -170,7 +170,7 @@ router.get('/my-recipes', async (req, res) => {
 
 // This is for rendering the page that has the search bar on it
 // ADD WITHAUTH INTO THIS WHEN THE TIME COMES, AND MAKE IT ASYNC
-router.get('/search', withAuth, (req, res) => {
+router.get('/search', (req, res) => {
   res.render('search');
 });
 
@@ -194,7 +194,7 @@ router.get('/find-recipe', async (req, res) => {
   }
 });
 
-router.get('/update/:id', withAuth, async (req, res) => {
+router.get('/update/:id', async (req, res) => {
   const dbRecipeData = await Recipe.findByPk(req.params.id, {
     include: [{model: Ingredient}, {model: Instruction}]
   });
@@ -204,7 +204,7 @@ router.get('/update/:id', withAuth, async (req, res) => {
   res.render('update', {recipeData, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 });
 
-router.get('/delete/:id', withAuth, async (req, res) => {
+router.get('/delete/:id', async (req, res) => {
   res.render('delete', {id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 });
 
