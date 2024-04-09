@@ -1,14 +1,14 @@
-const newPostFormHandler = async (event) => {
+const newCommentFormHandler = async (event) => {
     event.preventDefault();
     const recipeId = window.location.pathname.split('/').pop(); 
-    const contents = document.querySelector("#comment-contents").value.trim(); // Content inpute must either be labeled with id="comment-contents" or we will need to change this
+    const content = document.querySelector("#comment-contents").value.trim(); // Content inpute must either be labeled with id="comment-contents" or we will need to change this
     // console.log(recipeId);
     // console.log(contents);
-    if (contents) {
+    if (content) {
  
       const response = await fetch(`/api/comments/${recipeId}`, {
         method: "POST",
-        body: JSON.stringify({ contents }),
+        body: JSON.stringify({ content }),
         headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
@@ -20,9 +20,8 @@ const newPostFormHandler = async (event) => {
   };
 
 document
-  .querySelector(".newcomment-form") // Form will either need to have class="newcomment-form" or we will need to change this
-  .addEventListener("submit", newPostFormHandler);
+  .querySelector("#submit-comment-btn") // Form will either need to have class="newcomment-form" or we will need to change this
+  .addEventListener("click", newCommentFormHandler);
 
   // will need this link in recipe.handlebars
-  //<script src="/js/addComment.js"></script>
 
