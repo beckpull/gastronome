@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/css/authenticated-style.css">
     <link rel="stylesheet" href="/css/single-recipe-style.css">
     <link rel="stylesheet" href="/css/my-recipes-style.css">
+    <link rel="stylesheet" href="/css/new-recipe-style.css">
+
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -49,7 +51,8 @@
                                 <a href="/all" class="navbar-item is-active">View All Recipes</a>
                                 <a href="/my-recipes" class="navbar-item">My Recipes</a>
                                 <a href="/new-recipe" class="navbar-item">Create a New Recipe</a>
-                                <a href="/search" class="navbar-item">Recipe Search</a>
+                                {{!-- <a href="/search" class="navbar-item">{{> search-icon}}</a> --}}
+                                <div class="navbar-item" id="search-modal-link">{{> search-icon}}</div>
                                 <a class="navbar-item" id="logout">Logout</a>
                             </div>
 
@@ -114,7 +117,31 @@
                     </div>
                 </div>
     </footer>
+
+    <div class="modal" id="search-modal">
+        <div class="modal-background">
+        </div>
+        <div class="modal-card has-text-centered">
+            <header class="modal-card-head">
+                <div class="field">
+                    <div class="control">
+                        <input id="search-input" class="input is-medium" type="text" placeholder="Search Recipes"/>
+                    </div>
+    </div>
+                
+                <button class="delete ml-5 mb-6" id="inner-modal-close" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body" id="search-results">
+                <div class="content"></div>
+            </section>
+            <footer class="modal-card-foot">
+            </footer>
+        </div>
+        <button class="modal-close is-large delete" id="outer-modal-close" aria-label="close"></button>
+    </div>
+
     <script src="/js/authenticated.js"></script>
+    <script src="/js/search.js"></script>
 </body>
 
 </html>

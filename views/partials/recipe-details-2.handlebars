@@ -1,0 +1,13 @@
+<div class="indiv-recipe-container">
+    <a href="/recipe/{{id}}" id="recipe-name">{{ recipe_name }}</a>
+    {{#if imageUrl}}
+        <img src="{{imageUrl}}" alt="Recipe Photo" id="recipe-photo">
+    {{/if}}
+    <p id="recipe-description">{{ description }}</p>
+    {{#if has_meat}}
+    <p class="has-meat">This recipe contains meat.</p>
+    {{else}}
+    <p class="has-meat">This recipe is vegetarian friendly.</p>
+    {{/if}}
+    <p id="posted-by">Posted by {{ user.username }} on {{ format_date created_on}}.</p>
+    </div>

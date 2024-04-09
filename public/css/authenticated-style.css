@@ -169,3 +169,30 @@ nav {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.modal-card {
+    margin-top: 2vw;
+    width: 80%;
+    align-items: right;
+}
+
+.modal-card-head {
+    text-align: right;
+}
+
+.field {
+    width: 100%;
+}
+
+.control {
+    width: 100%;
+}
+
+/* #search-input {
+
+} */
+
+.inner-modal-close {
+    align-self: right;
+    padding: 20px;
+}

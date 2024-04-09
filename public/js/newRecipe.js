@@ -32,12 +32,14 @@ let counter = 2;
 const addIngredient = async (event) => {
   event.preventDefault(); // Prevent default form submission behavior
   await saveFormData(); // Save form data to session storage
-  let newIngredient = `<div class="field">
-      <label class="label">Ingredient</label>
+  let newIngredient = `<div id="ingredients-wrapper">
+    <div class="field">
+      <label class="label" id="ingredients-label" style="font-style: italic">ingredient</label>
       <div class="control">
-        <input class="input ingredient" type="text" placeholder="Ingredient" name="ingredient${counter}">
+        <input class="input ingredient" id="ingredients-input-el" type="text" placeholder="ingredient" name="ingredient${counter}">
       </div>
-    </div>`;
+    </div>
+  </div>`;
   document.getElementById('ingredients-container').insertAdjacentHTML('beforeend', newIngredient);
   await populateForm(); // Populate form fields with session storage data
   counter++;
@@ -49,12 +51,14 @@ let counter2 = 2;
 const addStep = async (event) => {
   event.preventDefault();
   await saveFormData();
-  let newStep = `<div class="field">
-      <label class="label">Instruction</label>
+  let newStep = `<div id="instructions-wrapper">
+    <div class="field">
+      <label class="label" id="instructions-label" style="font-style: italic">instruction</label>
       <div class="control">
-        <input class="input instruction" type="text" placeholder="Instruction" name="instruction${counter2}">
+        <input class="input instruction" id="instructions-input-el" type="text" placeholder="step" name="instruction${counter2}">
       </div>
-     </div>`;
+     </div>
+    </div>`;
   document.getElementById('instructions-container').insertAdjacentHTML('beforeend', newStep);
   await populateForm();
   counter2++;

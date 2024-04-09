@@ -34,3 +34,24 @@ for (i = 0; i < accordion.length; i++) {
         this.classList.toggle('active')
     })
 }
+
+let searchModalLink = document.getElementById("search-modal-link");
+let searchModal = document.getElementById("search-modal");
+let innerModalClose = document.getElementById("inner-modal-close");
+let outerModalClose = document.getElementById("outer-modal-close");
+searchModalLink.onclick = function() {
+  searchModal.style.display = "block";
+}
+
+innerModalClose.onclick = function() {
+  searchModal.style.display = "none";
+}
+outerModalClose.onclick = function() {
+  searchModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target.className == "modal-background") {
+    searchModal.style.display = "none";
+  }
+}

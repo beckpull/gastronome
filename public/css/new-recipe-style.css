@@ -1,0 +1,174 @@
+#new-recipe-pg-title {
+    font-size: 3em;
+    padding-top: 2%;
+    padding-bottom: 0%
+}
+
+#new-recipe-pg-wrapper {
+    margin-left: 20%;
+    margin-right: 20%;
+    /* margin-top: -20%; */
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+#recipe-form {
+    width: 100%;
+}
+
+#upload-photo-txt {
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    font-size: 20px;
+    padding: 10px;
+}
+
+input[type="file"]::file-selector-button {
+    font-size: 20px;
+    width: 160px;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: black;
+    font-size: 20px;
+    font-family: 'Roboto';
+    border-radius: 0.4em;
+    margin-left: -10px;
+}
+
+.form__section {
+    justify-content: center;
+}
+
+
+.field-label {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+#recipe-name-wrapper {
+    height: 100px;
+}
+
+#recipe-name-label {
+    height: 100%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#recipe-name {
+    height: 100%;
+    padding: 9px 14px;
+    font-size: 1.2em;
+}
+
+#description-wrapper {
+    height: 100px;
+} 
+
+#description-label {
+    height: 100%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#recipe-description {
+    height: 100%;
+    padding: 9px 14px;
+    font-size: 1.2em;
+}
+
+
+#ingredients-wrapper {
+    height: 100px;
+}
+
+#ingredients-label {
+    height: 100%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#ingredients-input-el {
+    height: 100%;
+    padding: 9px 14px;
+    font-size: 1.2em;
+}
+
+#add-ingredient {
+    margin-top: 20px;
+    width: 178px;
+}
+
+#instructions-wrapper {
+    height: 100px;
+}
+
+#instructions-label {
+    height: 100%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#instructions-input-el {
+    height: 100%;
+    padding: 9px 14px;
+    font-size: 1.2em;
+}
+
+#add-step {
+    margin-top: 20px;
+    width: 178px;
+
+}
+
+#meat-wrapper {
+    height: 100px;
+}
+
+#meat-label {
+    height: 100%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* This styles the actual checkbox for whether or not the recipe has meat. */
+input#has-meat { 
+    height: 20px;
+    width: 20px;
+    margin-top: 20px;
+}
+
+/* This styles the text, "Yes, this recipe contains meat." */
+input#has-meat#text {
+    padding-bottom: 10px;
+}
+
+#meat-checkbox-label {
+    font-size: 20px;
+}
+
+#share-cancel-btn-container {
+    margin-left: 0%;
+    margin-right: 20%;
+    margin-top: 40px;
+    text-align: left;
+}
+
+#share-btn-container {
+    width: 100%;
+    align-items: left;
+}
+
+#share-btn {
+    width: 178px;
+}
+
+#cancel-btn {
+    width: 178px;
+    margin-left: -60%;
+}
+
+
