@@ -13,7 +13,6 @@ Handlebars.registerHelper('orderById', function(instructions) {
   return instructions.slice().sort((a, b) => a.id - b.id);
 });
 
-// We're not using any custom helpers with handlebars yet--we can uncomment this when we make the file and some custom helpers.
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
