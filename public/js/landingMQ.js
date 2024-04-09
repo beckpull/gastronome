@@ -1,19 +1,25 @@
+const imgColumn = document.querySelector('.img-column');
+const image = document.querySelector('img');
+const formColumn = document.querySelector('.form-column');
+const container = document.querySelector('#container');
 
 
-// Function to handle media queries
+
 function handleMediaQueries() {
-    // Check if the window width is less than 768 pixels (example breakpoint)
     if (window.innerWidth < 768) {
-        // Apply styles or behaviors for small screens
-        
+        // small screens
+        container.classList.remove('columns');
+        imgColumn.classList.remove('column', 'img-column');
+        formColumn.classList.remove('column', 'form-column');
+        image.setAttribute('style', 'width: 100vw; height: 30vh; object-fit: cover; object-position: center; ')
+
     } else {
-        // Apply styles or behaviors for larger screens
-        console.log('Large screen detected');
+        // larger screens
     }
 }
 
-// Call the function initially to handle media queries on page load
+// call the function initially to handle media queries on page load
 handleMediaQueries();
 
-// Add event listener for window resize event to handle media queries dynamically
+// event listener for window resize event to handle media queries dynamically
 window.addEventListener('resize', handleMediaQueries);
