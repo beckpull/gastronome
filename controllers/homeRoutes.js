@@ -202,11 +202,33 @@ router.get('/update/:id', withAuth, async (req, res) => {
   // console.log(recipe);
 
   res.render('update', {recipeData, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
-})
+});
 
 router.get('/delete/:id', withAuth, async (req, res) => {
   res.render('delete', {id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
+});
+
+router.get('/our-story', async (req, res) => {
+  res.render('our-story');
+});
+
+router.get('/careers', async (req, res) => {
+  res.render('careers');
+});
+
+router.get('/sustainability', async (req, res) => {
+  res.render('sustainability');
+});
+
+router.get('/faq', async (req, res) => {
+  res.render('faq');
+});
+
+router.get('/privacy', async (req, res) => {
+  res.render('privacy');
 })
+
+
 
 module.exports = router;
 
