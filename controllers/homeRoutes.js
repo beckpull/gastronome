@@ -153,17 +153,18 @@ router.get('/my-recipes', withAuth, async (req, res) => {
       ],
     });
 
-    // console.log(userData);
+    console.log(userData);
 
     const user = userData.get({ plain: true });
 
-    // console.log(user);
+    console.log(user);
 
     res.render('my-recipes', {
       user,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
