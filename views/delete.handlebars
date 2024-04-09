@@ -1,27 +1,23 @@
-<div class="container-is-fluid">
-  <div class="columns is-vcentered">
-    <div class="column is-3">
-      <div class="card">
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="media is-centered">
+        <div class="media-content">
+          <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe.recipe_name }}</a></p>
+          <div class="media-center">
+            <figure class="image is-128x128" style="margin: 0 auto; display: block;">
+              <img src="{{recipe.imageUrl}}" alt="Recipe Photo" class="center">
+            </figure>
+            <p class="has-text-centered">{{ recipe.user.username }}</p>
+            <p class="has-text-centered">{{ recipe.description }}</p>
 
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4 has-text-centered"><a href="/recipe/{{id}}">{{ recipe_name }}</a></p>
-              <div class="media-center">
-                <figure class="image is-128x128">
-                <img src="{{imageUrl}}" alt="Recipe Photo">
-                </figure>
-                <p> {{ user.username }} </p>
-                <p> {{ description }} </p>
-
-                {{#if ../has_meat}}
-                <p> This recipe contains meat </p>
-                {{else}}
-                <p> This dish is vegetarian friendly!</p>
-                {{/if}}
-                <p> {{ created_on }} </p>
-                <button data-num="{{id}}" class="button is-danger" id="delete-btn">delete</button>
-            </div>
+            {{#if ../recipe.has_meat}}
+            <p class="has-text-centered">This recipe contains meat</p>
+            {{else}}
+            <p class="has-text-centered">This dish is vegetarian friendly!</p>
+            {{/if}}
+            <p class="has-text-centered">{{ format_date recipe.created_on }}</p>
+            <button  style="margin: 0 auto; display: block;" data-num="{{id}}" class="button is-danger is-centered" id="delete-btn">delete</button>
           </div>
         </div>
       </div>

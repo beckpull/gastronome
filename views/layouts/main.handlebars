@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/my-recipes-style.css">
     <link rel="stylesheet" href="/css/new-recipe-style.css">
 
+
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -26,7 +27,7 @@
                                 <img src="/img/logo-03.png" alt="website logo" style="max-height: 110px"
                                     class="py-2 px-2">
                             </a>
-                            <a class="navbar-burger" id="burger">
+                            <a class="navbar-burger mr-6" id="burger">
                                 {{!-- These empty span tags create the Bulma navbar burger icon --}}
                                 <span></span>
                                 <span></span>
@@ -39,7 +40,7 @@
                             the navbar. A class of navbar-start would place all of the nested navbar items on the left
                             side
                             (start) of the navbar. --}}
-                            <div class="navbar-end">
+                            <div class="navbar-end mr-6">
                                 {{!-- I'm thinking this View All Recipes link could lead to a page where the user sees
                                 all
                                 details, including ingredients and directions, for all the recipes, unsorted. This would
@@ -49,7 +50,6 @@
                                 self referential link. --}}
                                 <a href="/" class="navbar-item is-active">Home</a>
                                 <a href="/all" class="navbar-item is-active">View All Recipes</a>
-                                <a href="/my-recipes" class="navbar-item">My Recipes</a>
                                 <a href="/new-recipe" class="navbar-item">Create a New Recipe</a>
                                 {{!-- <a href="/search" class="navbar-item">{{> search-icon}}</a> --}}
                                 <div class="navbar-item" id="search-modal-link">{{> search-icon}}</div>
@@ -125,10 +125,10 @@
             <header class="modal-card-head">
                 <div class="field">
                     <div class="control">
-                        <input id="search-input" class="input is-medium" type="text" placeholder="Search Recipes"/>
+                        <input id="search-input" class="input is-medium" type="text" placeholder="Search Recipes" />
                     </div>
-    </div>
-                
+                </div>
+
                 <button class="delete ml-5 mb-6" id="inner-modal-close" aria-label="close"></button>
             </header>
             <section class="modal-card-body" id="search-results">
