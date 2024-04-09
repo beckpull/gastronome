@@ -4,7 +4,7 @@
     <h3 id="my-recipes-heading">Your Shared Recipes:</h3>
     {{#if user.recipes}}
       {{#each user.recipes as |recipe|}}
-      <a href="/recipe/{{id}}" id="recipe-name">{{ recipe.recipe_name }}</a>
+      <a href="/recipe/{{recipe.id}}" id="recipe-name">{{ recipe.recipe_name }}</a>
         {{#if recipe.imageUrl}}
         <img src="{{recipe.imageUrl}}" alt="Recipe Photo" id="recipe-photo">
         {{/if}}

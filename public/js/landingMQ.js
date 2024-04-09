@@ -13,9 +13,9 @@ function handleMediaQueries() {
         formColumn.classList.remove('column', 'form-column');
         image.setAttribute('style', 'width: 100vw; height: 30vh; object-fit: cover; object-position: center; ')
 
-    } else {
+    } // else {
         // larger screens
-    }
+   // }
 }
 
 // call the function initially to handle media queries on page load
