@@ -4,31 +4,28 @@
     <h3 id="my-recipes-heading">Your Shared Recipes:</h3>
     {{#if user.recipes}}
       {{#each user.recipes as |recipe|}}
-        <a href="/recipe/{{id}}" id="recipe-name">{{ recipe_name }}</a>
-        {{#if imageUrl}}
-<img src="{{imageUrl}}" alt="Recipe Photo" id="recipe-photo">
+      <a href="/recipe/{{id}}" id="recipe-name">{{ recipe.recipe_name }}</a>
+        {{#if recipe.imageUrl}}
+        <img src="{{recipe.imageUrl}}" alt="Recipe Photo" id="recipe-photo">
         {{/if}}
-        <p id="recipe-description">{{ description }}</p>
-    <div id="update-delete-btn-container">
-      <a class="button is-danger is-light is-medium" href="/delete/{{recipe.id}}" id="del-recipe-btn">Delete Recipe</a>
-    <a class="button is-black is-medium" href="/update/{{recipe.id}}">Update Recipe </a>
-    </div>
-    
+      <p id="recipe-description">{{ recipe.description }}</p>
+      <div id="update-delete-btn-container">
+        <a class="button is-danger is-light is-medium" href="/delete/{{recipe.id}}" id="del-recipe-btn">Delete Recipe</a>
+        <a class="button is-black is-medium" href="/update/{{recipe.id}}">Update Recipe </a>
+      </div>
+
 
       {{/each}}
-      <p class="create-recipe-message">Have a different dish on your mind? Post the recipe for your fellow cooks to recreate and enjoy!</p>
+      <p class="create-recipe-message">Have a different dish on your mind? Post the recipe for your fellow cooks to
+        recreate and enjoy!</p>
     {{else}}
-      <p class="create-recipe-message">Nothing to see here yet! Share the love and post a recipe for your GastronoMe community.</p>
+    <p class="create-recipe-message">Nothing to see here yet! Share the love and post a recipe for your GastronoMe
+      community.</p>
     {{/if}}
-    
+
     <div id="create-recipe-btn-container">
       <a class="button is-black is-medium" href="/new-recipe">Create a New Recipe</a>
     </div>
-    
-  </div>
-</div>
-<div>
-    
 
-    {{!-- <p>Click <a href="/new-recipe">here</a> to add a new recipe! </p> --}}
+  </div>
 </div>
