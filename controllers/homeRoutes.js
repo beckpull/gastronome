@@ -169,11 +169,6 @@ router.get('/my-recipes', withAuth, async (req, res) => {
   }
 });
 
-// This is for rendering the page that has the search bar on it
-// ADD WITHAUTH INTO THIS WHEN THE TIME COMES, AND MAKE IT ASYNC
-router.get('/search', withAuth, (req, res) => {
-  res.render('search');
-});
 
 // This is for getting the results of input in the search bar when the user is trying to search for a recipe
 router.get('/find-recipe', async (req, res) => {
@@ -186,7 +181,6 @@ router.get('/find-recipe', async (req, res) => {
           [Op.iLike]: `%${query}%` // Case-insensitive search
         }
       },
-      include: [Ingredient, Instruction]
     });
     res.json(recipes);
   } catch (err) {

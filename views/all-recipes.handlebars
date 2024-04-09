@@ -1,3 +1,12 @@
-{{#each recipes as |recipe|}}
-{{> recipe-details logged_in=../logged_in}}
-{{/each}}
+<div id="all-recipes-wrapper">
+
+
+<h2 id="all-recipes-pg-title">All Recipes</h2>
+
+    <div id="all-recipes-container">
+        {{#each recipes as |recipe|}}
+        {{> recipe-details-2}}
+        {{/each}}
+    </div>
+    
+</div>
