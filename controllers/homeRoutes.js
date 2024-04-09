@@ -131,7 +131,7 @@ router.get('/new-recipe', withAuth, (req, res) => {
   }
 });
 
-router.get('/my-recipes', withAuth, async (req, res) => {
+router.get('/my-recipes', async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       // attributes: { exclude: ['password'] },
@@ -161,7 +161,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
 
     res.render('my-recipes', {
       user,
-      logged_in: req.session.logged_in
+      // logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);

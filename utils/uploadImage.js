@@ -7,7 +7,7 @@ const uploadImage = (req, res, next) => {
         return next();
       }
 
-      const options = [];
+      const options = { width: 200, height: 200, crop: 'thumb' };
 
       // Upload image to Cloudinary
       cloudinary.uploader.upload(req.files.image.tempFilePath, options, (error, result) => {
