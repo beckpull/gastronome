@@ -7,8 +7,10 @@ const uploadImage = (req, res, next) => {
         return next();
       }
 
+      const options = [];
+
       // Upload image to Cloudinary
-      cloudinary.uploader.upload(req.files.image.tempFilePath, (error, result) => {
+      cloudinary.uploader.upload(req.files.image.tempFilePath, options, (error, result) => {
           if (error) {
               console.error('Error uploading image to Cloudinary:', error);
               return res.status(500).json({ error: 'Error uploading image to Cloudinary' });
