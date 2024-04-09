@@ -64,22 +64,23 @@
             <div class="button-container">
               <button class="button is-black is-large" id="submit-comment-btn" type="submit">Submit</button>
             </div>
-          {{#if recipe.comments.length}}
-            <ul>
+            {{#if recipe.comments.length}}
+              <ul>
+                <hr>
+                {{#each recipe.comments as |comment|}}
+                <li>
+                  <strong>{{ comment.user.username }}:</strong> {{ comment.content }}
+                </li>
+                <hr>
+                {{/each}}
+              </ul>
+            </div>
+            {{else}}
               <hr>
-              {{#each recipe.comments as |comment|}}
-              <li>
-                <strong>{{ comment.user.username }}:</strong> {{ comment.content }}
-              </li>
+              <p>Nothing to see here yet! Add a comment to start the conversation.</p>
               <hr>
-              {{/each}}
-            </ul>
+            {{/if}}
           </div>
-          {{else}}
-            <hr>
-            <p>Nothing to see here yet! Add a comment to start the conversation.</p>
-            <hr>
-          {{/if}}
 
         </div>
         
@@ -87,3 +88,4 @@
     </div>
   </div>
 </div>
+<script src="/js/addComment.js"></script>
