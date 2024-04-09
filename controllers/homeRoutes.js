@@ -200,7 +200,11 @@ router.get('/update/:id', withAuth, async (req, res) => {
 });
 
 router.get('/delete/:id', withAuth, async (req, res) => {
-  res.render('delete', {id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
+  const dbRecipeData = await Recipe.findByPk(req.params.id, {
+    include: [{model: Ingredient}, {model: Instruction}]
+  });
+  const recipe = dbRecipeData.get({ plain: true });
+  res.render('delete', {recipe, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 });
 
 router.get('/our-story', async (req, res) => {
