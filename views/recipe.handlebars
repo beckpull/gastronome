@@ -1,17 +1,16 @@
 <div class="container-is-fluid">
   <div class="columns is-vcentered">
-    <div class="column p-6">
+    <div class="column my-column">
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <h2 class="title is-4 has-text-centered p-6"><a href="/recipe/{{recipe.id}}">{{ recipe.recipe_name }}</a></h2>
+            <h2 class="title is-4 has-text-centered pt-6 pb-5"><a href="/recipe/{{recipe.id}}" id="recipe-name">{{ recipe.recipe_name }}</a></h2>
             <div class="media-center">
-              <figure class="image is-128x128">
+              <figure>
                 {{#if recipe.imageUrl}}
                 <img src="{{recipe.imageUrl}}" alt="Recipe Photo">
                 {{/if}}
               </figure>
-              <p> {{ recipe.user.username }} </p>
               {{#if logged_in}}
               <p> {{ recipe.description }} </p>
 
@@ -21,50 +20,69 @@
               <p> This dish is vegetarian friendly!</p>
               {{/if}}
               {{/if}}
-              <p> {{ format_date recipe.created_on }} </p>
-
+              <p> Shared by {{ recipe.user.username }} on {{ format_date recipe.created_on }}. </p>
             </div>
           </div>
         </div>
 
-        <!-- Ingredients -->
-        <div class="ingredients">
-          <h5>Ingredients:</h5>
-          <ul>
-            {{#each recipe.ingredients}}
-            <li>{{ this.ingredient }}</li>
-            {{/each}}
-          </ul>
+        
+
+        <div class="recipe-container">
+          <!-- Ingredients -->
+          <div class="ingredients">
+            <h5 class="heading">Ingredients:</h5>
+            <ul>
+              <hr>
+              {{#each recipe.ingredients}}
+              <li>{{ this.ingredient }}</li>
+              <hr>
+              {{/each}}
+            </ul>
+          </div>
+
+          <!-- Instructions -->
+          <div class="instructions">
+            <h5 class="heading">Instructions:</h5>
+            <ol>
+              <hr>
+              {{#each (orderById recipe.instructions)}}
+              <li>{{ this.step }}</li>
+              <hr>
+              {{/each}}
+            </ol>
+          </div>
+
+          <!-- Comments -->
+          
+          <div class="comments">
+            <h5 class="heading">Thoughts from the Community:</h5>
+            <label for="comment-contents"></label>
+            <div class="input-container">
+              <input class="form-input" type="text" placeholder="Start a dialog! You make the community great." id="comment-contents" />
+            </div>
+
+            <div class="button-container">
+              <button class="button is-black is-large" id="submit-comment-btn" type="submit">Submit</button>
+            </div>
+          {{#if recipe.comments.length}}
+            <ul>
+              <hr>
+              {{#each recipe.comments as |comment|}}
+              <li>
+                <strong>{{ comment.user.username }}:</strong> {{ comment.content }}
+              </li>
+              <hr>
+              {{/each}}
+            </ul>
+          </div>
+          {{else}}
+            <hr>
+            <p>Nothing to see here yet! Add a comment to start the conversation.</p>
+            <hr>
+          {{/if}}
+
         </div>
-
-        <!-- Instructions -->
-        <div class="instructions">
-          <h5>Instructions:</h5>
-          <ol>
-            {{#each (orderById recipe.instructions)}}
-            <li>{{ this.step }}</li>
-            {{/each}}
-          </ol>
-        </div>
-
-        <!-- Comments -->
-        {{#if logged_in}}
-        <div class="comments">
-          <h5>Comments:</h5>
-          <ul>
-            {{#each recipe.comments as |comment|}}
-            <li>
-              <strong>{{ comment.user.username }}:</strong> {{ comment.content }}
-            </li>
-            {{/each}}
-          </ul>
-
-          <label for="comment-contents">Comment:</label>
-          <input class="form-input" type="text" id="comment-contents" />
-          <button class="btn-primary" type="submit">submit</button>
-
-        </div>
-        {{/if}}
+        
       </div>
     </div>
   </div>

@@ -1,55 +1,34 @@
-<div style="text-align:center;">
-  <div>
-    <h2>Welcome, {{ user.username }}!</h2>
+<div>
+  <div id="my-recipes-container">
+    <h2 id="my-recipes-welcome">Welcome, {{ user.username }}!</h2>
+    <h3 id="my-recipes-heading">Your Shared Recipes:</h3>
+    {{#if user.recipes}}
+      {{#each user.recipes as |recipe|}}
+        <a href="/recipe/{{id}}" id="recipe-name">{{ recipe_name }}</a>
+        {{#if imageUrl}}
+<img src="{{imageUrl}}" alt="Recipe Photo" id="recipe-photo">
+        {{/if}}
+        <p id="recipe-description">{{ description }}</p>
+    <div id="update-delete-btn-container">
+      <a class="button is-danger is-light is-medium" href="/delete/{{recipe.id}}" id="del-recipe-btn">Delete Recipe</a>
+    <a class="button is-black is-medium" href="/update/{{recipe.id}}">Update Recipe </a>
+    </div>
+    
+
+      {{/each}}
+      <p class="create-recipe-message">Have a different dish on your mind? Post the recipe for your fellow cooks to recreate and enjoy!</p>
+    {{else}}
+      <p class="create-recipe-message">Nothing to see here yet! Share the love and post a recipe for your GastronoMe community.</p>
+    {{/if}}
+    
+    <div id="create-recipe-btn-container">
+      <a class="button is-black is-medium" href="/new-recipe">Create a New Recipe</a>
+    </div>
+    
   </div>
 </div>
-{{#if user.recipes}}
-<div style="text-align:center;">
-  <h3 style="text-align:center;">Your Shared Recipes:</h3>
-  {{#each user.recipes as |recipe|}}
-  {{> recipe-details}}
+<div>
+    
 
-  <!-- HTML for the "View Comments" button -->
-  <button id="view-comments-btn">View Comments</button>
-
-
-  <!-- HTML container for the comments section -->
-  <div id="comments-container" style="display: none;">
-    <p>Comments:</p>
-    {{#each ../../user.recipes.comments as |comment|}}
-    <p><strong>{{comment.user.username}}</strong> <i>said: </i>{{comment.content}}</p>
-    {{/each}}
-  </div>
-
-
-  </br>
-  <a href="/update/{{recipe.id}}">update this recipe </a>•<a href="/delete/{{recipe.id}}"> delete this recipe</a>
-  {{/each}}
-  {{else}}
-  <p>Click <a href="/new-recipe">here</a> to add a new recipe! </p>
-  {{/if}}
+    {{!-- <p>Click <a href="/new-recipe">here</a> to add a new recipe! </p> --}}
 </div>
-
-
-<script>
-// JavaScript code to handle button click
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all the "View Comments" buttons
-    var viewCommentsButtons = document.querySelectorAll('#view-comments-btn');
-
-    // Attach event listeners to each button
-    viewCommentsButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            console.log("button event listener");
-            // Toggle visibility of the comments container for this specific button
-            var commentsContainer = document.querySelector('#comments-container');
-            if (commentsContainer.style.display === 'none') {
-                commentsContainer.style.display = 'block';
-            } else {
-                commentsContainer.style.display = 'none';
-            }
-        });
-    });
-});
-
-</script>

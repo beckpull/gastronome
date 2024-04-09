@@ -1,0 +1,68 @@
+body {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+#my-recipes-container {
+    /* width: 100%; */
+    text-align: center;
+    padding-top: 2%;
+    font-family: 'Roboto';
+    color: #404654;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+#my-recipes-welcome {
+    width: 100%;
+    font-size: 3em;
+    padding: 2% 0%;
+}
+
+#my-recipes-heading {
+    font-size: 2.2em;
+    padding-bottom: 6%;
+}
+
+#recipe-name {
+    /* color: black; */
+    font-size: 2em;
+    color: #404654;
+    padding-top: 10%;
+
+}
+
+#recipe-photo {
+    margin: 4% 0%;
+}
+
+#recipe-description {
+    font-size: 1.5em;
+    text-align: justify;
+    /* text-justify: inter-word; */
+}
+
+#update-delete-btn-container {
+    text-align: right;
+    margin-top: 3%;
+    margin-bottom: 6%;
+}
+
+#del-recipe-btn {
+    margin-right: 1%;
+}
+
+.create-recipe-message {
+    font-size: 1.5em;
+    text-align: justify;
+    font-style: italic;
+    margin-bottom: 3%;
+}
+
+#create-recipe-btn-container {
+    text-align: right;
+    /* margin-top: -2%; */
+    margin-bottom: 6%;
+}

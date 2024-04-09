@@ -63,7 +63,6 @@ router.get('/all', withAuth, async (req, res) => {
 
 
 // Get 1 recipe with a particular id, which the user can only do after being logged in. 
-// I PERSONALLY PREFER THIS ROUTE TO BE IN recipeRoutes RATHER THAN homeRoutes--CHECK THAT IT CAUSES NO ISSUES.
 // The full route is localhost:PORT/api/recipes/:id 
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
@@ -89,7 +88,6 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
       ]
     });
     const recipe = recipeData.get({ plain: true });
-    console.log(recipe);
     // res.json(recipe);
     res.render('recipe', {
       recipe,
