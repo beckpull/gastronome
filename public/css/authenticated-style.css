@@ -16,6 +16,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-color: #E3E3E3;
+    color: black;
 }
 
 .container-for-nav {
@@ -74,6 +75,9 @@ nav {
     flex: 1;
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    align-self: center;
+    margin-bottom: 8vw;
 }
 
 .accordion {
