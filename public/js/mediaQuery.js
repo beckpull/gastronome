@@ -1,4 +1,4 @@
-const pageWrapper = document.querySelector('.section');
+const mainContainer = document.querySelector('#main-container');
 const image = document.querySelector('img');
 const formColumn = document.querySelector('.form-column');
 const container = document.querySelector('#container');
@@ -10,6 +10,7 @@ function handleMediaQueries() {
 
     } else if (window.innerWidth < 1126) {
         //   tablet
+        mainContainer.classList.remove('columns');
 
     } else {
         // desktop
