@@ -14,7 +14,8 @@
 }
 
 #all-recipes-container {
-    margin: 0 10%;
+    /* margin: 0% 8% 0% 6%; */
+    margin: 0% 10%;
     /* align-items: center; */
 }
 
@@ -30,9 +31,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: minmax(400px, auto);
-    grid-gap: 60px;
+    grid-gap: 40px;
     width: 100%;
-    margin: 6% 0%;
+    margin-bottom: 3vw;
 }
 
 /* Styles the items inside the grid wrapper */
@@ -80,31 +81,6 @@
 
 #posted-by {
     font-style: italic;
-}
-/* #recipe-description-all-recipes {
-    justify-self: start;
-} */
-/* This works to adjust font size
-.recipe-name-all-recipes-pg {
-    font-size: 20px;
-    color: black;
-}
-
-#recipe-photo {
-    width: 100%;
-    height: auto;
-    margin: 0;
-}
-
-#recipe-description-container {
-    font-size: 16px;
-    padding: 0;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-#recipe-description {
-    padding: 0;
 }
 
 /* Hover effect for the link to switch from the login page to signup page and vice versa */
@@ -167,4 +143,33 @@ a.recipe-name-all-recipes-pg:hover::before {
         font-size: 25px;
     }
 
+}
+
+@media screen and (max-width: 850px) {
+    
+    #all-recipes-container {
+        margin-left: 30px;
+        margin-right: 40px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: minmax(400px, auto);
+        grid-gap: 30px;
+        width: 100%;
+        /* margin: 6% 0%; */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #all-recipes-container {
+        margin: 0px 50px 0px 40px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(400px, auto);
+        grid-gap: 10px;
+        width: 100%;
+    }
 }
