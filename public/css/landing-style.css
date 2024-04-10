@@ -97,7 +97,7 @@ button {
 }
 
 /* Hover effect for the link to switch from the login page to signup page and vice versa */
-a {
+a.landing-link {
     background-image: linear-gradient(
       to right,
       #8D0000,
@@ -115,7 +115,7 @@ a {
     font-style: italic;
 }
   
-a:before {
+a.landing-link:before {
     content: '';
     background: #8D0000;
     display: block;
@@ -127,10 +127,10 @@ a:before {
     transition: all 0.3s ease-in-out;
 }
   
-a:hover {
+a.landing-link:hover {
     background-position: 0;
 }
   
-a:hover::before {
+a.landing-link:hover::before {
     width:100%;
 }
