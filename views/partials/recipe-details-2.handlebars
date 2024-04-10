@@ -1,13 +1,21 @@
+{{!-- The divs generated in the #each helper that calls this partial will be the items inside of the grid wrapper. --}}
 <div class="indiv-recipe-container">
+
     <a href="/recipe/{{id}}" class="recipe-name-all-recipes-pg">{{ recipe_name }}</a>
+
     {{#if imageUrl}}
         <img src="{{imageUrl}}" alt="Recipe Photo" id="recipe-photo">
     {{/if}}
-    <p id="recipe-description">{{ description }}</p>
+
+    <p id="recipe-description-all-recipes">{{ description }}</p>
+
+
     {{#if has_meat}}
-    <p class="has-meat">This recipe contains meat.</p>
+    <img src="/img/swirl-flourish.png" alt="flourish-character" id="flourish-character"><p class="has-meat">Contains meat.</p>
     {{else}}
-    <p class="has-meat">This recipe is vegetarian friendly.</p>
+    <img src="/img/swirl-flourish.png" alt="flourish-character" id="flourish-character"><p class="has-meat">Vegetarian friendly.</p>
     {{/if}}
+
     <p id="posted-by">Posted by {{ user.username }} on {{ format_date created_on}}.</p>
-    </div>
+
+</div>
