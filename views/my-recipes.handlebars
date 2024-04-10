@@ -8,7 +8,7 @@
         {{#if recipe.imageUrl}}
         <img src="{{recipe.imageUrl}}" alt="Recipe Photo" id="recipe-photo">
         {{/if}}
-      <p id="recipe-description">{{ recipe.description }}</p>
+      <p id="recipe-description-my-recipes">{{ recipe.description }}</p>
       <div id="update-delete-btn-container">
         <a class="button is-danger is-light is-medium" href="/delete/{{recipe.id}}" id="del-recipe-btn">Delete Recipe</a>
         <a class="button is-black is-medium" href="/update/{{recipe.id}}">Update Recipe </a>
