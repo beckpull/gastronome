@@ -1,14 +1,14 @@
-#create-recipe-pg-title, #update-recipe-pg-title {
+#create-recipe-pg-title, 
+#update-recipe-pg-title {
     font-size: 3em;
     padding-top: 2%;
     padding-bottom: 0%;
     text-align: center;
 }
 
-#new-recipe-pg-wrapper, #update-recipe-pg-wrapper {
-    margin-left: 20%;
-    margin-right: 20%;
-    /* margin-top: -20%; */
+#new-recipe-pg-wrapper, 
+#update-recipe-pg-wrapper {
+    margin: 0% 10%;
     font-size: 20px;
     box-sizing: border-box;
 }
@@ -17,7 +17,8 @@
     width: 100%;
 }
 
-#upload-photo-txt, #change-photo-txt {
+#upload-photo-txt, 
+#change-photo-txt {
     margin-bottom: 10px;
 }
 
@@ -42,97 +43,38 @@ input[type="file"]::file-selector-button {
     justify-content: center;
 }
 
+.recipe-name-wrapper, 
+.description-wrapper, 
+.ingredients-wrapper, 
+.instructions-wrapper, 
+.meat-wrapper {
+    height: 100px;
+}
 
-.field-label {
+.recipe-name-label, 
+.description-label, 
+#ingredients-label, 
+#instructions-label, 
+.meat-label  {
+    height: 100%;
     font-size: 20px;
+    margin-top: 20px;
     text-align: left;
-    margin-top: 30px;
 }
 
-.recipe-name-wrapper {
-    height: 100px;
-}
-
-.recipe-name-label {
-    height: 100%;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-#recipe-name {
-    height: 100%;
-    padding: 9px 14px;
-    font-size: 1.2em;
-}
-
-.description-wrapper {
-    height: 100px;
-}
-
-.description-label {
-    height: 100%;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-#recipe-description {
-    height: 100%;
-    padding: 9px 14px;
-    font-size: 1.2em;
-}
-
-
-.ingredients-wrapper {
-    height: 100px;
-}
-
-#ingredients-label {
-    height: 100%;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-#ingredients-input-el {
-    height: 100%;
-    padding: 9px 14px;
-    font-size: 1.2em;
-}
-
-#add-ingredient {
-    margin-top: 20px;
-    width: 178px;
-}
-
-.instructions-wrapper {
-    height: 100px;
-}
-
-#instructions-label {
-    height: 100%;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
+#recipe-name, 
+#recipe-description, 
+#ingredients-input-el, 
 #instructions-input-el {
     height: 100%;
     padding: 9px 14px;
     font-size: 1.2em;
 }
 
+#add-ingredient, 
 #add-step {
     margin-top: 20px;
     width: 178px;
-
-}
-
-.meat-wrapper {
-    height: 100px;
-}
-
-.meat-label {
-    height: 100%;
-    font-size: 20px;
-    margin-top: 20px;
 }
 
 /* This styles the actual checkbox for whether or not the recipe has meat. */
@@ -151,38 +93,46 @@ input#has-meat#text {
     font-size: 20px;
 }
 
-.share-cancel-btn-container, .update-cancel-btn-container {
+.share-cancel-btn-container, 
+.update-cancel-btn-container {
     margin-left: 0%;
     margin-right: 20%;
     margin-top: 40px;
     text-align: left;
 }
 
-.share-btn-container, .update-btn-container {
+.share-btn-container, 
+.update-btn-container {
     width: 100%;
     align-items: left;
 }
 
-#share-btn, #update-btn {
+#share-btn, 
+#update-btn {
     width: 178px;
 }
 
 .cancel-btn {
     width: 178px;
-    /* margin-left: -60%; */
 }
 
 @media screen and (max-width: 1150px) {
-
-    #new-recipe-pg-wrapper, #update-recipe-pg-wrapper {
+    #create-recipe-pg-title, 
+    #update-recipe-pg-title {
         margin-left: 5%;
-        margin-right: 5%;
-        /* margin-top: -20%; */
+        margin-right: 6%;
+    }
+
+    #new-recipe-pg-wrapper, 
+    #update-recipe-pg-wrapper {
+        margin-left: 5%;
+        margin-right: 6%;
         font-size: 20px;
         box-sizing: border-box;
     };
 
-    #share-btn, #update-btn {
+    #share-btn, 
+    #update-btn {
         width: 150px;
     };
 
@@ -190,5 +140,56 @@ input#has-meat#text {
         width: 150px;
         margin-left: 10%;
     };
-
 }
+
+@media screen and (max-width: 850px) {
+    #create-recipe-pg-title, 
+    #update-recipe-pg-title {
+        font-size: 2.1em;
+        padding-top: 5%;
+        padding-bottom: 0%;
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 6%;
+    }
+    #new-recipe-pg-wrapper, 
+    #update-recipe-pg-wrapper {
+        padding-top: 20px;
+        font-size: 18px;
+    }
+    input[type="file"] {
+        font-size: 18px;
+    }
+
+    .recipe-name-label, 
+    .description-label, 
+    #ingredients-label, 
+    #instructions-label, 
+    .meat-label  {
+        height: 100%;
+        font-size: 18px;
+        margin-top: 28px;
+        text-align: left;
+    }
+
+    #recipe-name, 
+    #recipe-description, 
+    #ingredients-input-el, 
+    #instructions-input-el {
+        height: 100%;
+        padding: 9px 14px;
+        font-size: 1.1em;
+    }
+
+    .meat-checkbox-label {
+        font-size: 18px;
+    }
+
+    .share-btn-container, 
+    .update-btn-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
