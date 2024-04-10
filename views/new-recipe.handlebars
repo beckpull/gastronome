@@ -1,4 +1,4 @@
-<h2 style="text-align: center;" class="is-title" id="new-recipe-pg-title">Create a New Recipe</h2>
+<h2 class="is-title" id="create-recipe-pg-title">Create a New Recipe</h2>
 <div class="section" id="new-recipe-pg-wrapper">
     <h3 id="upload-photo-txt">We eat with our eyes first—upload a photo!</h3>
 
@@ -6,15 +6,14 @@
         id="recipe-form">
 
         <div class="form__section">
-            {{!-- <label for="uploadFile" class="button is-black is-medium" id="overlay-upload-button">Choose File</label> --}}
             <label for="uploadFile" class="button" id="upload-label" style="display: none;"></label>
             <input type="file" class="file-upload-btn" id="uploadFile" name="uploadFile" style="display: inline-block;">
         </div>
         
 
-        <div id="recipe-name-wrapper">
+        <div class="recipe-name-wrapper">
             <div class="field">
-                <label class="label field-label" id="recipe-name-label">Recipe Name</label>
+                <label class="label field-label recipe-name-label">Recipe Name</label>
                 <div class="control">
                     <input class="input" type="text" placeholder="Name your recipe." id="recipe-name">
                 </div>
@@ -22,9 +21,9 @@
         </div>
 
 
-        <div id="description-wrapper">
+        <div class="description-wrapper">
             <div class="field">
-                <label class="label" id="description-label">Description</label>
+                <label class="label description-label">Description</label>
                 <div class="control">
                     <input class="input" type="text" placeholder="Give your recipe a description." id="recipe-description">
                 </div>
@@ -33,7 +32,7 @@
 
 
         <div id="ingredients-container">
-            <div id="ingredients-wrapper">
+            <div class="ingredients-wrapper">
                 <div class="field">
                     <label class="label" id="ingredients-label">Ingredients</label>
                     <div class="control">
@@ -51,7 +50,7 @@
         </div>
 
         <div id="instructions-container">
-            <div id="instructions-wrapper">
+            <div class="instructions-wrapper">
                 <div class="field">
                     <label class="label" id="instructions-label">Instructions</label>
                     <div class="control">
@@ -67,11 +66,11 @@
             </div>
         </div>
 
-        <div id="meat-wrapper">
+        <div class="meat-wrapper">
             <div class="field">
-                <label class="label" id="meat-label">Contains Meat</label>
+                <label class="label meat-label">Contains Meat</label>
                 <div class="control">
-                    <label class="checkbox" id="meat-checkbox-label">
+                    <label class="checkbox meat-checkbox-label">
                         <input type="checkbox" id="has-meat">
                         Yes, this recipe contains meat.
                     </label>
@@ -79,13 +78,13 @@
             </div>
         </div>
 
-        <div id="share-cancel-btn-container">
-            <div class="field is-grouped" id="share-btn-container">
+        <div class="share-cancel-btn-container">
+            <div class="field is-grouped share-btn-container">
                 <div class="control">
                     <button class="button is-black is-medium" id="share-btn" type="submit">Share Recipe</button>
                 </div>
-                <div class="control" id="cancel-btn-container">
-                    <button class="button is-danger is-light is-medium" id="cancel-btn">Cancel</button>
+                <div class="control cancel-btn-container">
+                    <button class="button is-danger is-light is-medium cancel-btn" id="cancel-btn">Cancel</button>
                 </div>
             </div>
         </div>
