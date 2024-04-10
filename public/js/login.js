@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
         // If successful, redirect the browser to the user's my-recipes page.
         document.location.replace('/my-recipes');
       } else {
-        alert(response.statusText);
+        alert("Incorrect email or password. Please try again!");
       }
     }
   };

@@ -15,7 +15,7 @@
     padding: 50px;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1036px) {
 
     #all-recipes-pg-title {
         margin-top: 5%;
