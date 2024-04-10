@@ -39,22 +39,22 @@ nav {
 
 .navbar-brand {
     height: 110px;
-    position: fixed; 
+    position: fixed;
     margin-left: 0px;
     padding-left: 0px;
-    top: 0px; 
-    bottom: auto; 
-    width: 100%; 
-    z-index: auto; 
-    border-style: none; 
-    background-color: rgb(255, 255, 255); 
-    opacity: 1; 
+    top: 0px;
+    bottom: auto;
+    width: 100%;
+    z-index: auto;
+    border-style: none;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
 
-} 
+}
 
 .navbar-menu {
     height: 110px;
-} 
+}
 
 
 #logo-span {
@@ -176,18 +176,22 @@ nav {
 
 @media screen and (max-width: 1023px) {
     .navbar {
-      display: flex;
-      flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
     }
+
     .navbar-brand {
-      min-width: 100%;
+        min-width: 100%;
     }
+
     .navbar-menu {
-      margin-left: auto;
-      min-width: 50%;
+        margin-left: auto;
+        min-width: 50%;
     }
+
     .navbar-top-margin {
         margin-top: 100px;
         height: 100vh;
     }
+
 }

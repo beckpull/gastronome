@@ -80,3 +80,16 @@
 #submit-comment-btn {
     width: 30%;
 }
+
+@media screen and (max-width: 1150px) {
+
+    .media-content {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .title {
+        margin-top: 5%;
+    }
+
+}
