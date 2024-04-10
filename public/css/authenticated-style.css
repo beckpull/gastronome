@@ -93,7 +93,7 @@ nav {
 .accordion .first-box {
     border-top-style: solid;
     border-top-color: #8D0000;
-    border-top-width: 2px;
+    border-top-width: 1.4px;
 }
 
 .accordion .contentBx .label {
@@ -130,11 +130,13 @@ nav {
 }
 
 .accordion .contentBx.active .content {
-    height: 60px;
-    padding: 0px;
+    height: 70px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     line-height: 10px;
     margin-left: 40px;
 }
+
 
 #footer-bottom {
     background-color: white;
@@ -174,6 +176,20 @@ nav {
     padding: 20px;
 }
 
+a.footer-link {
+    color: black;
+    text-underline-offset: 6px;
+
+}
+
+a.footer-link:hover {
+    text-shadow: .5px .5px 1px grey;
+    text-decoration: underline;
+    transition: all .3s ease-in-out;
+
+}
+
+
 @media screen and (max-width: 1023px) {
     .navbar {
         display: flex;
@@ -195,3 +211,6 @@ nav {
     }
 
 }
+
+
+

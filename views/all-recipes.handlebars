@@ -1,11 +1,12 @@
-<h2 id="all-recipes-pg-title">All Recipes</h2>
+<div id="all-recipes-container">
+    <h2 id="all-recipes-pg-title">All Recipes</h2>
 
-<div class="content">
-    {{#each recipes as |recipe|}}
+{{!-- The below div is the grid wrapper --}}
+    <div class="grid">
+        {{#each recipes as |recipe|}}
 
-    {{> recipe-details-2}}
+        {{> recipe-details-2}}
 
-    {{/each}}
-</div>
-
+        {{/each}}
+    </div>
 </div>
