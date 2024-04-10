@@ -4,18 +4,20 @@
     <a href="/recipe/{{id}}" class="recipe-name-all-recipes-pg">{{ recipe_name }}</a>
 
     {{#if imageUrl}}
-        <img src="{{imageUrl}}" alt="Recipe Photo" id="recipe-photo">
+        <img src="{{imageUrl}}" alt="Recipe Photo" class="recipe-photo">
     {{/if}}
 
-    <p id="recipe-description-all-recipes">{{ description }}</p>
+    <p class="recipe-desc-all-and-search">{{ description }}</p>
 
 
     {{#if has_meat}}
-    <img src="/img/swirl-flourish.png" alt="flourish-character" id="flourish-character"><p class="has-meat">Contains meat.</p>
+    <img src="/img/swirl-flourish.png" alt="flourish-character" class="flourish-character"><p class="has-meat">Contains meat.</p>
     {{else}}
-    <img src="/img/swirl-flourish.png" alt="flourish-character" id="flourish-character"><p class="has-meat">Vegetarian friendly.</p>
+    <img src="/img/swirl-flourish.png" alt="flourish-character" class="flourish-character"><p class="has-meat">Vegetarian friendly.</p>
     {{/if}}
 
-    <p id="posted-by">Posted by {{ user.username }} on {{ format_date created_on}}.</p>
+    <p class="posted-by">Posted by {{ user.username }} on {{ format_date created_on}}.</p>
+
+    <img src="/img/border3.png" alt="ornamental-divider" class="ornamental-divider">
 
 </div>
