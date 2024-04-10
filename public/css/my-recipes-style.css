@@ -65,3 +65,26 @@ body {
     /* margin-top: -2%; */
     margin-bottom: 6%;
 }
+
+@media screen and (max-width: 1150px) {
+
+
+    #my-recipes-container {
+        /* width: 100%; */
+        text-align: center;
+        padding-top: 2%;
+        font-family: 'Roboto';
+        color: #404654;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    ;
+
+    img {
+        margin: 0 auto;
+        /* margin-left: auto; */
+        display: block;
+    }
+
+}
