@@ -1,10 +1,11 @@
-#new-recipe-pg-title {
+#create-recipe-pg-title, #update-recipe-pg-title {
     font-size: 3em;
     padding-top: 2%;
-    padding-bottom: 0%
+    padding-bottom: 0%;
+    text-align: center;
 }
 
-#new-recipe-pg-wrapper {
+#new-recipe-pg-wrapper, #update-recipe-pg-wrapper {
     margin-left: 20%;
     margin-right: 20%;
     /* margin-top: -20%; */
@@ -16,7 +17,7 @@
     width: 100%;
 }
 
-#upload-photo-txt {
+#upload-photo-txt, #change-photo-txt {
     margin-bottom: 10px;
 }
 
@@ -48,11 +49,11 @@ input[type="file"]::file-selector-button {
     margin-top: 30px;
 }
 
-#recipe-name-wrapper {
+.recipe-name-wrapper {
     height: 100px;
 }
 
-#recipe-name-label {
+.recipe-name-label {
     height: 100%;
     font-size: 20px;
     margin-top: 20px;
@@ -64,11 +65,11 @@ input[type="file"]::file-selector-button {
     font-size: 1.2em;
 }
 
-#description-wrapper {
+.description-wrapper {
     height: 100px;
 }
 
-#description-label {
+.description-label {
     height: 100%;
     font-size: 20px;
     margin-top: 20px;
@@ -81,7 +82,7 @@ input[type="file"]::file-selector-button {
 }
 
 
-#ingredients-wrapper {
+.ingredients-wrapper {
     height: 100px;
 }
 
@@ -102,7 +103,7 @@ input[type="file"]::file-selector-button {
     width: 178px;
 }
 
-#instructions-wrapper {
+.instructions-wrapper {
     height: 100px;
 }
 
@@ -124,11 +125,11 @@ input[type="file"]::file-selector-button {
 
 }
 
-#meat-wrapper {
+.meat-wrapper {
     height: 100px;
 }
 
-#meat-label {
+.meat-label {
     height: 100%;
     font-size: 20px;
     margin-top: 20px;
@@ -146,34 +147,34 @@ input#has-meat#text {
     padding-bottom: 10px;
 }
 
-#meat-checkbox-label {
+.meat-checkbox-label {
     font-size: 20px;
 }
 
-#share-cancel-btn-container {
+.share-cancel-btn-container, .update-cancel-btn-container {
     margin-left: 0%;
     margin-right: 20%;
     margin-top: 40px;
     text-align: left;
 }
 
-#share-btn-container {
+.share-btn-container, .update-btn-container {
     width: 100%;
     align-items: left;
 }
 
-#share-btn {
+#share-btn, #update-btn {
     width: 178px;
 }
 
-#cancel-btn {
+.cancel-btn {
     width: 178px;
-    margin-left: -60%;
+    /* margin-left: -60%; */
 }
 
 @media screen and (max-width: 1150px) {
 
-    #new-recipe-pg-wrapper {
+    #new-recipe-pg-wrapper, #update-recipe-pg-wrapper {
         margin-left: 5%;
         margin-right: 5%;
         /* margin-top: -20%; */
@@ -181,7 +182,7 @@ input#has-meat#text {
         box-sizing: border-box;
     };
 
-    #share-btn {
+    #share-btn, #update-btn {
         width: 150px;
     };
 

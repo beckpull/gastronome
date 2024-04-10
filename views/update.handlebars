@@ -1,96 +1,103 @@
-
-
-
-
-<h2 style="text-align: center;" class="is-title is-2">Add a Recipe</h2>
-<div class="section">
+<h2 style="text-align: center;" class="is-title" id="update-recipe-pg-title">Update a Recipe</h2>
+<div class="section" id="update-recipe-pg-wrapper">
     <input value="{{recipeData.id}}" type="hidden" class="form-input" id="recipe-id">
-    <h3>Upload Image</h3>
+    <h3 id="change-photo-text">Change or Add Photo</h3>
 
     <form class="form share-recipe-form"
         id="recipe-form">
 
         <div class="form__section">
-            <label for="uploadFile">
-                Choose new image
-            </label>
+            <label for="uploadFile" class="button" id="upload-label" style="display: none;"></label>
             <input type="file" class="file-upload-btn" id="uploadFile" name="uploadFile" style="display: inline-block;">
         </div>
 
-        <div class="field">
-            <label class="label">Recipe Name:</label>
-            <div class="control">
-                <input value="{{recipeData.recipe_name}}" class="input" type="text" placeholder="Name your recipe"
-                    id="recipe-name">
-            </div>
+        <div class="recipe-name-wrapper">
+            <div class="field">
+                <label class="label field-label recipe-name-label">Recipe Name:</label>
+                <div class="control">
+                    <input value="{{recipeData.recipe_name}}" class="input" type="text" placeholder="Name your recipe."
+                        id="recipe-name">
+                </div>
+            </div>               
         </div>
 
-        <div class="field">
-            <label class="label">Description:</label>
-            <div class="control">
-                <input value="{{recipeData.description}}" class="input" type="text"
-                    placeholder="Give your recipe a description" id="recipe-description">
+
+        <div class="description-wrapper">
+            <div class="field">
+                <label class="label description-label">Description:</label>
+                <div class="control">
+                    <input value="{{recipeData.description}}" class="input" type="text" placeholder="Give your recipe a description." id="recipe-description">
+                </div>
             </div>
         </div>
-        <div id="ingredients-container">
+        
+            <div id="ingredients-container">
             {{#each recipeData.ingredients as |ingredient|}}
-
-                <div class="field">
-                    <label class="label">Ingredients:</label>
-                    <div class="control">
-                        <input value="{{ingredient.ingredient}}" class="input ingredient" type="text"
-                            placeholder="ingredient">
+                <div class="ingredients-wrapper">
+                    <div class="field">
+                        <label class="label" id="ingredients-label">Ingredients:</label>
+                        <div class="control">
+                            <input value="{{ingredient.ingredient}}" class="input ingredient" type="text" placeholder="ingredient" id="ingredients-input-el">
+                        </div>
                     </div>
                 </div>
             {{/each}}
-        </div>
+            </div>
+
 
 
         <div class="field">
             <div class="control">
-                <button class="button is-link" id="add-ingredient">Add
+                <button class="button is-black is-medium" id="add-ingredient">Add
                     Ingredient</button>
             </div>
         </div>
 
         <div id="instructions-container">
             {{#each recipeData.instructions as |instruction|}}
-
+            <div class="instructions-wrapper">
                 <div class="field">
-                    <label class="label">Instructions:</label>
+                    <label class="label" id="instructions-label">Instructions:</label>
                     <div class="control">
-                        <input value="{{instruction.step}}" class="input instruction" type="text" placeholder="step">
+                        <input value="{{instruction.step}}" class="input instruction" type="text" placeholder="step" id="instructions-input-el">
                     </div>
                 </div>
+            </div>
             {{/each}}
         </div>
 
 
         <div class="field">
             <div class="control">
-                <button class="button is-link" id="add-step">Add Step</button>
+                <button class="button is-black is-medium" id="add-step">Add Step</button>
             </div>
         </div>
 
-        <div class="field">
-            <label class="label">Has Meat:</label>
-            <div class="control">
-                <label class="checkbox">
-                    <input value="{{recipeData.has_meat}}" type="checkbox" id="has-meat">
-                    Yes, this recipe contains meat
-                </label>
+        <div class="meat-wrapper">
+            <div class="field">
+                <label class="label meat-label">Contains Meat:</label>
+                <div class="control">
+                    <label class="checkbox meat-checkbox-label">
+                        <input value="{{recipeData.has_meat}}" type="checkbox" id="has-meat">
+                        Yes, this recipe contains meat.
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="field is-grouped">
-            <div class="control">
-                <button class="button is-link" id="update-btn" type="submit">Update
-                    Recipe</button>
-            </div>
-            <div class="control">
-                <button class="button is-link is-light" id="cancel-btn">Cancel</button>
+
+        <div class="update-cancel-btn-container">
+            <div class="field is-grouped update-btn-container">
+                <div class="control">
+                    <button class="button is-black is-medium" id="update-btn" type="submit">Update Recipe</button>
+                </div>
+                <div class="control cancel-btn-container">
+                    <button class="button is-danger is-light is-medium cancel-btn" id="cancel-btn">Cancel</button>
+                </div>
             </div>
         </div>
+
+
     </form>
 </div>
 
