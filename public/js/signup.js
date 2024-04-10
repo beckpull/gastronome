@@ -17,7 +17,7 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/my-recipes');
       } else {
-        alert(response.statusText);
+        alert("Signup failed. Please try using a different email.");
       }
     }
   };

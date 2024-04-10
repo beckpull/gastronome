@@ -147,7 +147,7 @@ a.recipe-name-all-recipes-pg:hover::before {
     width:100%;
 } 
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1036px) {
 
     #all-recipes-pg-title {
         margin-top: 5%;
