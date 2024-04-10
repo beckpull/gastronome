@@ -16,13 +16,12 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-color: #E3E3E3;
-    /* margin-bottom: 40px; */
 }
 
 .container-for-nav {
+    width: 100vw;
     height: 100px;
-    /* position: sticky;
-    top: 0; */
+
     border-bottom-style: solid;
     border-bottom-color: #8D0000;
     border-bottom-width: thick;
@@ -31,25 +30,26 @@ body {
 
 nav {
     height: 110px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 15px;
 }
 
 .container {
     height: 100%;
-    border-bottom-style: solid;
-    border-bottom-color: #8D0000;
 }
 
 .navbar-brand {
     height: 110px;
     position: fixed; 
-    left: 20px; 
+    margin-left: 0px;
+    padding-left: 0px;
     top: 0px; 
     bottom: auto; 
     width: 100%; 
     z-index: auto; 
-    border-style: none; background-color: rgb(255, 255, 255); 
+    border-style: none; 
+    background-color: rgb(255, 255, 255); 
     opacity: 1; 
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 8px;
+
 } 
 
 .navbar-menu {
@@ -74,25 +74,6 @@ nav {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-
-@media screen and (max-width: 1023px) {
-    .navbar {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .navbar-brand {
-      min-width: 100%;
-    }
-    .navbar-menu {
-      margin-left: auto;
-      min-width: 50%;
-    }
-    .navbar-top-margin {
-        margin-top: 100px;
-        height: 100vh;
-    }
 }
 
 .accordion {
@@ -180,19 +161,33 @@ nav {
     text-align: right;
 }
 
-.field {
+.modal-field {
     width: 100%;
 }
 
-.control {
+.modal-control {
     width: 100%;
 }
-
-/* #search-input {
-
-} */
 
 .inner-modal-close {
     align-self: right;
     padding: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .navbar-brand {
+      min-width: 100%;
+    }
+    .navbar-menu {
+      margin-left: auto;
+      min-width: 50%;
+    }
+    .navbar-top-margin {
+        margin-top: 100px;
+        height: 100vh;
+    }
 }

@@ -1,64 +1,16 @@
-body {
-    width: 100%;
+* {
+    margin: 0;
     padding: 0;
-    margin: 0% 20%;
 }
 
-#all-recipes-wrapper {
-    /* width: 100%; */
-    text-align: center;
-    padding-top: 2%;
-    font-family: 'Roboto';
-    color: #404654;
-    margin-left: 5%;
-    margin-right: 5%;
-    display: inline-block;
+.content {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-auto-rows: 100px;
+    max-width: 100vw;
+    margin: 0 auto;
 }
 
-#all-recipes-container {
-    width: 20%;
-}
-
-.indiv-recipe-container {
-    display: inline-block;
-    width: 30%;
-    padding: 1.5%;
-    height: 50vw;
-    /* height: 10vw; */
-    background-color: red;
-    margin-top: 0;
-}
-
-#all-recipes-pg-title {
-    width: 100%;
-    font-size: 10em;
-    padding: 2% 0%;
-}
-
-#recipe-name {
-    /* color: black; */
-    font-size: 2em;
-    color: #404654;
-    padding-top: 10%;
-}
-
-#recipe-photo {
-    margin: 4% 0%;
-    width: 100%;
-}
-
-#recipe-description {
-    font-size: 1.5em;
-    text-align: justify;
-    /* text-justify: inter-word; */
-}
-
-.has-meat {
-    font-size: 1.5em;
-    text-align: justify;
-}
-
-#posted-by {
-    font-size: 1.5em;
-    text-align: justify;
+.content div {
+    padding: 50px;
 }

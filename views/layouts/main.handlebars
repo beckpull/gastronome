@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/authenticated-style.css">
     <link rel="stylesheet" href="/css/single-recipe-style.css">
     <link rel="stylesheet" href="/css/my-recipes-style.css">
+    <link rel="stylesheet" href="/css/all-recipes-style.css">
     <link rel="stylesheet" href="/css/new-recipe-style.css">
 
 
@@ -21,43 +22,39 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a>
-                        <img src="/img/logo-03.png" alt="website logo" style="max-height: 110px" class="py-2 px-2">
-                        <div class="navbar-brand">
-                            <a>
-                                <img src="/img/logo-03.png" alt="website logo" style="max-height: 110px"
-                                    class="py-2 px-2">
-                            </a>
-                            <a class="navbar-burger mr-6" id="burger">
-                                {{!-- These empty span tags create the Bulma navbar burger icon --}}
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="navbar-menu" id="nav-links">
-                            {{!-- The below navbar-end class places all of the nested navbar items on the right side
-                            (end) of
-                            the navbar. A class of navbar-start would place all of the nested navbar items on the left
-                            side
-                            (start) of the navbar. --}}
-                            <div class="navbar-end mr-6">
-                                {{!-- I'm thinking this View All Recipes link could lead to a page where the user sees
-                                all
-                                details, including ingredients and directions, for all the recipes, unsorted. This would
-                                be
-                                different than the /all page, which would be displayed in this layout, and that would be
-                                a wierd
-                                self referential link. --}}
-                                <a href="/" class="navbar-item is-active">Home</a>
-                                <a href="/all" class="navbar-item is-active">View All Recipes</a>
-                                <a href="/new-recipe" class="navbar-item">Create a New Recipe</a>
-                                {{!-- <a href="/search" class="navbar-item">{{> search-icon}}</a> --}}
-                                <div class="navbar-item" id="search-modal-link">{{> search-icon}}</div>
-                                <a class="navbar-item" id="logout">Logout</a>
-                            </div>
-
-
-                        </div>
+                        <img src="/img/logo-03.png" alt="website logo" style="max-height: 110px"
+                            class="py-2 px-2">
+                    </a>
+                    <a class="navbar-burger mr-6" id="burger">
+                        {{!-- These empty span tags create the Bulma navbar burger icon --}}
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+                <div class="navbar-menu" id="nav-links">
+                    {{!-- The below navbar-end class places all of the nested navbar items on the right side
+                    (end) of
+                    the navbar. A class of navbar-start would place all of the nested navbar items on the left
+                    side
+                    (start) of the navbar. --}}
+                    <div class="navbar-end mr-6">
+                        {{!-- I'm thinking this View All Recipes link could lead to a page where the user sees
+                        all
+                        details, including ingredients and directions, for all the recipes, unsorted. This would
+                        be
+                        different than the /all page, which would be displayed in this layout, and that would be
+                        a wierd
+                        self referential link. --}}
+                        <a href="/" class="navbar-item is-active">Home</a>
+                        <a href="/all" class="navbar-item is-active">View All Recipes</a>
+                        <a href="/new-recipe" class="navbar-item">Create a New Recipe</a>
+                        {{!-- <a href="/search" class="navbar-item">{{> search-icon}}</a> --}}
+                        <div class="navbar-item" id="search-modal-link">{{> search-icon}}</div>
+                        <a class="navbar-item" id="logout">Logout</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
     <hr class="navbar-divider">
@@ -123,8 +120,8 @@
         </div>
         <div class="modal-card has-text-centered">
             <header class="modal-card-head">
-                <div class="field">
-                    <div class="control">
+                <div class="field modal-field">
+                    <div class="control modal-control">
                         <input id="search-input" class="input is-medium" type="text" placeholder="Search Recipes" />
                     </div>
                 </div>
