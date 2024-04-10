@@ -12,7 +12,7 @@
 <div align="center">
   <a href="https://gastronome.onrender.com">
 
-<h1 align="center">TechBlog</h1></a>
+<h1 align="center">Gastrono-Me!</h1></a>
 
   <p align="center">
 
