@@ -133,8 +133,13 @@ const submitForm = async (event) => {
   }
 };
 
+const cancelUpdate = (event) => {
+  event.preventDefault();
+  document.location.replace('/');
+}
+
 // Add event listeners
 document.querySelector('#update-btn').addEventListener('click', submitForm);
 document.querySelector('#add-ingredient').addEventListener('click', addIngredient);
 document.querySelector('#add-step').addEventListener('click', addStep);
-
+document.querySelector('#cancel-btn').addEventListener('click', cancelUpdate)

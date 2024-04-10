@@ -7,7 +7,7 @@
     <input value="{{recipeData.id}}" type="hidden" class="form-input" id="recipe-id">
     <h3>Upload Image</h3>
 
-    <form action="/api/recipes/create-recipe" method="post" enctype="multipart/form-data" class="form share-recipe-form"
+    <form class="form share-recipe-form"
         id="recipe-form">
 
         <div class="form__section">
@@ -88,7 +88,7 @@
                     Recipe</button>
             </div>
             <div class="control">
-                <button class="button is-link is-light">Cancel</button>
+                <button class="button is-link is-light" id="cancel-btn">Cancel</button>
             </div>
         </div>
     </form>
