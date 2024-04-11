@@ -17,24 +17,38 @@ searchInput.addEventListener('input', async () => {
 
     searchResults.innerHTML = ''; // Clear previous results
     recipes.forEach(recipe => {
+        const recipeResultWrapper = document.createElement('div');
+        recipeResultWrapper.classList.add('recipe-result-wrapper');
+        recipeResultWrapper.classList.add('fancy-border');
+
+        searchResults.appendChild(recipeResultWrapper);
+
         const recipeEl = document.createElement('a');
         recipeEl.setAttribute('href', `/recipe/${recipe.id}`);
         recipeEl.textContent = recipe.recipe_name;
-        searchResults.appendChild(recipeEl);
+        recipeEl.classList.add('recipe-result-link');
+        recipeResultWrapper.appendChild(recipeEl);
 
         const imageEl = document.createElement('img');
         imageEl.src = recipe.imageUrl;
         imageEl.alt = `${recipe.recipe_name} photo`;
-        searchResults.appendChild(imageEl);
+        imageEl.classList.add('search-recipe-photo');
+        recipeResultWrapper.appendChild(imageEl);
 
         const descriptionEl = document.createElement('p');
         descriptionEl.textContent = recipe.description;
-        searchResults.appendChild(descriptionEl);
+        recipeResultWrapper.appendChild(descriptionEl);
+
+        const flourishEl = document.createElement('img');
+        flourishEl.src = '/img/swirl-flourish.png';
+        flourishEl.alt = 'flourish character';
+        flourishEl.classList.add('flourish-character');
+        recipeResultWrapper.appendChild(flourishEl);
 
         const hasMeatEl = document.createElement('p');
         let hasMeatText = recipe.has_meat ? 'Contains meat' : 'Vegetarian';
         hasMeatEl.textContent = hasMeatText;
-        searchResults.appendChild(hasMeatEl);
+        recipeResultWrapper.appendChild(hasMeatEl);
     });
     } catch (error) {
     console.error('Error fetching search results:', error);
