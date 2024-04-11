@@ -260,7 +260,7 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 
 > We utilized several articles from sources such as (but not limited to) Stack Overflow, W3Schools, and MDN Web Docs, as well as many classwork example code from the University of Denver (relied heavily on DU materials for => userRoutes.js, login/signup.js/.handlebars, postFormHandlers, etc. ) **as references** for the javascript code attached.
 >
-> **All of the utilized information has been altered in order to fit this project. This repository contains _solely_ our own work.**
+> **All of the utilized information has been altered in order to fit this project.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
