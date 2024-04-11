@@ -172,7 +172,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.redirect('/signup');
   }
 });
 
