@@ -225,7 +225,7 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 
 - **Rebecca Feltman** - [Email Rebecca](mailto:beckpull@icloud.com) - or check her out on [GitHub!](https://github.com/beckpull)
 - **Sara Hines** - [Email Sara](mailto:sara.marie.hines1@gmail.com) - or check her out on [GitHub!](https://github.com/sara-hines)
-- **Vic Swain** - [Email him](mailto:) - or check him out on [GitHub!](https://github.com/VicSwain)
+- **Vic Swain** - [Email him](mailto:huracanmusic2016@gmail.com) - or check him out on [GitHub!](https://github.com/VicSwain)
 
 > Repository Link: [https://github.com/beckpull/gastronome](https://github.com/beckpull/gastronome)
 
