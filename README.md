@@ -143,7 +143,13 @@ _OR, to easily get a local copy up and running follow these simple example steps
 </br></br>
 
 <div align="center"> 
-<strong><i>Click <a href="https://gastronome.onrender.com">HERE</a> to view this site in action!</strong>
+<strong><i>Scan the QR code or click <a href="https://gastronome.onrender.com">HERE</a> to view this site in action!</strong>
+  </br>
+  </br>
+  </br>
+  <img src="./public/img/qr.png">
+  </br>
+  </br>
   </br>
   <p><strong></i>This is what users see upon entering the site:</i></strong></p>
   </br>
@@ -195,15 +201,17 @@ _OR, to easily get a local copy up and running follow these simple example steps
 
 ## Contributing
 
-Ideas for future development:
+Directions for future development:
 
 - A vegetarian view with automatic filtering (extendable to other diets as well)
 - Edit/delete comment functionality 
 - Adding more than one photo to a post (Image model and attach to Recipe model)
-- 
-- 
-- 
-- 
+- Implementing a ‘like’ functionality on recipes
+- Global network data visualization for locations of origin for recipes and likes
+- Incorporating nutritional facts
+- Surprise Me! Button
+- Recipe Directory with filters: such as cultural filters, dietary restriction filters, etc.
+- Connecting other social platforms to enable sharing on Instagram/Facebook
 
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
