@@ -140,7 +140,7 @@ _OR, to easily get a local copy up and running follow these simple example steps
 
 ## Usage
 
-</br></br>
+</br>
 
 <div align="center"> 
 <strong><i>Scan the QR code or click <a href="https://gastronome.onrender.com">HERE</a> to view this site in action!</strong>
