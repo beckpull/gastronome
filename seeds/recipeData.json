@@ -2,7 +2,7 @@
     {
         "recipe_name": "Spaghetti Carbonara",
         "description": "Classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper.",
-        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/creamy_carbonara_cwd5jd.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712771032/byldnfqg3bepvotu9uum.jpg",
         "has_meat": "true"
     },
     {
@@ -14,13 +14,13 @@
     {
         "recipe_name": "Pakistani Biryani",
         "description": "Fragrant and flavorful rice dish cooked with aromatic spices, meat, and saffron, a popular dish in Pakistani cuisine.",
-        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/CHICKEN-BIRYANiI_nc5d7b.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712771013/gkxbuasrgvcokrxg5fiu.jpg",
         "has_meat": "true"
     },
     {
         "recipe_name": "Russian Beef Stroganoff",
         "description": "A creamy and savory beef dish served with noodles or rice, a classic in Russian cuisine.",
-        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519059/25202beef-stroganoff-iii-ddmfs-3x4-233-0f26fa477e9c446b970a32502468efc6_i0fyz9.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712770988/luvuh40wqjgqyvunojer.jpg",
         "has_meat": "true"
     },
     {
@@ -32,7 +32,7 @@
     {
         "recipe_name": "French Coq au Vin",
         "description": "A classic French dish of chicken braised in red wine with mushrooms, onions, and bacon, full of rich and deep flavors.",
-        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712519063/IG1005_Coq_Au_Vin_s4x3_y1yvxq.jpg",
+        "imageUrl": "https://res.cloudinary.com/dfwjyw6uw/image/upload/v1712782227/fsto8hcighk9qxua7qra.jpg",
         "has_meat": "true"
     },
     {

@@ -195,6 +195,17 @@ _OR, to easily get a local copy up and running follow these simple example steps
 
 ## Contributing
 
+Ideas for future development:
+
+- A vegetarian view with automatic filtering (extendable to other diets as well)
+- Edit/delete comment functionality 
+- Adding more than one photo to a post (Image model and attach to Recipe model)
+- 
+- 
+- 
+- 
+
+
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
 
 _If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
@@ -225,7 +236,7 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 
 - **Rebecca Feltman** - [Email Rebecca](mailto:beckpull@icloud.com) - or check her out on [GitHub!](https://github.com/beckpull)
 - **Sara Hines** - [Email Sara](mailto:sara.marie.hines1@gmail.com) - or check her out on [GitHub!](https://github.com/sara-hines)
-- **Vic Swain** - [Email him](mailto:) - or check him out on [GitHub!](https://github.com/VicSwain)
+- **Vic Swain** - [Email him](mailto:huracanmusic2016@gmail.com) - or check him out on [GitHub!](https://github.com/VicSwain)
 
 > Repository Link: [https://github.com/beckpull/gastronome](https://github.com/beckpull/gastronome)
 
