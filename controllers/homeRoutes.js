@@ -133,12 +133,6 @@ router.get('/new-recipe', withAuth, (req, res) => {
 
 router.get('/my-recipes', withAuth, async (req, res) => {
 
-  console.log(req.session);
-  
-  if (!req.session.user_id) {
-    res.redirect('/signup');
-  };
-
   try {
     const userData = await User.findByPk(req.session.user_id, {
       // attributes: { exclude: ['password'] },
@@ -172,7 +166,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.redirect('/signup');
+    res.redirect('/');
   }
 });
 

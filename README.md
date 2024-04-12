@@ -155,30 +155,30 @@ _OR, to easily get a local copy up and running follow these simple example steps
   </br>
   <a href="https://gastronome.onrender.com">
    <p>Log in/Sign up</p>
-    <img src="./public/img/login.png" width="444">
-    <img src="./public/img/signup.png" width="370">
+    <img src="./public/img/big-login.png">
+    <img src="./public/img/big-my.png">
   </a>
   </br></br>
   <a href="hhttps://gastronome.onrender.com">
-    <p>User Homepage</p>
-    <img src="./public/img/my-recipes.png" width="800">
+    <p>Create new Recipe</p>
+    <img src="./public/img/big-new.png" width="800">
   </a>
   </br></br>
   <a href="https://gastronome.onrender.com">
-    <p>Recipe Example</p>
-    <img src="./public/img/recipe.png" width="800">
+    <p>GET all Recipes/GET single recipe</p>
+    <img src="./public/img/big-all.png" width="800">
+    <img src="./public/img/instructions.png" width="800">
+    <img src="./public/img/ingredients.png" width="800">
+    <img src="./public/img/comments.png" width="800">
   </a>
     <a href="https://gastronome.onrender.com">
     <p>Check out our responsive design!</p>
-    <img src="./public/img/responsive.png" width="400">
-  </a>
-  <a href="https://gastronome.onrender.com">
-    <p>Recipe Example</p>
-    <img src="./public/img/responsive-recipe.png" width="400">
-  </a>
-  <a href="https://gastronome.onrender.com">
-    <p>Recipe Example</p>
-    <img src="./public/img/responsive-form.png" width="400">
+    <img src="./public/img/small-all.png" width="400">
+    <img src="./public/img/small-login.png" width="400">
+    <img src="./public/img/small-signup.png" width="400">
+    <img src="./public/img/small-new.png" width="400">
+    <img src="./public/img/small-our-story.png" width="400">
+    <img src="./public/img/small-faq.png" width="400">
   </a>
 </br></br>
 </div>
