@@ -68,7 +68,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-    // console.log("Hi!!!!!");
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.redirect('/');
