@@ -1,4 +1,4 @@
-// The signupFormHandler function is triggered when the user submits their signup information. This will cause a fetch POST request with the new user's username, email, and password to be sent to the /api/users endpoint. If the user is successfully created and the response is OK, the user will be redirected to the /my-recipes page
+// The signupFormHandler function is triggered when the user submits their signup information. This will cause a fetch POST request with the new user's username, email, and password to be sent to the /api/users endpoint. If the user is successfully created and the response is OK, the user will be redirected to the /my-recipes page.
 const signupFormHandler = async (event) => {
   event.preventDefault();
 

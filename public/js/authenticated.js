@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // This JavaScript file provides functionality needed by the nav bar, search modal, and accordion footer in the main.handlebars layout.
+=======
+// This script provides functionality needed by the nav bar, search modal, and accordion footer in the main.handlebars layout.
+>>>>>>> Stashed changes
 
 
 // Functionality for mobile burger nav menu
