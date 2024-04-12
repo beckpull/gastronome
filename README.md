@@ -16,7 +16,7 @@
 
   <p align="center">
 
-**Gastronome** is your go-to destination for culinary exploration and recipe sharing. Developed by three talented bootcamp students at the University of Denver, Gastronome offers a vibrant platform where food enthusiasts can come together to discover, share, and indulge in a world of delicious recipes. From mouth-watering appetizers to decadent desserts, Gastronome empowers users to showcase their culinary creations, engage in lively discussions, and embark on a flavorful journey of culinary discovery. Join our community today and unleash your inner chef with Gastronome!
+<strong><i>GastronoMe</i></strong> is your go-to destination for culinary exploration and recipe sharing. Developed by three talented bootcamp students at the University of Denver, <strong><i>GastronoMe</i></strong> offers a vibrant platform where food enthusiasts can come together to discover, share, and indulge in a world of delicious recipes. From mouth-watering appetizers to decadent desserts, <strong><i>GastronoMe</i></strong> empowers users to showcase their culinary creations, engage in lively discussions, and embark on a flavorful journey of culinary discovery. Join our community today and unleash your inner chef!
     </br>
     </br>
     <a href="https://github.com/beckpull/gastronome"><strong>Explore the docs »</strong></a>
@@ -66,23 +66,23 @@
 
 ## About The Project
 
-**Gastronome** is a recipe-sharing website built with Node.js and Express. Developed by three bootcamp students at the University of Denver, Gastronome allows users to log in, sign up, and share their favorite recipes for others to see, comment on, and try for themselves.
+<strong><i>GastronoMe</i></strong> is a recipe-sharing website built with Node.js and Express. Developed by three bootcamp students at the University of Denver, <strong><i>GastronoMe</i></strong> allows users to log in, sign up, and share their favorite recipes for others to see, comment on, and try for themselves.
 
 Key Features:
 
-- **User Authentication**: Utilizing express-session and bcrypt, Gastronome provides a secure authentication system for users to create accounts and log in securely.
+- **User Authentication**: Utilizing express-session and bcrypt, <strong><i>GastronoMe</i></strong> provides a secure authentication system for users to create accounts and log in securely.
 
 - **Recipe Sharing**: Users can easily share their recipes with the community, including ingredients, cooking instructions, and images for a comprehensive cooking experience.
 
 - **Commenting System**: Engage in discussions and provide feedback on recipes through the commenting system, fostering a vibrant culinary community atmosphere.
 
-- **Interactive Dashboard**: Gastronome offers an intuitive homepage for users to manage their recipes effortlessly, including updating and deleting them.
+- **Interactive Dashboard**: <strong><i>GastronoMe</i></strong> offers an intuitive homepage for users to manage their recipes effortlessly, including updating and deleting them.
 
 - **Image Upload**: Leveraging express-fileupload and Cloudinary, users can upload images of their dishes to accompany their recipes, enhancing the visual appeal and user experience.
 
-- **Responsive Design**: Gastronome features a fully responsive design, ensuring seamless user experience across devices, from desktops to mobile devices.
+- **Responsive Design**: <strong><i>GastronoMe</i></strong> features a fully responsive design, ensuring seamless user experience across devices, from desktops to mobile devices.
 
-**Gastronome** is the perfect platform for culinary enthusiasts to discover new recipes, share their culinary creations, and connect with like-minded individuals passionate about food.
+<strong><i>GastronoMe</i></strong> is the perfect platform for culinary enthusiasts to discover new recipes, share their culinary creations, and connect with like-minded individuals passionate about food.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,33 +154,73 @@ _OR, to easily get a local copy up and running follow these simple example steps
   <p><strong></i>This is what users see upon entering the site:</i></strong></p>
   </br>
   <a href="https://gastronome.onrender.com">
-   <p>Log in/Sign up</p>
+   <p>Log In/Sign Up</p>
     <img src="./public/img/big-login.png">
-    <img src="./public/img/big-my.png">
-  </a>
-  </br></br>
-  <a href="hhttps://gastronome.onrender.com">
-    <p>Create new Recipe</p>
-    <img src="./public/img/big-new.png" width="800">
   </a>
   </br></br>
   <a href="https://gastronome.onrender.com">
-    <p>GET all Recipes/GET single recipe</p>
-    <img src="./public/img/big-all.png" width="800">
-    <img src="./public/img/instructions.png" width="800">
-    <img src="./public/img/ingredients.png" width="800">
-    <img src="./public/img/comments.png" width="800">
+   <p>My Recipes / Home Page</p>
+    <img src="./public/img/my-recipes-01.png">
+    <img src="./public/img/my-recipes-02.png">
   </a>
-    <a href="https://gastronome.onrender.com">
+  </br></br>
+  <a href="https://gastronome.onrender.com">
+    <p>GET All Recipes</p>
+    <img src="./public/img/all-recipes-screenshot.png" width="800">
+  </a>
+  </br></br>
+  <a href="https://gastronome.onrender.com">
+    <p>GET a Single Recipe</p>
+    <img src="./public/img/single-recipe-1.png" width="800">
+    <img src="./public/img/single-recipe-2.png" width="800">
+  </a>
+  </br></br>
+  <a href="hhttps://gastronome.onrender.com">
+    <p>Create a New Recipe</p>
+    <img src="./public/img/create-new-recipe.png" width="800">
+  </a>
+  </br></br>
+  <a href="https://gastronome.onrender.com">
+    <p>Search for a Recipe</p>
+    <img src="./public/img/modal-screenshot.png" width="800">
+  </a>
+  </br></br>
+  <a href="https://gastronome.onrender.com">
     <p>Check out our responsive design!</p>
-    <img src="./public/img/small-all.png" width="400">
-    <img src="./public/img/small-login.png" width="400">
+    <p>** A few examples of responsivity for mobile and/or tablet devices across our site: **</p></a>
+  </br>
+  <a href="https://gastronome.onrender.com">
+    <p>Log In/Sign Up</p>
     <img src="./public/img/small-signup.png" width="400">
-    <img src="./public/img/small-new.png" width="400">
-    <img src="./public/img/small-our-story.png" width="400">
-    <img src="./public/img/small-faq.png" width="400">
   </a>
-</br></br>
+  </br></br>
+  <a href="https://gastronome.onrender.com">
+    <p>GET All Recipes</p>
+    <img src="./public/img/all-recipes-mobile-1.png" width="400">
+    <img src="./public/img/all-recipes-mobile-2.png" width="400">
+  </a>
+  </br></br>
+  <a href="hhttps://gastronome.onrender.com">
+    <p>Create a New Recipe</p>
+    <img src="./public/img/new-recipe-mobile-screenshot.png" width="400">
+  </a>
+  </br></br>
+  <a href="hhttps://gastronome.onrender.com">
+    <p>Search for a Recipe</p>
+    <img src="./public/img/modal-screenshot-tablet.png" width="400">
+  </a>
+  </br></br>
+  <a href="hhttps://gastronome.onrender.com">
+    <p>Our Story</p>
+    <img src="./public/img/our-story-mobile-screenshot.png" width="400">
+  </a>
+  </br></br>
+  <a href="hhttps://gastronome.onrender.com">
+    <p>Frequently Asked Questions</p>
+    <img src="./public/img/faq-mobile.png" width="400">
+  </a>
+  </br></br></br>
+    
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -193,7 +233,7 @@ _OR, to easily get a local copy up and running follow these simple example steps
 <div align="right">
   <p><i>This was how we chose to set up our schema for this project</i></p>
 </div>
-</br></br></br>
+</br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,6 +267,8 @@ Don't forget to give the project a star! Thanks again!_
 
 See the [open issues](https://github.com/beckpull/gastronome/issues) for a full list of proposed features (and known issues).
 
+</br>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
@@ -235,6 +277,8 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 
 <p align='center'>Distributed under the MIT License. See `LICENSE.txt` for more information.</p>
 <p align='center'>© Beck Feltman · All rights reserved.</p>
+
+</br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -247,6 +291,8 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 - **Rebecca Feltman** - [Email me](mailto:beckpull@icloud.com) - or check me out on [GitHub!](https://github.com/beckpull)
 
 > Repository Link: [https://github.com/beckpull/gastronome](https://github.com/beckpull/gastronome)
+
+</br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
