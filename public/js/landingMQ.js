@@ -13,9 +13,13 @@ function handleMediaQueries() {
         formColumn.classList.remove('column', 'form-column');
         image.setAttribute('style', 'width: 100vw; height: 30vh; object-fit: cover; object-position: center; ')
 
-    } // else {
-        // larger screens
-   // }
+    } else {
+       // larger screens
+       container.classList.add('columns');
+       imgColumn.classList.add('column', 'img-column');
+       formColumn.classList.add('column', 'form-column');
+       image.removeAttribute('style', 'width: 100vw; height: 30vh; object-fit: cover; object-position: center; ')
+   }
 }
 
 // call the function initially to handle media queries on page load

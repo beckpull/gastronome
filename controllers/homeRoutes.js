@@ -98,6 +98,7 @@ router.get('/new-recipe', withAuth, (req, res) => {
 
 // Functionality to render the my-recipes page where the user can view all of the recipes they have posted. This is used as a home page.
 router.get('/my-recipes', withAuth, async (req, res) => {
+
   try {
     const userData = await User.findByPk(req.session.user_id, {
       include: [
@@ -130,7 +131,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.redirect('/api/users/logout');
   }
 });
 
