@@ -1,3 +1,5 @@
+/* Styling for my-recipes.handlebars */
+
 body {
     width: 100vw;
     padding: 0;
@@ -5,14 +7,12 @@ body {
 }
 
 #my-recipes-container {
-    /* width: 100%; */
     text-align: center;
     padding-top: 2%;
     font-family: 'Roboto';
-    color: #404654;
+    color: black;
     margin-left: 20%;
     margin-right: 20%;
-
 }
 
 #my-recipes-welcome {
@@ -26,11 +26,10 @@ body {
     padding-bottom: 6%;
 }
 
-#recipe-name {
-    /* color: black; */
+a#recipe-name {
     font-size: 2em;
-    color: #404654;
-    padding-top: 10%;
+    color: black;
+    padding-top: 1%;
     display: block;
 }
 
@@ -41,7 +40,6 @@ body {
 #recipe-description-my-recipes {
     font-size: 1.5em;
     text-align: justify;
-    /* text-justify: inter-word; */
 }
 
 #update-delete-btn-container {
@@ -63,15 +61,11 @@ body {
 
 #create-recipe-btn-container {
     text-align: right;
-    /* margin-top: -2%; */
-    margin-bottom: 6%;
+    margin-bottom: 1%;
 }
 
 @media screen and (max-width: 768px) {
-
-
     #my-recipes-container {
-        /* width: 100%; */
         text-align: center;
         padding-top: 2%;
         font-family: 'Roboto';
@@ -80,11 +74,8 @@ body {
         margin-right: 5%;
     }
 
-    ;
-
     img {
         margin: 0 auto;
-        /* margin-left: auto; */
         display: block;
     }
     #my-recipes-welcome {
@@ -98,7 +89,6 @@ body {
         padding-bottom: 6%;
     }
     #recipe-name {
-        /* color: black; */
         font-size: 25px;
     }
 

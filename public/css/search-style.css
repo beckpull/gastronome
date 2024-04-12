@@ -1,3 +1,5 @@
+/* Styling for the search modal, whose html is located in the main.handlebars layout */
+
 .flourish-character {
     width: 50px;
     height: auto;
@@ -8,13 +10,11 @@
 .modal-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-auto-rows: 400px; */
     grid-template-rows: minmax(300px, auto);
     grid-gap: 40px;
     width: 100%;
     margin-bottom: 3vw;
     font-family: 'Roboto';
-    /* align-items: start; */
 }
 
 .grid div {
@@ -43,6 +43,7 @@
     padding-bottom: 15px;
 }
 
+/* Hover effects for the recipe names that appear as the user types */
 a.recipe-result-link {
     background-image: linear-gradient(
       to right,
@@ -82,6 +83,7 @@ a.recipe-result-link:hover::before {
     width:100%;
 }
 
+/* Change the grid to a 1 column grid for viewing on generally smaller devices */
 @media screen and (max-width: 780px) {
     .modal-grid {
         display: grid;
@@ -89,5 +91,4 @@ a.recipe-result-link:hover::before {
         grid-template-rows: minmax(300px, auto);
         grid-gap: 20px;
     }
-    
 }

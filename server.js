@@ -1,3 +1,5 @@
+// In server.js, the express app, express-session, express-handlebars, express-fileupload, and middleware are set up.
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');

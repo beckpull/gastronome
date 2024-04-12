@@ -1,56 +1,57 @@
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 
-
+// Functionality to send a fetch request with the user's query each time they modify the text in the search bar. The search results obtained will be rendered with a hyperlinked recipe name, image, description, vegetarian/contains meat statement, and styling.
 searchInput.addEventListener('input', async () => {
     const query = searchInput.value.trim();
-    
+
     if (query === '') {
-    // If the input is empty, clear the search results
-    searchResults.innerHTML = '';
-    return;
+        // If the input is empty, clear the search results
+        searchResults.innerHTML = '';
+        return;
     }
 
     try {
-    const response = await fetch(`/find-recipe?query=${query}`);
-    const recipes = await response.json();
+        const response = await fetch(`/find-recipe?query=${query}`);
+        const recipes = await response.json();
 
-    searchResults.innerHTML = ''; // Clear previous results
-    recipes.forEach(recipe => {
-        const recipeResultWrapper = document.createElement('div');
-        recipeResultWrapper.classList.add('recipe-result-wrapper');
-        recipeResultWrapper.classList.add('fancy-border');
+        searchResults.innerHTML = ''; // Clear previous results
+        recipes.forEach(recipe => {
+            const recipeResultWrapper = document.createElement('div');
+            recipeResultWrapper.classList.add('recipe-result-wrapper');
+            recipeResultWrapper.classList.add('fancy-border');
 
-        searchResults.appendChild(recipeResultWrapper);
+            searchResults.appendChild(recipeResultWrapper);
 
-        const recipeEl = document.createElement('a');
-        recipeEl.setAttribute('href', `/recipe/${recipe.id}`);
-        recipeEl.textContent = recipe.recipe_name;
-        recipeEl.classList.add('recipe-result-link');
-        recipeResultWrapper.appendChild(recipeEl);
+            const recipeEl = document.createElement('a');
+            recipeEl.setAttribute('href', `/recipe/${recipe.id}`);
+            recipeEl.textContent = recipe.recipe_name;
+            recipeEl.classList.add('recipe-result-link');
+            recipeResultWrapper.appendChild(recipeEl);
 
-        const imageEl = document.createElement('img');
-        imageEl.src = recipe.imageUrl;
-        imageEl.alt = `${recipe.recipe_name} photo`;
-        imageEl.classList.add('search-recipe-photo');
-        recipeResultWrapper.appendChild(imageEl);
+            const imageEl = document.createElement('img');
+            imageEl.src = recipe.imageUrl;
+            imageEl.alt = `${recipe.recipe_name} photo`;
+            imageEl.classList.add('search-recipe-photo');
+            recipeResultWrapper.appendChild(imageEl);
 
-        const descriptionEl = document.createElement('p');
-        descriptionEl.textContent = recipe.description;
-        recipeResultWrapper.appendChild(descriptionEl);
+            const descriptionEl = document.createElement('p');
+            descriptionEl.textContent = recipe.description;
+            recipeResultWrapper.appendChild(descriptionEl);
 
-        const flourishEl = document.createElement('img');
-        flourishEl.src = '/img/swirl-flourish.png';
-        flourishEl.alt = 'flourish character';
-        flourishEl.classList.add('flourish-character');
-        recipeResultWrapper.appendChild(flourishEl);
+            const flourishEl = document.createElement('img');
+            flourishEl.src = '/img/swirl-flourish.png';
+            flourishEl.alt = 'flourish character';
+            flourishEl.classList.add('flourish-character');
+            recipeResultWrapper.appendChild(flourishEl);
 
-        const hasMeatEl = document.createElement('p');
-        let hasMeatText = recipe.has_meat ? 'Contains meat' : 'Vegetarian';
-        hasMeatEl.textContent = hasMeatText;
-        recipeResultWrapper.appendChild(hasMeatEl);
-    });
+            const hasMeatEl = document.createElement('p');
+            let hasMeatText = recipe.has_meat ? 'Contains meat' : 'Vegetarian';
+            hasMeatEl.textContent = hasMeatText;
+            recipeResultWrapper.appendChild(hasMeatEl);
+        });
+
     } catch (error) {
-    console.error('Error fetching search results:', error);
+        console.error('Error fetching search results:', error);
     }
 });
