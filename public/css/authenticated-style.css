@@ -1,8 +1,9 @@
+/* Styling for most of the pages across the site, for after the user has logged in */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Poppins', sans-serif */
 }
 
 html {
@@ -23,7 +24,6 @@ body {
 .container-for-nav {
     width: 100vw;
     height: 100px;
-
     border-bottom-style: solid;
     border-bottom-color: #8D0000;
     border-bottom-width: thick;
@@ -51,21 +51,16 @@ nav {
     border-style: none;
     background-color: rgb(255, 255, 255);
     opacity: 1;
-
 }
 
 .navbar-menu {
     height: 110px;
 }
 
-
 #logo-span {
     display: flex;
     align-content: center;
     justify-content: center;
-    /* margin-top: 5px;
-    margin-bottom:5px;
-    height: 100%; */
     width: 200px;
     height: 110px;
     width: 100%;
@@ -81,15 +76,13 @@ nav {
     margin-bottom: 8vw;
 }
 
+/* Styling for the accordion footer */
 .accordion {
     background: white;
 }
 
 .accordion .contentBx {
-    /* position: relative; */
     margin: 0px 0px;
-    /* margin: 10px 0px; */
-
     border-bottom-style: solid;
     border-bottom-color: #8D0000;
     border-bottom-width: 2px;
@@ -123,7 +116,6 @@ nav {
 }
 
 .accordion .contentBx .content {
-    /* position: relative; */
     padding: 0px;
     background: white;
     height: 0;
@@ -142,7 +134,7 @@ nav {
     margin-left: 40px;
 }
 
-
+/* Styling for the very bottom of footer which contains the line art */
 #footer-bottom {
     background-color: white;
     bottom: 0px;
@@ -151,6 +143,7 @@ nav {
     padding: 20px 5px;
 }
 
+/* Styling to distribute the line art in the footer */
 #footer-img-container {
     margin: 0px 10px;
     display: flex;
@@ -188,12 +181,10 @@ a.footer-link {
 }
 
 a.footer-link:hover {
-    text-shadow: .5px .5px 1px grey;
+    text-shadow: .5px .5px 1px rgb(179, 179, 179);
     text-decoration: underline;
     transition: all .3s ease-in-out;
-
 }
-
 
 @media screen and (max-width: 1023px) {
     .navbar {
@@ -214,7 +205,6 @@ a.footer-link:hover {
         margin-top: 100px;
         height: 100vh;
     }
-
 }
 
 

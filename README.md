@@ -243,6 +243,19 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 >
 > **All of the utilized information has been altered in order to fit this project. This repository contains _solely_ our own work.**
 
+#### Citations:
+
+Afif, T. (n.d.). Fancy frame II. Codepen. Retrieved April 10, 2024, from https://codepen.io/t_afif/pen/ZEaYdqy
+
+Net Ninja. (2020). Bulma tutorial (product page build) #4 - Navbar (desktop) [Video]. In YouTube. https://www.youtube.com/watch?v=HmfQq0suMSA&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=5
+
+Net Ninja. (2020). Bulma Tutorial (Product Page Build) #5 - Navbar (for mobiles) [Video]. In YouTube. https://www.youtube.com/watch?v=qvn2SxGvyPs&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=5
+
+
+Patel, H. (2022, February 15). 6 creative ideas for CSS link hover effects. CSS-Tricks. https://css-tricks.com/css-link-hover-effects/
+
+Stack Overflow. (2018, February 13). Bulma navbar: How to style the menu on dropdown? Stack Overflow. https://stackoverflow.com/questions/48735750/bulma-navbar-how-to-style-the-menu-on-dropdown
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->

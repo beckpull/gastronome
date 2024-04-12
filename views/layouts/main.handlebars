@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="/css/all-recipes-style.css">
     <link rel="stylesheet" href="/css/create-update-style.css">
     <link rel="stylesheet" href="/css/search-style.css">
-
-
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -34,23 +32,11 @@
                     </a>
                 </div>
                 <div class="navbar-menu" id="nav-links">
-                    {{!-- The below navbar-end class places all of the nested navbar items on the right side
-                    (end) of
-                    the navbar. A class of navbar-start would place all of the nested navbar items on the left
-                    side
-                    (start) of the navbar. --}}
+                    {{!-- The below navbar-end class places all of the nested navbar items on the right side (end) of the navbar. --}}
                     <div class="navbar-end mr-6">
-                        {{!-- I'm thinking this View All Recipes link could lead to a page where the user sees
-                        all
-                        details, including ingredients and directions, for all the recipes, unsorted. This would
-                        be
-                        different than the /all page, which would be displayed in this layout, and that would be
-                        a wierd
-                        self referential link. --}}
                         <a href="/" class="navbar-item is-active">Home</a>
                         <a href="/all" class="navbar-item is-active">View All Recipes</a>
                         <a href="/new-recipe" class="navbar-item">Create a New Recipe</a>
-                        {{!-- <a href="/search" class="navbar-item">{{> search-icon}}</a> --}}
                         <div class="navbar-item" id="search-modal-link">{{> search-icon}}</div>
                         <a class="navbar-item" id="logout">Logout</a>
                     </div>
@@ -66,8 +52,6 @@
     <footer>
         <div class="accordion">
             <div class="contentBx first-box">
-                {{!-- <div class="label">GastronoMe</div> --}}
-
                 <div class="accordion">
                     <div class="contentBx first-box">
                         <div class="label">GastronoMe</div>
@@ -102,16 +86,6 @@
                         <img src="/img/fork-and-knife.png" alt="fork and knife image" style="max-height: 45px"></img>
                         <img src="/img/apple.png" alt="apple image" style="max-height: 40px"></img>
                         <img src="/img/beetroot.png" alt="beetroot image" style="max-height: 45px"></img>
-                        {{!-- <img src="/img/plate-and-utensils.png" alt="plate and utensils image"
-                            style="max-height: 45px"></img>
-                        <img src="/img/tomato.jpg" alt="tomato image" style="max-height: 45px"></img> --}}
-                        {{!-- <img src="/img/fork-and-knife.png" alt="fork and knife image" style="max-height: 45px"></img>
-                        <img src="/img/apple.png" alt="apple image" style="max-height: 40px"></img>
-                        <img src="/img/radish2.png" alt="radish image" style="max-height: 45px"></img>
-                        <img src="/img/pear.png" alt="pear image" style="max-height: 45px"></img>
-                        <img src="/img/plate-and-utensils.png" alt="plate and utensils image"
-                            style="max-height: 45px"></img>
-                        <img src="/img/pear.png" alt="pear image" style="max-height: 45px"></img> --}}
                     </div>
                 </div>
     </footer>
@@ -140,6 +114,7 @@
 
     <script src="/js/authenticated.js"></script>
     <script src="/js/search.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>

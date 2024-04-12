@@ -1,46 +1,9 @@
 const router = require('express').Router();
 const { User, Recipe, Comment, Ingredient, Instruction } = require('../models');
 const withAuth = require('../utils/auth');
-const { UniqueRand } = require('uniquerand');
 const { Op } = require('sequelize');
 
-
-// User does not have to be logged in to see the home page. Home page will have forms to sign up and log in. At the home page, the user can see 4 recipes, each with a title, image, and teaser description.
-// router.get('/', async (req, res) => {
-//   try {
-//     const recipeData = await Recipe.findAll({
-//       // include: [Ingredient, Instruction],
-//     });
-
-//     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-
-//     let min = 0;
-//     let max = recipes.length - 1;
-//     let count = 4;
-//     // Generates an array of 4 unique random numbers between min and max (inclusive).
-//     let arr = UniqueRand.getRandArr(min, max, count);
-//     let selectedRecipes = [];
-//     // For each randomly generated number in arr, find the recipe at that index and push it into the selectedRecipes array.
-//     for (let i = 0; i < arr.length; i++) {
-//       let selectedRecipe = recipes[arr[i]];
-//       selectedRecipes.push(selectedRecipe);
-//     }
-//     console.log(selectedRecipes);
-
-//     res.render('login', {
-//       layout: 'landing',
-//       selectedRecipes,
-//       logged_in: req.session.logged_in,
-//     });
-//     // res.json(selectedRecipes);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-
-// Ideally, when the user successfully logs in and is redirected to the all-recipes page, I would want to only show the title, image, and short description of each recipe, rather than displaying all of the ingredients and instructions there, too. I would want the user to have to click on 1 recipe to see its full details including ingredients and instructions. For now, we will render everything about every recipe on the all-recipes page.
+// Sets up functionality to render the all-recipes page using the serialized recipeData obtained by sequelize's findAll method (including the additional models needed to for the all-recipes page). In this route (and in additional routes throughout the application), withAuth middleware is used to check if the user is logged in and, if not, redirect them to '/' to log in.
 router.get('/all', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
@@ -50,20 +13,19 @@ router.get('/all', withAuth, async (req, res) => {
     const recipes = recipeData.map((Recipe) =>
       Recipe.get({ plain: true })
     );
-    console.log(recipes[0]);
+
     res.render('all-recipes', {
       recipes,
       logged_in: req.session.logged_in,
     });
-    // res.json(recipes);
+
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 
-// Get 1 recipe with a particular id, which the user can only do after being logged in. 
-// The full route is localhost:PORT/api/recipes/:id 
+// Functionality to allow the user to view a single recipe, including the recipe's comments posted by certain users, and the recipe's ingredients and instructions.
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
@@ -88,16 +50,19 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
       ]
     });
     const recipe = recipeData.get({ plain: true });
-    // res.json(recipe);
+
     res.render('recipe', {
       recipe,
       logged_in: req.session.logged_in
     });
+
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+
+// Functionality to render the login page when the user visits the root of the website (if the user is already logged in, they will be redirected to their My Recipes page).
 router.get('/', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/my-recipes');
@@ -108,6 +73,7 @@ router.get('/', (req, res) => {
   });
 });
 
+// Functionality to render the signup page using the landing.handlebars layout when the user clicks the signup link in login.handlebars.
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/my-recipes');
@@ -118,8 +84,7 @@ router.get('/signup', (req, res) => {
   });
 });
 
-// We will need to add withAuth before (req, res)
-// This is for rendering the new-recipe page where the user can fill in a form to create a new recipe
+// Functionality to render the new-recipe page where the user can fill in a form to create a new recipe.
 router.get('/new-recipe', withAuth, (req, res) => {
   try {
     res.render('new-recipe',
@@ -131,10 +96,10 @@ router.get('/new-recipe', withAuth, (req, res) => {
   }
 });
 
+// Functionality to render the my-recipes page where the user can view all of the recipes they have posted. This is used as a home page.
 router.get('/my-recipes', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      // attributes: { exclude: ['password'] },
       include: [
         {
           model: Recipe,
@@ -170,7 +135,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
 });
 
 
-// This is for getting the results of input in the search bar when the user is trying to search for a recipe
+// Uses Op.ilike as part of a case insensitive search for all recipes which include the text the user entered in the search bar. 
 router.get('/find-recipe', async (req, res) => {
   const query = req.query.query;
 
@@ -183,22 +148,24 @@ router.get('/find-recipe', async (req, res) => {
       },
     });
     res.json(recipes);
+
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
 
+// Functionality to render the update.handlebars page, where a user can modify a recipe they previously posted. 
 router.get('/update/:id', withAuth, async (req, res) => {
   const dbRecipeData = await Recipe.findByPk(req.params.id, {
     include: [{model: Ingredient}, {model: Instruction}]
   });
   const recipeData = dbRecipeData.get({ plain: true });
-  // console.log(recipe);
 
   res.render('update', {recipeData, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 });
 
+// Functionality to render the delete.handlebars page, where a user is directed to confirm they'd like to delete a recipe (after having clicked a recipe's delete button).
 router.get('/delete/:id', withAuth, async (req, res) => {
   const dbRecipeData = await Recipe.findByPk(req.params.id, {
     include: [{model: Ingredient}, {model: Instruction}]
@@ -206,6 +173,8 @@ router.get('/delete/:id', withAuth, async (req, res) => {
   const recipe = dbRecipeData.get({ plain: true });
   res.render('delete', {recipe, id: req.params.id, logged_in: req.session.logged_in, user_id: req.session.user_id});
 });
+
+// The below routes render the accessory pages when the user clicks the respective link in the footer.
 
 router.get('/our-story', async (req, res) => {
   res.render('our-story');
@@ -226,8 +195,6 @@ router.get('/faq', async (req, res) => {
 router.get('/privacy', async (req, res) => {
   res.render('privacy');
 })
-
-
 
 module.exports = router;
 

@@ -3,9 +3,8 @@ const { Recipe, Ingredient, Instruction } = require('../../models');
 const uploadImage = require('../../utils/uploadImage');
 const withAuth = require('../../utils/auth');
 
-
+// Functionality for creating a new recipe
 router.post('/create-recipe', withAuth, uploadImage, async (req, res) => {
-  // console.log("POST ROUTE");
   try {
     const imageUrl = req.body.imageUrl;
 
@@ -43,6 +42,7 @@ router.post('/create-recipe', withAuth, uploadImage, async (req, res) => {
   }
 });
 
+// Functionality for updating a recipe
 router.put('/update/:id', withAuth, uploadImage, async (req, res) => {
   try {
     const imageUrl = req.body.imageUrl;
@@ -97,7 +97,7 @@ router.put('/update/:id', withAuth, uploadImage, async (req, res) => {
   }
 });
 
-// Delete a recipe with a particular id.The full route is localhost:PORT/api/recipes/:id 
+// Functionality for deleting a recipe
 router.delete('/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.destroy({
@@ -107,13 +107,17 @@ router.delete('/:id', async (req, res) => {
       }
     });
 
+    // If no recipe exists with the id from the request parameter object, a 404 status will be sent to communicate that the resource was not found.
     if (!recipeData) {
       res.status(404).json({ message: 'No recipe found with this id.' });
       return;
     }
 
+    // If the recipe was found and deleted, a 200 OK response will be sent with the recipeData.
     res.status(200).json(recipeData);
   } catch (err) {
+    
+    // If there was an error, a 500 response will be sent to communicate that a server error occurred.
     console.log(err);
     res.status(500).json(err);
   }

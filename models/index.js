@@ -4,6 +4,7 @@ const Comment = require('./Comment');
 const Ingredient = require('./Ingredient');
 const Instruction = require('./Instruction')
 
+// Defining the model relationships.
 
 User.hasMany(Recipe, {
     foreignKey: 'user_id', 

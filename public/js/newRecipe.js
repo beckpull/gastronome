@@ -87,13 +87,11 @@ const submitForm = async (event) => {
 
   const nodeList = document.querySelectorAll('.ingredient');
   const ingredients = Array.from(nodeList).map(input => input.value);
-  // console.log(ingredients);
 
   formData.append('ingredients', ingredients);
 
   const nodeList2 = document.querySelectorAll('.instruction');
   const instructions = Array.from(nodeList2).map(input => input.value);
-  // console.log(instructions);
 
   formData.append('instructions', instructions);
 

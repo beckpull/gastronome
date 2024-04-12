@@ -1,8 +1,8 @@
+/* Styling for all-recipes.handlebars */
+
 * {
     margin: 0;
     padding: 0;
-    /* font-size: 18px; */
-    /* box-sizing: border-box; */
     font-family: 'Roboto';
     color: black;
 }
@@ -36,7 +36,6 @@
 }
 
 /* Styles the items inside the grid wrapper */
-/* This is basically the same selector as .indiv-recipe-container */
 .grid div {
     padding: 0px;
 }
@@ -45,8 +44,6 @@
     display: grid;
     grid-template-columns: 1fr;
     font-size: 16px;
-    /* border-image: url("/img/corner-border.png"); */
-    /* text-align: center; */
 }
 
 .indiv-recipe-container a {
@@ -66,8 +63,6 @@
 }
 
 .recipe-name-all-recipes-pg {
-    /* margin-bottom: 20px; */
-    /* padding-bottom: 15px; */
     padding-bottom: min(20px, 5%);
     text-align: center;
 }
@@ -83,7 +78,6 @@
 }
 
 .ornamental-divider {
-    /* width: calc() */
     align-self: end;
 }
 
@@ -127,6 +121,7 @@ a.recipe-name-all-recipes-pg:hover::before {
     width:100%;
 } 
 
+/* Media queries for responsiveness. */
 @media screen and (max-width: 1036px) {
     #all-recipes-pg-title {
         margin-top: 5%;
@@ -159,11 +154,10 @@ a.recipe-name-all-recipes-pg:hover::before {
         grid-template-rows: minmax(400px, auto);
         grid-gap: 30px;
         width: 100%;
-        /* margin: 6% 0%; */
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
     #all-recipes-container {
         margin: 0px 50px 0px 40px;
     }
