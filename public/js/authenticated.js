@@ -1,4 +1,4 @@
-// This stylesheet provides functionality needed by the nav bar, search modal, and accordion footer in the main.handlebars layout.
+// This JavaScript file provides functionality needed by the nav bar, search modal, and accordion footer in the main.handlebars layout.
 
 
 // Functionality for mobile burger nav menu
