@@ -243,8 +243,8 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 ## Contact
 
 - **Sara Hines** - [Email Sara](mailto:sara.marie.hines1@gmail.com) - or check her out on [GitHub!](https://github.com/sara-hines)
-- **Vic Swain** - [Email him](mailto:huracanmusic2016@gmail.com) - or check him out on [GitHub!](https://github.com/VicSwain)
-- **Rebecca Feltman** - [Email Rebecca](mailto:beckpull@icloud.com) - or check me out on [GitHub!](https://github.com/beckpull)
+- **Vic Swain** - [Email Vic](mailto:huracanmusic2016@gmail.com) - or check him out on [GitHub!](https://github.com/VicSwain)
+- **Rebecca Feltman** - [Email me](mailto:beckpull@icloud.com) - or check me out on [GitHub!](https://github.com/beckpull)
 
 > Repository Link: [https://github.com/beckpull/gastronome](https://github.com/beckpull/gastronome)
 
@@ -261,6 +261,19 @@ See the [open issues](https://github.com/beckpull/gastronome/issues) for a full 
 > We utilized several articles from sources such as (but not limited to) Stack Overflow, W3Schools, and MDN Web Docs, as well as many classwork example code from the University of Denver (relied heavily on DU materials for => userRoutes.js, login/signup.js/.handlebars, postFormHandlers, etc. ) **as references** for the javascript code attached.
 >
 > **All of the utilized information has been altered in order to fit this project.**
+
+#### Citations:
+
+Afif, T. (n.d.). Fancy frame II. Codepen. Retrieved April 10, 2024, from https://codepen.io/t_afif/pen/ZEaYdqy
+
+Net Ninja. (2020). Bulma tutorial (product page build) #4 - Navbar (desktop) [Video]. In YouTube. https://www.youtube.com/watch?v=HmfQq0suMSA&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=5
+
+Net Ninja. (2020). Bulma Tutorial (Product Page Build) #5 - Navbar (for mobiles) [Video]. In YouTube. https://www.youtube.com/watch?v=qvn2SxGvyPs&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=5
+
+
+Patel, H. (2022, February 15). 6 creative ideas for CSS link hover effects. CSS-Tricks. https://css-tricks.com/css-link-hover-effects/
+
+Stack Overflow. (2018, February 13). Bulma navbar: How to style the menu on dropdown? Stack Overflow. https://stackoverflow.com/questions/48735750/bulma-navbar-how-to-style-the-menu-on-dropdown
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

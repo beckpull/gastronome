@@ -1,30 +1,24 @@
+/* Styling for recipe.handlebars */
+
 .my-column {
     width: 100vw;
 }
 
 #recipe-name-single-recipe {
     font-size: 2.5em;
-    /* font-family: 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    text-decoration: none; */
     font-family: 'Roboto';
     color: black;
 }
 
 .media-content {
-    /* width: 100%; */
-    /* margin: 0;
-    padding: 0; */
     margin-left: 20%;
     margin-right: 20%;
 }
 
 .media-center {
     width: 100%;
-    /* margin-left: 30%;
-    margin-right: 30% */
     font-size: 1.2em;
     line-height: 2em;
-
 }
 
 .figure {
@@ -49,13 +43,11 @@
 
 .heading {
     font-size: 2em;
-    /* font-family: 'Brush Script MT'; */
     font-family: 'Roboto';
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
     font-weight: bold;
-    
 }
 
 .input-container {
@@ -65,7 +57,6 @@
 
 .form-input {
     font-size: 1.2em;
-    /* height: 2em; */
     height: 50px;
     width: 100%;
     padding: 1%;
@@ -82,7 +73,6 @@
 }
 
 @media screen and (max-width: 1150px) {
-
     .media-content {
         margin-left: 5%;
         margin-right: 5%;
@@ -91,5 +81,4 @@
     .title {
         margin-top: 5%;
     }
-
 }

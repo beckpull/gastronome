@@ -1,3 +1,4 @@
+// Sets up the cloudinary connection which is used for uploading, resizing, and storing recipe images. 
 const cloudinary = require('cloudinary').v2;
 require('dotenv').config();
 

@@ -1,3 +1,4 @@
+// Sets up the sequelize connection which is used to access the postgreSQL database through javascript. 
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
