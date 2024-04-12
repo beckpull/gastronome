@@ -166,7 +166,7 @@ router.get('/my-recipes', withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.redirect('/');
+    res.redirect('/api/users/logout');
   }
 });
 
